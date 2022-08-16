@@ -1,0 +1,24 @@
+{
+  "name":"Mary Petrov",
+  "email":[
+     "mpetrov@gmail.com",
+     "analisa.ger.milano@gmail.com"
+  ],
+  "phone":[
+     "+414454543",
+     "+414454543"
+  ],
+  "role":"owner",
+  "image": 1,
+  "properties":[
+     {
+        "img":"htttp://img.com",
+        "price":20000,
+        "labels":[
+           "For Sale",
+           "House"
+        ],
+        "Street":"14 SE Lincoln, St. Portland"
+     }
+  ]
+}

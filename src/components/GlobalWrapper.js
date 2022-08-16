@@ -4,7 +4,7 @@ import Sidebar from 'components/Sidebar';
 import AuthenticatedRoute from './AuthenticatedRoute';
 import UnathenticatedRoute from './UnauthenticatedRoute';
 import Header from 'components/Header';
-const auth = false;
+const auth = true;
 
 const GlobalWrapper = () => {
 
@@ -15,7 +15,7 @@ const GlobalWrapper = () => {
         <Row className="pb-4">
         <Col>
             <Header name={'Milton'} surname={'Fisher'} />
-            <Row>
+            <Row className='mt-4'>
                 <Sidebar />
                 <Col sm={12} md={9} className="mt-4 pt-4">
                   <Container fluid>
