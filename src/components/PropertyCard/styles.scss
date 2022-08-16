@@ -1,48 +1,50 @@
 @use '../../style/custom' as *;
 
-.property-card{
-    border-radius: 8px;
-    border-color: $n100;
-    position: relative;
+.property-card {
+  border-radius: 8px;
+  border-color: $n100;
+  position: relative;
+  transition: all 0.25s;
 
-    img{
-        border-radius: 8px;
-    }
+  &:hover {
+    border: 1px solid #e0e0e1;
+    box-shadow: 0px 10px 23px #e0e0e1;
+    cursor: pointer;
+  }
 
-    .property-address{
-        color: $n300;
-    }
+  .card-body {
+    padding: 0;
+  }
 
-    hr{
-        color: $p50;
-    }
+  h5 {
+    color: $n300;
+    font-weight: 400;
+  }
 
-    .user-name-surname{
-        margin-left: 8px;
-    }
+  .property-address {
+    color: $n300;
+  }
 
-    .favorite-property-icon{
-        background-color: rgba($n500, 0.5);
-        position: absolute;
-        right: 8px;
-        top:8px;
+  hr {
+    color: $p50;
+    background-color: $p50;
+    height: 2px;
+  }
 
-        svg{
-            fill: $n0;
-        }
-    }
-}
+  .user-name-surname {
+    margin-left: 8px;
+  }
 
-.property-card-hover{
+  .favorite-property-icon {
+    background-color: rgba($n500, 0.5);
     position: absolute;
-    border-radius: 8px;
-    width: 100%;
-    height: 100%;
-    background: rgba(38, 50, 56, 0.2);
-    padding: 10px;
+    right: 8px;
+    top: 8px;
+    z-index: 200;
 
-    .btn{
-        width: 100%;
-        padding: 14px 24px;
+    svg {
+      fill: $n0;
+      scale: 1.3;
     }
+  }
 }
