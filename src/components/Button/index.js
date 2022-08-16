@@ -1,7 +1,7 @@
-import React, { useEffect } from 'react';
-import FilledArrowDown from '../../stories/svg/FilledArrowDown';
-import AddOutline from '../../stories/svg/AddOutline';
-import './styles.scss';
+import React, { useEffect } from "react";
+import FilledArrowDown from "../../stories/svg/FilledArrowDown";
+import AddOutline from "../../stories/svg/AddOutline";
+import "./styles.scss";
 
 const Button = ({
   children,
@@ -10,10 +10,12 @@ const Button = ({
   type,
   disabled,
   className,
+  onClick,
 }) => {
   return (
     <button
       disabled={disabled}
+      onClick={onClick}
       className={`btn btn-variant-${type} ${className}  d-flex align-items-center justify-content-center gx-2`}
     >
       {leadingIcon !== true ? (
@@ -28,8 +30,8 @@ const Button = ({
 };
 
 Button.defaultProps = {
-  children: 'Button',
-  type: 'primary',
+  children: "Button",
+  type: "primary",
   leadingIcon: false,
   endIcon: false,
   disabled: false,

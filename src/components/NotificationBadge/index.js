@@ -1,14 +1,13 @@
-import React from 'react';
+import React from "react";
 
-import './styles.scss';
+import "./styles.scss";
 
-const NotificationBadge = ({className, number}) => {
+const NotificationBadge = ({ className, number }) => {
   return (
-   <div class={`notification-badge ${className}`}>
-    <p className='small-text'>{number>99 ? '99+' : number}</p>
-   </div>
-
-  )
-}
+    <div className={`notification-badge ${className}`}>
+      <p className="small-text">{number > 99 ? "99+" : number}</p>
+    </div>
+  );
+};
 
 export default NotificationBadge;

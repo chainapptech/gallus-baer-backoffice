@@ -1,5 +1,5 @@
 @use './style/custom' as *;
-@import '~bootstrap/scss/bootstrap.scss';
+@import "~bootstrap/scss/bootstrap.scss";
 
 /* Box sizing rules */
 *,
@@ -11,7 +11,6 @@
 body {
   overflow-x: hidden;
 }
-
 
 /* Remove default margin */
 body,
@@ -27,19 +26,23 @@ dd {
   margin: 0;
 }
 
-table{
-  a{
-    color:#000;
+table {
+  a {
+    color: #000;
   }
 }
 
-.card{
-    color:#000;
+.card {
+  color: #000;
+}
+
+.wrapper {
+  background-color: #f5f5f5;
 }
 
 /* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
-ul[role='list'],
-ol[role='list'] {
+ul[role="list"],
+ol[role="list"] {
   list-style: none;
 }
 
@@ -60,7 +63,7 @@ a:not([class]) {
   text-decoration-skip-ink: auto;
 }
 
-a{
+a {
   text-decoration: none;
 }
 

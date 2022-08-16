@@ -4,14 +4,15 @@
   background-color: #fff !important;
   z-index: 10;
   border-bottom: 1px solid $s500;
+  min-height: 68px;
 
-  .notification-outline-svg{
+  .notification-outline-svg {
     fill: $p700;
     width: 24px;
     height: 24px;
   }
 
-  .language-item{
+  .language-item {
     color: $p700;
   }
 }

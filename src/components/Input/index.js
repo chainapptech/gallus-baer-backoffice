@@ -1,9 +1,9 @@
-import React from 'react';
-import { Col, DropdownButton, Dropdown } from 'react-bootstrap';
+import React from "react";
+import { Col, DropdownButton, Dropdown } from "react-bootstrap";
 
-import MagnifyingGlass from '../../stories/svg/MagnifyingGlass';
-import Button from '../Button';
-import './styles.scss';
+import MagnifyingGlass from "../../stories/svg/MagnifyingGlass";
+import Button from "../Button";
+import "./styles.scss";
 
 const InputComponent = ({
   type,
@@ -15,8 +15,8 @@ const InputComponent = ({
   search,
 }) => (
   <Col className="input-wrapper d-flex flex-column">
-    <h6 className='mb-1'>{label}</h6>
-    {type === 'select' ? (
+    <h6 className="mb-1">{label}</h6>
+    {type === "select" ? (
       <DropdownButton
         disabled={disabled}
         id="dropdown-basic-button"
@@ -34,12 +34,13 @@ const InputComponent = ({
           placeholder={placeholder}
           className="px-3 py-2 rounded"
         />
-        {type === 'search' && (
+        {type === "search" && (
           <Button
-            children="Search"
             leadingIcon={<MagnifyingGlass className="add-outline-svg" />}
             className="position-absolute end-0"
-          />
+          >
+            Search
+          </Button>
         )}
       </div>
     )}
