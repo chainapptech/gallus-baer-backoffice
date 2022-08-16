@@ -1,32 +1,52 @@
 [
-    {
-      "name": "Merry Petrov",
+  {
+  "id": 1,
+  "account": {
+      "name": "Merry",
+      "surname": "Petrov",
       "email": "mpetrov@bank.us",
       "role": "owner",
-      "image": 1
-    },
-    {
-      "name": "Eva Jafferson",
+      "image": "account-1.jpg"
+    }
+  },
+  {
+  "id": 2,
+  "account": {
+      "name": "Eva",
+      "surname": "Jafferson",
       "email": "ejafferson@gmail.com",
       "role": "admin",
-      "image": 2
-    },
-    {
-      "name": "Alexander Morisson",
+      "image": "account-2.png"
+    }
+  },
+  {
+    "id": 3,
+    "account": {
+      "name": "Alexander",
+      "surname": "Morisson",
       "email": "alex456xyz@gmail.com",
       "role": "user",
-      "image": 3
-    },
-    {
-      "name": "Carolina Hoppkins",
+      "image": "account-3.png"
+    }
+  },
+  {
+    "id": 4,
+    "account": {
+      "name": "Carolina",
+      "surname": "Hoppkins",
       "email": "name.lastname@gmail.com",
       "role": "admin",
-      "image": 4
-    },
-    {
-      "name": "Jenna Jameson",
+      "image": "account-4.png"
+    }
+  },
+  {
+    "id": 5,
+    "account": {
+      "name": "Jenna",
+      "surname": "Jameson",
       "email": "jjameson@gmail.com",
       "role": "owner",
-      "image": 5
+      "image": "account-5.png"
     }
+  }
   ]

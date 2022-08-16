@@ -17,7 +17,6 @@ const PropertyCard = ({ property, user }) => {
   };
 
   return (
-    <Col sm={12} md={3}>
       <Card className="property-card">
         <Card.Body className="position-relative">
           <IconButton
@@ -69,7 +68,6 @@ const PropertyCard = ({ property, user }) => {
           </Col>
         </Card.Body>
       </Card>
-    </Col>
   );
 };
 

@@ -1,24 +1,105 @@
 {
-  "name":"Mary Petrov",
+  "name": "John",
+  "surname": "Doe",
   "email":[
-     "mpetrov@gmail.com",
-     "analisa.ger.milano@gmail.com"
+     "johndoe@gmail.com",
+     "johndoe.ger.milano@gmail.com"
   ],
   "phone":[
      "+414454543",
      "+414454543"
   ],
   "role":"owner",
-  "image": 1,
+  "img": "account-1.jpg",
   "properties":[
-     {
-        "img":"htttp://img.com",
-        "price":20000,
-        "labels":[
-           "For Sale",
-           "House"
-        ],
-        "Street":"14 SE Lincoln, St. Portland"
-     }
+   {
+      "id": 1,
+      "property": {
+        "img": "dummy-property-1.png",
+        "price": 1585000,
+        "previous-price": 1280000,
+        "tags": ["For Sale", "House"],
+        "address": "372 Central Park West, Unit 17",
+        "approved": true
+      }
+    },
+    {
+      "id": 2,
+      "property": {
+        "img": "dummy-property-2.png",
+        "price": 1585000,
+        "previous-price": 1280000,
+        "tags": ["For Sale", "House"],
+        "address": "354 Bridle Ave.Frederick, MD 21701",
+        "approved": false
+      }
+    },
+    {
+      "id": 3,
+      "property": {
+        "img": "dummy-property-3.png",
+        "price": 1585000,
+        "previous-price": 1280000,
+        "tags": ["For Sale", "House"],
+        "address": "583 Fairview Rd Brooks (GA), 30205",
+        "approved": true
+      }
+    },
+    {
+      "id": 4,
+      "property": {
+        "img": "dummy-property-4.png",
+        "price": 1585000,
+        "previous-price": 1280000,
+        "tags": ["For Sale", "House"],
+        "address": "1651 California Rd Ridgway (PA)",
+        "approved": true
+      }
+    },
+    {
+      "id": 5,
+      "property": {
+        "img": "dummy-property-5.png",
+        "price": 1585000,
+        "previous-price": 1280000,
+        "tags": ["For Sale", "House"],
+        "address": "4917 Cedar Ln Thomson (IL)",
+        "approved": true
+      }
+    }
+  ],
+  "histories":[
+   {
+      "id": 1,
+      "history": {
+         "date": "19.03.2022.",
+         "time": "15:24",
+         "action": "updated his profile."
+      }
+    },
+    {
+      "id": 2,
+      "history": {
+         "date": "15.03.2022.",
+         "time": "10:54",
+         "action": "added a new phone number."
+      }
+    },
+    {
+      "id": 2,
+      "history": {
+         "date": "13.03.2022.",
+      "time": "12:36",
+      "action": "account verified."
+      }
+    },
+    {
+      "id": 2,
+      "history": {
+         "date": "13.03.2022.",
+         "time": "12:27",
+         "action": "account created."
+      }
+    }
   ]
 }

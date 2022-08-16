@@ -3,7 +3,8 @@ import { Row, Col } from 'react-bootstrap';
 import Table from 'components/Table';
 
 import './styles.scss';
-var data = require("./accounts.json");
+
+import data from "./accounts.json";
 
 const Accounts = () => {
 

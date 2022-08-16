@@ -42,12 +42,12 @@ const SingleAccount = ({ user, hover, image, table }) => {
       onMouseLeave={handleHover}
     >
       <ProfileIcon
-        name={user.name && user.name.split(' ')[0]}
-        surname={user.name && user.name.split(' ')[1]}
+        name={user.name && user.name}
+        surname={user.surname && user.surname}
         image={user.image || image}
       />
       <div className="info flex-fill ms-4">
-        <h5>{user.name}</h5>
+        <h5>{user.name} {user.surname}</h5>
         {table === true ? <h6 className="small-text light-color user-email">{user.email}</h6> : <p className="small-text light-color">{user.email}</p>}
       </div>
       <div className="label">

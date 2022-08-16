@@ -4,15 +4,13 @@ import { Link } from "react-router-dom";
 import ContactInfoCard from 'components/ContactInfoCard';
 import ProfileIcon from 'components/ProfileIcon';
 import AccountLabel from 'components/AccountLabel';
-import PropertyCard from 'components/PropertyCard';
+import Property from "components/PropertyCard";
 import AccountHistory from 'components/AccountHistory';
 import NotFoundProperty from 'components/NotFoundProperty';
 
 import './styles.scss';
 
 var accountInfo = require("./account_info.json");
-var propertiesData = require("./properties.json");
-var history = require('./history.json');
 
 const SingleAccountPage = () => {
   return (
@@ -26,9 +24,9 @@ const SingleAccountPage = () => {
 
                 <div className='d-flex align-items-center'>
               <ProfileIcon
-                  name={accountInfo.name && accountInfo.name.split(' ')[0]}
-                  surname={accountInfo.name && accountInfo.name.split(' ')[1]}
-                  image={accountInfo.image || image}
+                  name={accountInfo.name}
+                  surname={accountInfo.surname}
+                  image={accountInfo.img || img}
                 />
 
                 <div className="d-flex flex-column ms-4">
@@ -44,9 +42,11 @@ const SingleAccountPage = () => {
                     <h3>Associated properties</h3>
 
                     <Row className="gy-4 mt-2">
-                      {propertiesData.length === 0 ? <> <Col sm={12} md={1}></Col> <Col sm={12} md={6}><NotFoundProperty title={"Not found"} subtitle={"There are no associated properties with this account at the moment."} /></Col> </>: 
-                      propertiesData.map((property, index) => (
-                       <PropertyCard key={index} price={property.property.price} address={property.property.address} img={property.property.img} user={accountInfo}  />
+                      { accountInfo.properties.length === 0 ? <> <Col sm={12} md={1}></Col> <Col sm={12} md={6}><NotFoundProperty title={"Not found"} subtitle={"There are no associated properties with this account at the moment."} /></Col> </>: 
+                      accountInfo.properties.map(({id, property}) => (
+                        <Col key={id} sm={12} md={4}>
+                          <Property property={property} user={accountInfo} />
+                        </Col>
                       ))}
                     </Row>
                   </Col>
@@ -54,7 +54,7 @@ const SingleAccountPage = () => {
 
                 <Row className='mt-4 pt-2'>
                   <Col>
-                    <AccountHistory history={history} user={accountInfo.name}/>
+                    <AccountHistory history={accountInfo.histories} user={accountInfo.name}/>
                   </Col>
                 </Row>
 
