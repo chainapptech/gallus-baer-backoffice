@@ -1,0 +1,35 @@
+.profile-icon,
+.md {
+  background-color: #fecba1;
+  max-width: 40px;
+  max-height: 40px;
+  min-width: 40px;
+  min-height: 40px;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 16px;
+
+  img {
+    width: 100%;
+  }
+}
+
+.sm {
+  max-width: 24px;
+  max-height: 24px;
+  min-width: 24px;
+  min-height: 24px;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+}
+
+.lg {
+  max-width: 56px;
+  max-height: 56px;
+  min-width: 56px;
+  min-height: 56px;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 24px;
+}

@@ -1,0 +1,79 @@
+@use '../../style/custom' as *;
+
+.house-fill-svg{
+    width: 100px;
+    height: 100px;
+}
+.sidebar-links{
+    width: 200px;
+    border: 2px solid transparent;
+    border-left: 4px solid transparent;
+    cursor: pointer;
+    background: transparent;
+    outline: none;
+    transition: background 100ms;
+
+    .inner-button{
+        width: 100%;
+    }
+
+    &:focus:not(:focus-visible) {
+        box-shadow: none;
+        border: 2px solid transparent;
+        border-left: 4px solid $p500;
+        background-color: $p50;
+        .link-text{
+            color: $p500;
+            font-weight: 700;
+        }
+        svg{
+            fill: $p500;
+        }
+
+        &:before {
+            content: " ";
+            border: 0 solid transparent;
+            background-color: red;
+        }
+    }
+
+    svg{
+        width: 20px;
+        height: 20px;
+        margin-right: 8px;
+        fill: $n500;
+    }
+
+    &:hover{
+      background-color: $p50;
+      border: 2px solid $p50;
+      border-left: 4px solid $p50;
+      padding-left: -2px;
+    }
+
+    &:active {
+        border: 2px solid transparent;
+        border-left: 4px solid $p500;
+        background-color: $p50;
+        .link-text{
+            color: $p500;
+            font-weight: 700;
+        }
+        svg{
+            fill: $p500;
+        }
+    }
+
+    &:focus,
+    .focus-visible:focus:not(:focus-visible){
+        background-color: $p50;
+        border: 2px solid $n500;
+        border-left: 2px solid $n500;
+
+        &:before {
+            content: "";
+            border-left: 2px solid transparent;
+            left: 0;
+        }
+    }
+}

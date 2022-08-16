@@ -1,0 +1,18 @@
+.table-header {
+  background-color: #faf4ef;
+  padding: 18px;
+  color: #063561;
+  grid-gap: 10px;
+  border-bottom: 1.3px solid #d6a67a;
+
+  p {
+    margin: 0;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 16px;
+  }
+}
+
+.table-body {
+  border: none;
+}

@@ -1,0 +1,7 @@
+@use '../../style/custom' as *;
+
+.create-card-title {
+  color: $n500;
+  font-weight: bold;
+  border-left: 2px solid $s500;
+}

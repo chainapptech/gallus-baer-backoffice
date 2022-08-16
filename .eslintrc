@@ -1,0 +1,28 @@
+{
+  "env": {
+    "browser": true,
+    "es2021": true
+  },
+  "settings": {
+    "react": {
+      "version": "^17.0.2"
+    }
+  },
+  "extends": ["plugin:react/recommended"],
+  "plugins": ["react"],
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": "latest",
+    "sourceType": "module"
+  },
+  "ignorePatterns": ["**/build/**"],
+  "rules": {
+    "react/jsx-key": "off",
+    "react/prop-types": "off",
+    "react/no-find-dom-node": "off",
+    "react/react-in-jsx-scope": "off",
+    "no-mixed-spaces-and-tabs": "off"
+  }
+}

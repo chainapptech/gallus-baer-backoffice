@@ -1,0 +1,12 @@
+@use '../../style/custom' as *;
+
+.property-tag{
+    background-color: $n50 !important;
+    border: 1px solid $p200;
+    border-radius: 8px;
+    padding: 4px 8px;
+    margin-right: 8px;
+    margin-top: 8px;
+    width: fit-content;
+    display: block;
+}

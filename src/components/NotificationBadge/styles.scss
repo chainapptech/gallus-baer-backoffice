@@ -1,0 +1,12 @@
+@use '../../style/custom' as *;
+
+.notification-badge{
+    background-color: $e500;
+    width: fit-content;
+    padding: 4px 8px;
+    border-radius: 999px;
+
+    p{
+        color: $n0;
+    }
+}

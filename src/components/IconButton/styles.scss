@@ -1,0 +1,54 @@
+@use '../../style/custom' as *;
+
+.btn-add-button{
+    border:none;
+    background-color: transparent;
+    transition: 200ms;
+
+    &:focus:not(:focus-visible) {
+        box-shadow: none;
+        border: none;
+        outline: none;
+        background-color: $s200;
+    }
+
+    svg{
+        width: 20px;
+        height: 20px;
+        fill: $p500;
+    }
+
+    &:hover{
+        background: $s50
+    }
+
+    &:active {
+        background-color: $s200;
+    }
+
+    &:focus,
+    .focus-visible:focus:not(:focus-visible){
+        box-shadow: 0px 0px 0px 2px #FFFFFF, 0px 0px 0px 4px #232E40;
+        background-color: $s200;
+        outline: none;
+    }
+
+    &:disabled {
+        background-color: $n50;
+        border: none;
+        svg{
+          fill: $n200;
+        }
+    }
+}
+
+.btn-add-button-lg{
+    width: 44px;
+    height: 44px;
+}
+
+
+.btn-add-button-sm{
+    width: 24px;
+    height: 24px;
+}

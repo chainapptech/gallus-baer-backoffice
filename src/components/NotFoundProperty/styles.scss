@@ -1,0 +1,20 @@
+.not-found-property {
+  max-width: 600px;
+  width: 100%;
+
+  h3 {
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 32px;
+  }
+
+  p {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+  }
+
+  div {
+    grid-gap: 16px;
+  }
+}

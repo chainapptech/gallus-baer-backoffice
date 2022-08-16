@@ -1,0 +1,45 @@
+@use '../../style/custom' as *;
+
+.navbar {
+  background-color: #fff !important;
+  z-index: 10;
+  border-bottom: 1px solid $s500;
+
+  .notification-outline-svg{
+    fill: $p700;
+    width: 24px;
+    height: 24px;
+  }
+
+  .language-item{
+    color: $p700;
+  }
+}
+
+.language-selector {
+  font-family: "Ubuntu";
+  font-weight: bold;
+  button {
+    background-color: #fff;
+    border: none;
+    color: $p700;
+    &:hover {
+      background-color: #fff;
+      color: $p700;
+    }
+    &:active {
+      background-color: #fff;
+      color: $p700;
+    }
+    &:focus {
+      background-color: #fff;
+      color: $p700;
+    }
+  }
+  .dropdown-toggle {
+    background-color: #fff !important;
+    color: $p700 !important;
+    box-shadow: none !important;
+    border: none !important;
+  }
+}

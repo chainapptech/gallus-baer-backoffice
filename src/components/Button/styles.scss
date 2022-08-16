@@ -1,0 +1,197 @@
+@use '../../style/custom' as *;
+
+.btn {
+  padding: 8px 20px;
+  font-family: 'Ubuntu';
+  font-weight: bold;
+  grid-gap: 10px;
+
+  h5 {
+    display: flex;
+    align-items: center;
+  }
+
+  .svg{
+    width: 24px;
+    height: 24px;
+  }
+
+  .add-outline-svg {
+    margin-right: 8px;
+  }
+
+  .filled-arrow-svg {
+    margin-left: 8px;
+  }
+}
+
+.btn-variant-primary {
+  border: solid 1px $s300;
+
+  &:focus:not(:focus-visible) {
+    box-shadow: none;
+    background-color: $p900;
+    h5{
+      color: $s300;
+    }
+   }
+
+  h5{
+    color: $s200;
+  }
+  background-color: $p500;
+
+  svg {
+    fill: $s200;
+  }
+
+  &:hover {
+    background-color: $p800;
+    h5{
+      color: $s300;
+    }
+    svg {
+      fill: $s300;
+    }
+  }
+
+  &:active {
+    background-color: $p900;
+    h5{
+      color: $s300;
+    }
+    svg {
+      fill: $s300;
+    }
+  }
+
+  &:focus,
+  .focus-visible:focus:not(:focus-visible) {
+    background-color: $p700;
+    box-shadow: 0px 0px 0px 2px #ffffff, 0px 0px 0px 4px #232e40;
+  }
+
+  &:disabled {
+    background-color: $n50;
+    h5{
+      color: $n200;
+    }
+    border: none;
+    svg {
+      fill: $n200;
+    }
+  }
+}
+
+.btn-variant-secondary {
+  border: solid 1px $s500;
+  background-color: $s50;
+
+  &:focus:not(:focus-visible) {
+    box-shadow: none;
+    background-color: $s300;
+    h5{
+      color:$p700;
+    }
+   }
+
+  h5{
+    color:$p700;
+  }
+
+  svg {
+    fill: $p700;
+  }
+
+  &:focus,
+  .focus-visible:focus:not(:focus-visible) {
+    box-shadow: 0px 0px 0px 2px #ffffff, 0px 0px 0px 4px #232e40;
+    background-color: $s200;
+  }
+
+  &:hover {
+    background-color: $s100;
+    border: solid 1px $s700;
+
+    h5{
+      color:$p700;
+    }
+  }
+
+  &:active {
+    background-color: $s300;
+    border: solid 1px $s800;
+    h5{
+      color:$p700;
+    }
+  }
+
+  &:disabled {
+    background-color: $n50;
+    h5{
+      color: $n200;
+    }
+    border: none;
+  }
+}
+
+.btn-variant-text {
+  &:focus:not(:focus-visible) {
+    box-shadow: none;
+    background-color: $s200;
+    h5{
+      color: $n500;
+    }
+    svg {
+      fill: $n500;
+    }
+   }
+
+  h5{
+    color: $p700;
+  }
+
+  svg {
+    fill: $p700;
+  }
+
+  &:focus,
+  .focus-visible:focus:not(:focus-visible) {
+    background-color: $s200;
+    box-shadow: 0px 0px 0px 2px #ffffff, 0px 0px 0px 4px #232e40;
+  }
+
+  &:hover {
+    background-color: $s50;
+    h5{
+      color: $p700;
+    }
+    svg {
+      fill: $p700;
+    }
+  }
+
+  &:active {
+    background-color: $s200;
+    h5{
+      color: $n500;
+    }
+
+    svg {
+      fill: $n500;
+    }
+  }
+
+  &:disabled {
+    background-color: $n50;
+    border: none;
+
+    h5{
+      color: $n200;
+    }
+
+    svg {
+      fill: $n200;
+    }
+  }
+}
