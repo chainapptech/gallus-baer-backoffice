@@ -1,15 +1,14 @@
-// import React from 'react';
-import { Row, Col, Container } from "react-bootstrap";
-import Sidebar from "components/Sidebar";
-import AuthenticatedRoute from "./AuthenticatedRoute";
-import UnathenticatedRoute from "./UnauthenticatedRoute";
-import Header from "components/Header";
-const auth = false;
+import { Row, Col, Container} from 'react-bootstrap';
+import Sidebar from 'components/Sidebar';
+import AuthenticatedRoute from './AuthenticatedRoute';
+import UnathenticatedRoute from './UnauthenticatedRoute';
+import Header from 'components/Header';
+const auth = true;
 
 const GlobalWrapper = () => {
   return (
     <>
-      {auth ? (
+      {!auth ? (
         <UnathenticatedRoute />
       ) : (
         <>

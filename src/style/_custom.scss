@@ -65,6 +65,7 @@ $n100: #e0e0e1;
 $n200: #96989b;
 $n300: #6b6f72;
 $n400: #4c5054;
+$n700: #3B485C;
 
 
 //Error colors
@@ -74,6 +75,12 @@ $e500:#D23E3F;
 
 $primary: $p500;
 $secondary: $s500;
+
+// Global settings
+
+body{
+  background-color: $n50;
+}
 
 //Typography
 
