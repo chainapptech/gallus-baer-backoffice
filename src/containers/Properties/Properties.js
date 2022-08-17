@@ -6,42 +6,54 @@ import {
   Tab,
   InputGroup,
   FormControl,
-  Button as BootstrapButton,
   Offcanvas,
   Form,
 } from "react-bootstrap";
-import { BsSearch } from "react-icons/bs";
+import { MultiSelect } from "react-multi-select-component";
 
-import Plus from "stories/svg/Plus";
 import Button from "components/Button";
 import Property from "components/PropertyCard";
-import data from "./dummy.json";
-
-import "./styles.scss";
-import MagnifyingGlass from "stories/svg/MagnifyingGlass";
 import NotificationBadge from "components/NotificationBadge";
+import MagnifyingGlass from "stories/svg/MagnifyingGlass";
+import Plus from "stories/svg/Plus";
+import FilterSvg from "stories/svg/Filter";
+import data from "./dummy.json";
+import "./styles.scss";
+import FilledArrowDown from "stories/svg/FilledArrowDown";
+
+const typeOptions = [
+  { label: "Apartment", value: "apartment" },
+  { label: "House", value: "house" },
+];
+
+const cityOptions = ["New York", "Los Angeles", "Chicago", "Houston"];
+
+const radiusOptions = ["0", "+5km", "+10km", "+15km", "+20km"];
+
+const createdAtOptions = [
+  { label: "Today", value: "today" },
+  { label: "This week", value: "this-week" },
+  { label: "This month", value: "this-month" },
+];
+
+const otherDetailsData = [
+  { label: "Parking", value: "parking" },
+  { label: "Spa", value: "spa" },
+  { label: "Swimming Pool", value: "swimming-pool" },
+];
 
 const Properties = () => {
-  const [show, setShow] = useState(false);
+  const [show, setShow] = useState(true);
   const [properties, setProperties] = useState(data);
   const [searchTerm, setSearchTerm] = useState("");
-  const [filters, setFilters] = useState({
-    type: "",
-    cityOrAddress: "",
-    radius: "",
-    plannedPriceRange: {
-      from: 0,
-      to: 0,
-    },
-    externalPriceRange: {
-      from: 0,
-      to: 0,
-    },
-    activeProperties: true,
-    inactiveProperties: false,
-    accountsCreated: "",
-    otherDetails: "",
-  });
+  const [type, setType] = useState([]);
+  const [cityOrAddres, setCityOrAddres] = useState("");
+  const [radius, setRadius] = useState("");
+  const [plannedPrice, setPlannedPrice] = useState({ from: 0, to: 0 });
+  const [externalPrice, setExternalPrice] = useState({ from: 0, to: 0 });
+  const [propertyStatus, setPropertyStatus] = useState([]);
+  const [accountsCreated, setAccountsCreated] = useState([]);
+  const [otherDetails, setOtherDetails] = useState([]);
 
   useEffect(() => {
     if (searchTerm.length === 0) {
@@ -57,6 +69,14 @@ const Properties = () => {
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    console.log(e);
+
+    handleClose();
+  };
 
   return (
     <>
@@ -174,75 +194,179 @@ const Properties = () => {
         show={show}
         onHide={handleClose}
       >
-        <Offcanvas.Header closeButton>
-          <Offcanvas.Title>All filters</Offcanvas.Title>
-        </Offcanvas.Header>
-        <Offcanvas.Body>
-          <h3 className="mb-3">Type of property</h3>
-          <p className="mb-2">What are you looking to buy?</p>
+        <Form onSubmit={handleSubmit}>
+          <Offcanvas.Header closeButton>
+            <Offcanvas.Title className="d-flex align-items-center">
+              <FilterSvg className="me-3" /> Filter
+            </Offcanvas.Title>
+          </Offcanvas.Header>
+          <Offcanvas.Body>
+            <h4 className="mb-3">Type of property</h4>
+            <MultiSelect
+              options={typeOptions}
+              value={type}
+              onChange={setType}
+              ArrowRenderer={FilledArrowDown}
+            />
 
-          <h3 className="my-3">Location</h3>
+            <h4 className="my-3">Location</h4>
+            <Form.Group className="mb-3">
+              <Form.Label>City/Address</Form.Label>
+              <Form.Select
+                className="mb-3"
+                onChange={(e) => setCityOrAddres(e.target.value)}
+              >
+                {cityOptions.map((city) => (
+                  <option key={city}>{city}</option>
+                ))}
+              </Form.Select>
+            </Form.Group>
 
-          <Form.Group className="mb-3">
-            <Form.Label>City/Town</Form.Label>
-            <Form.Select className="mb-3">
-              <option>Select location</option>
-              <option>Zürich</option>
-              <option>Geneva</option>
-              <option>Basel</option>
-              <option>Lausanne</option>
-            </Form.Select>
-          </Form.Group>
+            <Form.Group className="mb-3">
+              <Form.Label>Radious</Form.Label>
+              <Form.Select onChange={(e) => setRadius(e.target.value)}>
+                {radiusOptions.map((radius) => (
+                  <option key={radius}>{radius}</option>
+                ))}
+              </Form.Select>
+            </Form.Group>
 
-          <Form.Group className="mb-3">
-            <Form.Label>Radious</Form.Label>
-            <Form.Select>
-              <option>0km</option>
-              <option>+5km</option>
-              <option>+10km</option>
-              <option>+20km</option>
-            </Form.Select>
-          </Form.Group>
+            <h4 className="my-3">Planned price range</h4>
+            <Row>
+              <Col>
+                <Form.Group className="mb-3">
+                  <Form.Label>From</Form.Label>
+                  <Form.Control
+                    className="border border-2"
+                    type="number"
+                    placeholder="$ 40 000"
+                    onChange={(e) =>
+                      setPlannedPrice((state) => ({
+                        ...state,
+                        from: e.target.value,
+                      }))
+                    }
+                  />
+                </Form.Group>
+              </Col>
+              <Col>
+                <Form.Group className="mb-3">
+                  <Form.Label>To</Form.Label>
+                  <Form.Control
+                    className="border border-2"
+                    type="number"
+                    placeholder="$ 100 000"
+                    onChange={(e) =>
+                      setPlannedPrice((state) => ({
+                        ...state,
+                        to: e.target.value,
+                      }))
+                    }
+                  />
+                </Form.Group>
+              </Col>
+            </Row>
 
-          <h3 className="my-3">Price range</h3>
+            <h4 className="my-3">External price estimation range</h4>
+            <Row>
+              <Col>
+                <Form.Group className="mb-3">
+                  <Form.Label>From</Form.Label>
+                  <Form.Control
+                    className="border border-2"
+                    type="number"
+                    placeholder="$ 40 000"
+                    onChange={(e) =>
+                      setExternalPrice((state) => ({
+                        ...state,
+                        from: e.target.value,
+                      }))
+                    }
+                  />
+                </Form.Group>
+              </Col>
+              <Col>
+                <Form.Group className="mb-3">
+                  <Form.Label>To</Form.Label>
+                  <Form.Control
+                    className="border border-2"
+                    type="number"
+                    placeholder="$ 100 000"
+                    onChange={(e) =>
+                      setExternalPrice((state) => ({
+                        ...state,
+                        to: e.target.value,
+                      }))
+                    }
+                  />
+                </Form.Group>
+              </Col>
+            </Row>
 
-          <Row>
-            <Col>
-              <Form.Group className="mb-3">
-                <Form.Label>From</Form.Label>
-                <Form.Control type="text" placeholder="$ 40 000" />
-              </Form.Group>
-            </Col>
+            <h4 className="mb-3">Property Status</h4>
+            <Form.Group className="mb-3">
+              <Form.Check
+                type="checkbox"
+                id={`active`}
+                label={`Active Properties`}
+                value="active"
+                onChange={(e) =>
+                  setPropertyStatus((state) => {
+                    if (state.includes(e.target.value)) {
+                      return state.filter(
+                        (status) => status !== e.target.value
+                      );
+                    } else {
+                      return [...state, e.target.value];
+                    }
+                  })
+                }
+              />
+              <Form.Check
+                type="checkbox"
+                id={`inactive`}
+                label={`Inactive Properties`}
+                onChange={(e) =>
+                  setPropertyStatus((state) => {
+                    if (state.includes(e.target.value)) {
+                      return state.filter(
+                        (status) => status !== e.target.value
+                      );
+                    } else {
+                      return [...state, e.target.value];
+                    }
+                  })
+                }
+                value="inactive"
+              />
+            </Form.Group>
 
-            <Col>
-              <Form.Group className="mb-3">
-                <Form.Label>To</Form.Label>
-                <Form.Control type="text" placeholder="$ 100 000" />
-              </Form.Group>
-            </Col>
-          </Row>
+            <h4 className="mb-3">Accounts Created</h4>
+            <MultiSelect
+              options={createdAtOptions}
+              value={accountsCreated}
+              onChange={setAccountsCreated}
+              ArrowRenderer={FilledArrowDown}
+              className="mb-3"
+            />
 
-          <h3 className="my-3">Other details</h3>
+            <h4 className="mb-3">Other Details</h4>
+            <MultiSelect
+              options={otherDetailsData}
+              value={otherDetails}
+              onChange={setOtherDetails}
+              ArrowRenderer={FilledArrowDown}
+            />
 
-          <Form.Check type="checkbox" label="Parking" />
+            <p role="button" className="mt-4 pointer text-primary">
+              Clear all filters
+            </p>
 
-          <Form.Check type="checkbox" label="Spa" />
-
-          <Form.Check type="checkbox" label="Swimming pool" />
-
-          <Form.Check type="checkbox" label="Fitness centre" />
-
-          <Form.Check
-            type="checkbox"
-            label="Electric vehicle charging station"
-          />
-
-          <Form.Check type="checkbox" label="Teracce" />
-
-          <Form.Check type="checkbox" label="View" />
-
-          <Form.Check type="checkbox" label="Washing machine" />
-        </Offcanvas.Body>
+            <Button type="primary" className="mt-4 w-100">
+              Search 2,323 properties
+            </Button>
+          </Offcanvas.Body>
+        </Form>
       </Offcanvas>
     </>
   );
