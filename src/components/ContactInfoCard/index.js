@@ -7,9 +7,9 @@ import FilledPhone from '../../stories/svg/FilledPhone';
 
 import './styles.scss';
 
-const ContactInfoCard = ({phoneNumbers, emails}) => {
+const ContactInfoCard = ({phoneNumbers, emails, className}) => {
   return (
-    <Card className="contact-info-card">
+    <Card className={`contact-info-card ${className}`}>
       <Card.Body>
         <h3>Contact info</h3>
         <p className='contact-name'>Phone number</p>
