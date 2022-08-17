@@ -18,8 +18,8 @@ const ProfileIcon = ({
       <>
         {name && surname ? (
           <Col>
-            {name.charAt(0)}
-            {surname.charAt(0)}
+            {name}
+            {surname}
           </Col>
         ) : (
           <User />

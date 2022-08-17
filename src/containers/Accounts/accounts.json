@@ -1,17 +1,17 @@
 [
   {
-  "id": 1,
-  "account": {
-      "name": "Merry",
-      "surname": "Petrov",
-      "email": "mpetrov@bank.us",
+    "id": 1,
+    "account": {
+      "name": "John",
+      "surname": "Doe",
+      "email": "johnDoe@gmail.com",
       "role": "owner",
       "image": "account-1.jpg"
     }
   },
   {
-  "id": 2,
-  "account": {
+    "id": 2,
+    "account": {
       "name": "Eva",
       "surname": "Jafferson",
       "email": "ejafferson@gmail.com",
@@ -49,4 +49,4 @@
       "image": "account-5.png"
     }
   }
-  ]
+]

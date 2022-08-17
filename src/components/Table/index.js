@@ -1,7 +1,7 @@
-import React, {useState, useEffect} from 'react';
+import React, { useState, useEffect } from "react";
 
-import SingleAccount from '../SingleAccount';
-import { Link } from 'react-router-dom';
+import SingleAccount from "../SingleAccount";
+import { Link } from "react-router-dom";
 import {
   Row,
   Col,
@@ -14,10 +14,9 @@ import {
 import Button from "components/Button";
 import MagnifyingGlass from "stories/svg/MagnifyingGlass";
 
-import './styles.scss';
+import "./styles.scss";
 
 const Table = ({ accounts }) => {
-
   const [searchTerm, setSearchTerm] = useState("");
   const [accountsList, setAccountsList] = useState(accounts);
 
@@ -26,8 +25,10 @@ const Table = ({ accounts }) => {
       setAccountsList(accounts);
     }
 
-    const filteredAccounts = accounts.filter(({ account }) =>
-      account.name.toLowerCase().includes(searchTerm.toLowerCase()) || account.role.toLowerCase().includes(searchTerm.toLowerCase())
+    const filteredAccounts = accounts.filter(
+      ({ account }) =>
+        account.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        account.role.toLowerCase().includes(searchTerm.toLowerCase())
     );
 
     setAccountsList(filteredAccounts);
@@ -35,9 +36,9 @@ const Table = ({ accounts }) => {
 
   return (
     <div className="d-flex flex-column accounts-table">
-      <Row className='table-name'>
+      <Row className="table-name">
         <Col sm={12} md={5}>
-        <h4>Accounts</h4>
+          <h4>Accounts</h4>
         </Col>
 
         <Col sm={12} md={7}>
@@ -50,7 +51,7 @@ const Table = ({ accounts }) => {
                 onChange={(e) => setSearchTerm(e.target.value)}
               />
             </InputGroup>
-       
+
             <Button className={"ms-2"} type="secondary">
               Filters
             </Button>
@@ -59,17 +60,17 @@ const Table = ({ accounts }) => {
       </Row>
       <div className="table-header d-flex justify-content-between">
         <h5>Account name</h5>
-        <h5 className='role-name'>Role</h5>
+        <h5 className="role-name">Role</h5>
       </div>
       <div className="table-body">
-        {accountsList.map(({id, account}) => (
-          <Link key={id} to={`/singleaccount?id=${id}`} >
+        {accountsList.map(({ id, account }) => (
+          <Link key={id} to={`/singleaccount?id=${id}`}>
             <SingleAccount user={account} table />
           </Link>
         ))}
       </div>
 
-      <div className='table-footer'></div>
+      <div className="table-footer"></div>
     </div>
   );
 };

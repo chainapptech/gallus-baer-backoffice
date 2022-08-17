@@ -1,11 +1,7 @@
 @use '../../style/custom' as *;
 
-.house-fill-svg{
-    width: 100px;
-    height: 100px;
-}
 .sidebar-links{
-    width: 200px;
+    width: 100%;
     border: 2px solid transparent;
     border-left: 4px solid transparent;
     cursor: pointer;
