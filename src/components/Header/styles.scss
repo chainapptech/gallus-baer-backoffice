@@ -1,10 +1,14 @@
 @use '../../style/custom' as *;
 
 .navbar {
-  background-color: #fff !important;
+  background-color: $n0 !important;
   z-index: 1000;
   border-bottom: 1px solid $s500;
-  min-height: 68px;
+  height: 68px;
+
+  .offcanvas-body{
+    height: 68px;
+  }
 
   .notification-outline-svg {
     fill: $p700;
@@ -23,7 +27,7 @@
 
 .profile-toggle{
   display: flex;
-  background: #fff;
+  background: $n0;
   border: none;
   outline: none;
   box-shadow: none;
@@ -51,27 +55,27 @@
 
 
 .language-selector {
-  font-family: "Ubuntu";
-  font-weight: bold;
   button {
-    background-color: #fff;
+    background-color: $n0;
     border: none;
     color: $p700;
+    display: flex;
+    align-items: center;
     &:hover {
-      background-color: #fff;
+      background-color: $n0;
       color: $p700;
     }
     &:active {
-      background-color: #fff;
+      background-color: $n0;
       color: $p700;
     }
     &:focus {
-      background-color: #fff;
+      background-color: $n0;
       color: $p700;
     }
   }
   .dropdown-toggle {
-    background-color: #fff !important;
+    background-color: $n0 !important;
     color: $p700 !important;
     box-shadow: none !important;
     border: none !important;

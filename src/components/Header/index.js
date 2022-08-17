@@ -98,7 +98,7 @@ const Header = ({ name, surname }) => {
                 <DropdownButton
                   className="d-flex language-selector me-4 d-none d-md-block"
                   id="dropdown-basic-button"
-                  title="Eng"
+                  title={<h5 className="mb-0">Eng</h5>}
                 >
                   <Dropdown.Item href="#/action-1">
                     <h5 className="language-item">Eng</h5>
