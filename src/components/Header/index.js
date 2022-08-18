@@ -8,6 +8,7 @@ import {
   Dropdown,
 } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import { useAppContext } from "lib/contextLib";
 import NotificationsOutline from "../../stories/svg/NotificationsOutline";
 import ProfileIcon from "../ProfileIcon";
 //icons
@@ -24,10 +25,16 @@ import { BsPeople, BsPeopleFill } from "react-icons/bs"; // error with PeopleOut
 import "./styles.scss";
 
 const Header = ({ name, surname }) => {
+  const { setAuthenticated } = useAppContext();
   const [show, setShow] = useState(false);
 
   const toggleOffCanvas = () => {
     setShow((show) => !show);
+  };
+
+  const logoutHandler = () => {
+    setAuthenticated(false);
+    nav("/");
   };
 
   const links = [
@@ -107,7 +114,7 @@ const Header = ({ name, surname }) => {
 
                 <NotificationsOutline className="notification-outline-svg me-4 d-none d-md-block" />
 
-                <Dropdown>
+                <Dropdown className="profile-dropdown">
                   <Dropdown.Toggle
                     id="dropdown-basic"
                     className="profile-toggle"
@@ -115,9 +122,9 @@ const Header = ({ name, surname }) => {
                     <ProfileIcon name={name} surname={surname} size="md" className={"ms-3 ms-md-0"}/>
                   </Dropdown.Toggle>
 
-                  <Dropdown.Menu className="profile-dropwdown">
-                    <Dropdown.Item>
-                      <Link to={"/"}>Logout</Link>
+                  <Dropdown.Menu className="profile-dropwdown-menu">
+                    <Dropdown.Item as="button" onClick={logoutHandler}>
+                      Logout
                     </Dropdown.Item>
                   </Dropdown.Menu>
                 </Dropdown>
