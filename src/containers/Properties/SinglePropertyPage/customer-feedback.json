@@ -1,0 +1,36 @@
+[
+    {
+        "id":1,
+        "feedback": {
+            "date": "25.03.2022.",
+            "time": "16:13",
+            "message": "Etiam dictum nisi sed dui pretium facilisis. Sed nec nulla ullamcorper, iaculis mi et, tincidunt urna. Aliquam eget velit eget elit facilisis rhoncus quis at ligula. Curabitur vitae feugiat neque. Suspendisse dapibus rutrum metus, id malesuada nibh maximus accumsan. Proin condimentum metus eget venenatis mollis.",
+            "account": {
+                "img": "account-1.jpg",
+                "name": "John",
+                "surname": "Doe",
+                "email":[
+                    "johndoe@gmail.com",
+                    "johndoe.ger.milano@gmail.com"
+                ]
+              }
+        }
+    },
+    {
+        "id":2,
+        "feedback": {
+            "date": "12.03.2022.",
+            "time": "11:02",
+            "message": "Etiam dictum nisi sed dui pretium facilisis. Sed nec nulla ullamcorper, iaculis mi et, tincidunt urna. Aliquam eget velit eget elit facilisis rhoncus quis at ligula. Curabitur vitae feugiat neque. Suspendisse dapibus rutrum metus, id malesuada nibh maximus accumsan. Proin condimentum metus eget venenatis mollis.",
+            "account": {
+                "name": "Eva",
+                "surname": "Jafferson",
+                "img": "account-2.png",
+                "email":[
+                    "johndoe@gmail.com",
+                    "johndoe.ger.milano@gmail.com"
+                ]
+              }
+        }
+    }
+]

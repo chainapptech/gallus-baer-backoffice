@@ -34,7 +34,7 @@ const PropertyCard = ({ property, user, id }) => {
             <Card.Img
               className="mb-3"
               variant="top"
-              src={`assets/${property.img}`}
+              src={`/assets/${property.img}`}
             />
           ) : (
             <Card.Img
