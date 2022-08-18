@@ -6,7 +6,12 @@ import { numberWithCommas } from "utils/numberWithCommas";
 import PropertyTag from "components/PropertyTag";
 import DocumentTable from "components/DocumentTable";
 import ContactInfoCard from "components/ContactInfoCard";
+import CustomerFeedbackCard from "components/CustomerFeedbackCard";
+import OverviewDataCard from "components/OverviewData";
+
 import data from "../dummy.json";
+import customerFeedbakData from "./customer-feedback.json";
+import overviewData from "./overview-data.json";
 
 import "./styles.scss";
 
@@ -64,7 +69,7 @@ const SingleProperty = () => {
             <ContactInfoCard
               phoneNumbers={["+312513213", "+31241233"]}
               emails={["johndoe@gmail.com", "john1@gmail.com"]}
-              className="w-50 contact-info-card"
+              className="w-50 contact-info-card-property"
             />
           </Col>
 
@@ -174,7 +179,24 @@ const SingleProperty = () => {
               eventKey="overview"
               title="Overview"
               tabClassName="position-relative"
-            ></Tab>
+            >
+              <Row className="g-3 gy-4">
+                {overviewData.map(({id, overviewData}) => (
+                  <Col key={id} sm={12} md={6}>
+                    <OverviewDataCard data={overviewData} />
+                  </Col>
+                ))}
+              </Row>
+
+              <Row className="gy-3 mt-4">
+                <h3 className="mb-2">Customer feedback</h3>
+                {customerFeedbakData.map(({id, feedback}) =>(
+                    <Col sm={8}>
+                      <CustomerFeedbackCard key={id} feedback={feedback} />
+                    </Col>
+                ))}
+              </Row>
+            </Tab>
           </Tabs>
         </Row>
       ) : null}
