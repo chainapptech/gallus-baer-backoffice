@@ -66,7 +66,13 @@ const Header = ({ name, surname }) => {
 
   return (
     <>
-      <Navbar bg="light" expand={"md"} className="fixed-top">
+      <Navbar
+        collapseonselect="true"
+        bg="light"
+        expand={"md"}
+        className="fixed-top"
+      >
+
         <Container fluid>
           <Navbar.Brand href="#">
             <img src="assets/logo.png" alt="logo" width={"166px"} />
@@ -79,6 +85,7 @@ const Header = ({ name, surname }) => {
             id={`offcanvasNavbar-expand-md`}
             aria-labelledby={`offcanvasNavbarLabel-expand-md`}
             placement="end"
+            collapseonselect="true"
             show={show}
             onHide={toggleOffCanvas}
           >
@@ -118,7 +125,12 @@ const Header = ({ name, surname }) => {
                     id="dropdown-basic"
                     className="profile-toggle"
                   >
-                    <ProfileIcon name={name} surname={surname} size="md" className={"ms-3 ms-md-0"}/>
+                    <ProfileIcon
+                      name={name}
+                      surname={surname}
+                      size="md"
+                      className={"ms-3 ms-md-0"}
+                    />
                   </Dropdown.Toggle>
 
                   <Dropdown.Menu className="profile-dropwdown-menu">

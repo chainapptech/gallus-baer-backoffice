@@ -1,0 +1,36 @@
+.status-label {
+  width: fit-content;
+  grid-gap: 4px;
+
+  p {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16px;
+    color: #3b485c;
+  }
+}
+
+.success {
+  background: #e9f0e0;
+  border: 1px solid #498500;
+}
+
+.inProgress {
+  background: #e8edf3;
+  border: 1px solid #3d6c9e;
+}
+
+.notStarted {
+  background: #f3f5f6;
+  border: 1px solid #c1c6cd;
+}
+
+.warningLabel {
+  background: #fff3e9;
+  border: 1px solid #ff9e49;
+}
+
+.errorLabel {
+  background: #fae4e4;
+  border: 1px solid #d61f21;
+}

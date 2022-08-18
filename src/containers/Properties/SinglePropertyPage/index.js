@@ -2,10 +2,11 @@ import { Col, Row, Container, Tabs, Tab, Carousel } from "react-bootstrap";
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 
-import PropertyTag from "components/PropertyTag";
-import data from "../dummy.json";
 import { numberWithCommas } from "utils/numberWithCommas";
+import PropertyTag from "components/PropertyTag";
+import DocumentTable from "components/DocumentTable";
 import ContactInfoCard from "components/ContactInfoCard";
+import data from "../dummy.json";
 
 import "./styles.scss";
 
@@ -35,8 +36,6 @@ const SingleProperty = () => {
 
     setProperty(singleProperty[0]);
   }, []);
-
-  console.log(propertyData);
 
   return (
     <>
@@ -70,7 +69,7 @@ const SingleProperty = () => {
           </Col>
 
           <Tabs
-            defaultActiveKey="details"
+            defaultActiveKey="process"
             id="uncontrolled-tab-example"
             className="mb-4"
           >
@@ -88,6 +87,7 @@ const SingleProperty = () => {
                 <Row className="mt-3 d-flex align-items-center">
                   {Object.keys([1, 2, 3, 4]).map((key) => (
                     <img
+                      key={key}
                       className="property-small-img"
                       src={`/assets/${propertyData.property.img}`}
                       alt="property"
@@ -117,7 +117,10 @@ const SingleProperty = () => {
                 <h3>Property details</h3>
                 <Col className="mt-4">
                   {detailLabels.map((label) => (
-                    <Row className="detail-row border-bottom py-3 ps-2">
+                    <Row
+                      className="detail-row border-bottom py-3 ps-2"
+                      key={label}
+                    >
                       <Col className="detail-label">
                         <p>{label}</p>
                       </Col>
@@ -145,7 +148,7 @@ const SingleProperty = () => {
                   <img src="/assets/map.png" alt="map" />
                 </Col>
               </Col>
-              <Col className="mt-4 virtual-tour">
+              <Col className="mt-4">
                 <h3>Virtual tour</h3>
                 <Col className="mt-3">
                   <p className="mb-3">
@@ -159,7 +162,9 @@ const SingleProperty = () => {
               eventKey="process"
               title="Process information"
               tabClassName="position-relative"
-            ></Tab>
+            >
+              <DocumentTable />
+            </Tab>
             <Tab
               eventKey="inquiries"
               title="Inquiries"

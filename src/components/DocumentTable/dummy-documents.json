@@ -1,0 +1,266 @@
+[
+  {
+    "name": "Land register excerpt",
+    "status": 1,
+    "uploader": "John Doe",
+    "img": "account-1.jpg"
+  },
+  {
+    "name": "ID Copy Ownership",
+    "status": 2,
+    "uploader": "John Doe",
+    "img": "account-1.jpg"
+  },
+  {
+    "name": "GVA (Building insurance statement)",
+    "status": 1,
+    "uploader": "John Doe",
+    "img": "account-1.jpg"
+  },
+  {
+    "name": "Service charge settlement",
+    "status": 5,
+    "uploader": "John Doe",
+    "img": "account-1.jpg"
+  },
+  {
+    "name": "Cadastral plan/situation plan",
+    "status": 4,
+    "uploader": "John Doe",
+    "img": "account-1.jpg"
+  },
+  {
+    "name": "Tenant profile",
+    "status": 3,
+    "uploader": "John Doe",
+    "img": "account-1.jpg"
+  },
+  {
+    "name": "Rental agreements",
+    "status": 4,
+    "uploader": "John Doe",
+    "img": "account-1.jpg"
+  },
+  {
+    "name": "Floor plans",
+    "status": 1,
+    "uploader": "John Doe",
+    "img": "account-1.jpg"
+  },
+  {
+    "name": "Building description/Minergie certificate",
+    "status": 1,
+    "uploader": "John Doe",
+    "img": "account-1.jpg"
+  },
+  {
+    "name": "Building plans",
+    "status": 1,
+    "uploader": "John Doe",
+    "img": "account-1.jpg"
+  },
+  {
+    "name": "Documents or Expose if available",
+    "status": 2,
+    "uploader": "John Doe",
+    "img": "account-1.jpg"
+  },
+  {
+    "name": "Land register excerpt",
+    "status": 3,
+    "uploader": "John Doe",
+    "img": "account-1.jpg"
+  },
+  {
+    "name": "ID Copy Ownership",
+    "status": 5,
+    "uploader": "John Doe",
+    "img": "account-1.jpg"
+  },
+  {
+    "name": "GVA (Building insurance statement)",
+    "status": 4,
+    "uploader": "John Doe",
+    "img": "account-1.jpg"
+  },
+  {
+    "name": "Service charge settlement",
+    "status": 1,
+    "uploader": "John Doe",
+    "img": "account-1.jpg"
+  },
+  {
+    "name": "Cadastral plan/situation plan",
+    "status": 1,
+    "uploader": "John Doe",
+    "img": "account-1.jpg"
+  },
+  {
+    "name": "Tenant profile",
+    "status": 1,
+    "uploader": "John Doe",
+    "img": "account-1.jpg"
+  },
+  {
+    "name": "Rental agreements",
+    "status": 2,
+    "uploader": "John Doe",
+    "img": "account-1.jpg"
+  },
+  {
+    "name": "Floor plans",
+    "status": 1,
+    "uploader": "John Doe",
+    "img": "account-1.jpg"
+  },
+  {
+    "name": "Building description/Minergie certificate",
+    "status": 5,
+    "uploader": "John Doe",
+    "img": "account-1.jpg"
+  },
+  {
+    "name": "Building plans",
+    "status": 4,
+    "uploader": "John Doe",
+    "img": "account-1.jpg"
+  },
+  {
+    "name": "Documents or Expose if available",
+    "status": 3,
+    "uploader": "John Doe",
+    "img": "account-1.jpg"
+  },
+  {
+    "name": "Land register excerpt",
+    "status": 1,
+    "uploader": "John Doe",
+    "img": "account-1.jpg"
+  },
+  {
+    "name": "ID Copy Ownership",
+    "status": 2,
+    "uploader": "John Doe",
+    "img": "account-1.jpg"
+  },
+  {
+    "name": "GVA (Building insurance statement)",
+    "status": 1,
+    "uploader": "John Doe",
+    "img": "account-1.jpg"
+  },
+  {
+    "name": "Service charge settlement",
+    "status": 5,
+    "uploader": "John Doe",
+    "img": "account-1.jpg"
+  },
+  {
+    "name": "Cadastral plan/situation plan",
+    "status": 4,
+    "uploader": "John Doe",
+    "img": "account-1.jpg"
+  },
+  {
+    "name": "Tenant profile",
+    "status": 3,
+    "uploader": "John Doe",
+    "img": "account-1.jpg"
+  },
+  {
+    "name": "Rental agreements",
+    "status": 4,
+    "uploader": "John Doe",
+    "img": "account-1.jpg"
+  },
+  {
+    "name": "Floor plans",
+    "status": 1,
+    "uploader": "John Doe",
+    "img": "account-1.jpg"
+  },
+  {
+    "name": "Building description/Minergie certificate",
+    "status": 1,
+    "uploader": "John Doe",
+    "img": "account-1.jpg"
+  },
+  {
+    "name": "Building plans",
+    "status": 1,
+    "uploader": "John Doe",
+    "img": "account-1.jpg"
+  },
+  {
+    "name": "Documents or Expose if available",
+    "status": 2,
+    "uploader": "John Doe",
+    "img": "account-1.jpg"
+  },
+  {
+    "name": "Land register excerpt",
+    "status": 3,
+    "uploader": "John Doe",
+    "img": "account-1.jpg"
+  },
+  {
+    "name": "ID Copy Ownership",
+    "status": 5,
+    "uploader": "John Doe",
+    "img": "account-1.jpg"
+  },
+  {
+    "name": "GVA (Building insurance statement)",
+    "status": 4,
+    "uploader": "John Doe",
+    "img": "account-1.jpg"
+  },
+  {
+    "name": "Service charge settlement",
+    "status": 1,
+    "uploader": "John Doe",
+    "img": "account-1.jpg"
+  },
+  {
+    "name": "Cadastral plan/situation plan",
+    "status": 1,
+    "uploader": "John Doe",
+    "img": "account-1.jpg"
+  },
+  {
+    "name": "Tenant profile",
+    "status": 1,
+    "uploader": "John Doe",
+    "img": "account-1.jpg"
+  },
+  {
+    "name": "Rental agreements",
+    "status": 2,
+    "uploader": "John Doe",
+    "img": "account-1.jpg"
+  },
+  {
+    "name": "Floor plans",
+    "status": 1,
+    "uploader": "John Doe",
+    "img": "account-1.jpg"
+  },
+  {
+    "name": "Building description/Minergie certificate",
+    "status": 5,
+    "uploader": "John Doe",
+    "img": "account-1.jpg"
+  },
+  {
+    "name": "Building plans",
+    "status": 4,
+    "uploader": "John Doe",
+    "img": "account-1.jpg"
+  },
+  {
+    "name": "Documents or Expose if available",
+    "status": 3,
+    "uploader": "John Doe",
+    "img": "account-1.jpg"
+  }
+]
