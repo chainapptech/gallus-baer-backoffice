@@ -72,6 +72,7 @@ const Header = ({ name, surname }) => {
         expand={"md"}
         className="fixed-top"
       >
+
         <Container fluid>
           <Navbar.Brand href="#">
             <img src="assets/logo.png" alt="logo" width={"166px"} />

@@ -3,10 +3,10 @@ import { Col } from 'react-bootstrap';
 
 import './styles.scss';
 
-const AccountHistory = ({ user, history }) => (
+const AccountHistory = ({ user, histories }) => (
   <Col className="account-history">
     <h2 className="mb-3">Account history</h2>
-    {history.map(({ id, history }, index) => (
+    {histories.map(({ id, history }, index) => (
       <p key={index} className="mb-2">
         {history.date} {history.time} <span className="fw-bold">{`@${user}`}</span>{' '}
         <span>{history.action}</span>
