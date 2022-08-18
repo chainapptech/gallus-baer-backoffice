@@ -64,7 +64,7 @@ const Table = ({ accounts }) => {
       </div>
       <div className="table-body">
         {accountsList.map(({ id, account }) => (
-          <Link key={id} to={`/singleaccount?id=${id}`}>
+          <Link key={id} to={`/accounts/${id}`}>
             <SingleAccount user={account} table />
           </Link>
         ))}

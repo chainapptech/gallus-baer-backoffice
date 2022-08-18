@@ -66,7 +66,7 @@ const Header = ({ name, surname }) => {
 
   return (
     <>
-      <Navbar collapseOnSelect bg="light" expand={"md"} className="fixed-top">
+      <Navbar bg="light" expand={"md"} className="fixed-top">
         <Container fluid>
           <Navbar.Brand href="#">
             <img src="assets/logo.png" alt="logo" width={"166px"} />
@@ -79,7 +79,6 @@ const Header = ({ name, surname }) => {
             id={`offcanvasNavbar-expand-md`}
             aria-labelledby={`offcanvasNavbarLabel-expand-md`}
             placement="end"
-            collapseOnSelect
             show={show}
             onHide={toggleOffCanvas}
           >

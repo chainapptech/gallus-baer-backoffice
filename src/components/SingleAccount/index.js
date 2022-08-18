@@ -44,11 +44,11 @@ const SingleAccount = ({ user, hover, image, table }) => {
       <ProfileIcon
         name={user.name && user.name}
         surname={user.surname && user.surname}
-        image={user.image || image}
+        image={user.img || image}
       />
       <div className="info flex-fill ms-4">
         <h5>{user.name} {user.surname}</h5>
-        {table === true ? <h6 className="small-text light-color user-email">{user.email}</h6> : <p className="small-text light-color">{user.email}</p>}
+        {table === true ? <h6 className="small-text light-color user-email">{user.email[0]}</h6> : <p className="small-text light-color">{user.email}</p>}
       </div>
       <div className="label">
         {isHovered || hover ? (
