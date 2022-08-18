@@ -1,0 +1,37 @@
+[
+    {
+        "id":1,
+        "overviewData":{
+            "dataName": "VIEWS OF THE PROPERTY",
+            "dataNumber": 84
+        }
+    },
+    {
+        "id":2,
+        "overviewData":{
+            "dataName": "CANCELED VIEWINGS",
+            "dataNumber": 1
+        }
+    },
+    {
+        "id":3,
+        "overviewData":{
+            "dataName": "NUMBER OF ARRANGED VIEWINGS ",
+            "dataNumber": 4
+        }
+    },
+    {
+        "id":4,
+        "overviewData":{
+            "dataName": "INTERESTED CUSTOMERS",
+            "dataNumber": 7
+        }
+    },
+    {
+        "id":5,
+        "overviewData":{
+            "dataName": "SUCCESSFUL VIEWINGS",
+            "dataNumber": 3
+        }
+    }
+]

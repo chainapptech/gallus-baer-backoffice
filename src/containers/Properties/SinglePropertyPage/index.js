@@ -6,6 +6,11 @@ import PropertyTag from "components/PropertyTag";
 import data from "../dummy.json";
 import { numberWithCommas } from "utils/numberWithCommas";
 import ContactInfoCard from "components/ContactInfoCard";
+import CustomerFeedbackCard from "components/CustomerFeedbackCard";
+import OverviewDataCard from "components/OverviewData";
+
+import CustomerFeedbakData from "./customer-feedback.json";
+import overviewData from "./overview-data.json";
 
 import "./styles.scss";
 
@@ -169,7 +174,25 @@ const SingleProperty = () => {
               eventKey="overview"
               title="Overview"
               tabClassName="position-relative"
-            ></Tab>
+            >
+
+              <Row className="g-3 gy-4">
+                {overviewData.map(({id, overviewData}) => (
+                  <Col key={id} sm={12} md={6}>
+                    <OverviewDataCard data={overviewData} />
+                  </Col>
+                ))}
+              </Row>
+
+              <Row className="gy-3 mt-4">
+                <h3 className="mb-2">Customer feedback</h3>
+                {CustomerFeedbakData.map(({id, feedback}) =>(
+                    <Col sm={8}>
+                      <CustomerFeedbackCard key={id} feedback={feedback} />
+                    </Col>
+                ))}
+              </Row>
+            </Tab>
           </Tabs>
         </Row>
       ) : null}
