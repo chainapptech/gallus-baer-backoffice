@@ -17,9 +17,10 @@ import NotificationBadge from "components/NotificationBadge";
 import MagnifyingGlass from "stories/svg/MagnifyingGlass";
 import Plus from "stories/svg/Plus";
 import FilterSvg from "stories/svg/Filter";
-import data from "./dummy.json";
-import "./styles.scss";
 import FilledArrowDown from "stories/svg/FilledArrowDown";
+import data from "./dummy.json";
+
+import "./styles.scss";
 
 const typeOptions = [
   { label: "Apartment", value: "apartment" },
@@ -60,11 +61,11 @@ const Properties = () => {
       setProperties(data);
     }
 
-    const filteredProperties = data.filter(({ property }) =>
+    const searchedProperties = data.filter(({ property }) =>
       property.address.toLowerCase().includes(searchTerm.toLowerCase())
     );
 
-    setProperties(filteredProperties);
+    setProperties(searchedProperties);
   }, [searchTerm]);
 
   const handleClose = () => setShow(false);
@@ -72,8 +73,6 @@ const Properties = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
-    console.log(e);
 
     handleClose();
   };
