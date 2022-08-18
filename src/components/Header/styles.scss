@@ -20,7 +20,7 @@
     color: $p700;
   }
   
-  .profile-dropwdown{
+  .profile-dropwdown-menu{
     margin-left: -100px;
   }
 }
@@ -50,6 +50,12 @@
 
   &::after {
     display: none;
+  }
+}
+
+.profile-dropdown{
+  button{
+    border: none !important;
   }
 }
 

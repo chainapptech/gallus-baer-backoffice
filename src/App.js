@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { AppContext } from "./lib/contextLib";
+import { AppContextProvider } from "lib/contextLib";
 import { Auth } from "aws-amplify";
 import GlobalWrapper from "components/GlobalWrapper";
 
@@ -23,9 +23,9 @@ function App() {
   //   //setIsAuthenticating(false);
   // }
   return (
-    <AppContext.Provider value={{}}>
+    <AppContextProvider>
       <GlobalWrapper />
-    </AppContext.Provider>
+    </AppContextProvider>
   );
 }
 

@@ -72,7 +72,9 @@ const NewPassword = () => {
               onChange={(e) => setPasswordConfirm(e.target.value)}
             />
           </div>
-          <Button className="mt-4 login-button">Reset password</Button>
+          <Link to="/">
+            <Button className="mt-4 login-button">Reset password</Button>
+          </Link>
         </Form>
       </Col>
     </Row>
