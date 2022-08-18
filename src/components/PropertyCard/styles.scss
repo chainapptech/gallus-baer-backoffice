@@ -1,48 +1,76 @@
 @use '../../style/custom' as *;
 
-.property-card{
-    border-radius: 8px;
-    border-color: $n100;
-    position: relative;
+.property-card {
+  border-radius: 8px;
+  border-color: $n100;
+  position: relative;
+  transition: all 0.25s;
+  min-width: 0;
+  &:hover {
+    border: 1px solid #e0e0e1;
+    box-shadow: 0px 10px 23px #e0e0e1;
+    cursor: pointer;
+  }
 
-    img{
-        border-radius: 8px;
-    }
+  .card-body {
+    padding: 0;
+  }
 
-    .property-address{
-        color: $n300;
-    }
+  h5 {
+    color: $n300;
+    font-weight: 400;
+  }
 
-    hr{
-        color: $p50;
-    }
+  .property-address {
+    color: $n300;
+  }
 
-    .user-name-surname{
-        margin-left: 8px;
-    }
+  hr {
+    color: $p50;
+    background-color: $p50;
+    height: 2px;
+  }
 
-    .favorite-property-icon{
-        background-color: rgba($n500, 0.5);
-        position: absolute;
-        right: 8px;
-        top:8px;
+  .user-name-surname {
+    margin-left: 8px;
+  }
 
-        svg{
-            fill: $n0;
-        }
-    }
-}
-
-.property-card-hover{
+  .favorite-property-icon {
+    background-color: rgba($n500, 0.5);
     position: absolute;
-    border-radius: 8px;
-    width: 100%;
-    height: 100%;
-    background: rgba(38, 50, 56, 0.2);
-    padding: 10px;
+    right: 8px;
+    top: 8px;
+    z-index: 200;
 
-    .btn{
-        width: 100%;
-        padding: 14px 24px;
+    svg {
+      fill: $n0;
+      scale: 1.3;
     }
+  }
+
+  .actions {
+    display: flex;
+    align-items: center;
+    margin-top: 8px;
+    border-radius: 40px;
+    position: relative;
+    transition: all 0.3s;
+
+    &:active,
+    &:focus,
+    &:hover {
+      background-color: #ebd3bd;
+    }
+  }
+
+  .actions-wrapper {
+    min-width: 200px;
+    width: 100%;
+    z-index: 200;
+    padding: 16px;
+    border: 1px solid #96989b;
+    border-radius: 4px;
+    top: 30px;
+    left: 10px;
+  }
 }

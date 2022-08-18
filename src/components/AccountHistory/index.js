@@ -6,10 +6,10 @@ import './styles.scss';
 const AccountHistory = ({ user, history }) => (
   <Col className="account-history">
     <h2 className="mb-3">Account history</h2>
-    {history.map(({ date, time, action }, index) => (
+    {history.map(({ id, history }, index) => (
       <p key={index} className="mb-2">
-        {date} {time} <span className="fw-bold">{`@${user}`}</span>{' '}
-        <span>{action}</span>
+        {history.date} {history.time} <span className="fw-bold">{`@${user}`}</span>{' '}
+        <span>{history.action}</span>
       </p>
     ))}
   </Col>

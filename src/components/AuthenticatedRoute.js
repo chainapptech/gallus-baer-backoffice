@@ -1,18 +1,17 @@
-// import React from "react";
 import { Route, Routes } from "react-router-dom";
-import Dashboard from "containers/Dashboard/Dashboard";
+import Accounts from "containers/Accounts";
+import SingleAccountPage from "containers/SingleAccountPage";
+import Properties from "containers/Properties/Properties";
+import Dashboard from "containers/Dashboard";
+
 
 export default function AuthenticatedRoute() {
 	return (
 	<Routes>
         <Route path="/" element={<Dashboard />} />
-        {/* <Route path="/accounts" element={<Accounts />} />
-        <Route path="/inquiries" element={<Inquiries />} />
-        <Route path="/properties" element={<Properties />} />
-        <Route path="/singleuser" element={<SingleUser />} />
-        <Route path="/singleproperty" element={<SingleProperty />} />
-        <Route path="/singleportal" element={<SinglePortal />} />
-        <Route path="/propertyinquiries" element={<PropertyInquiries />} />  */}
-    </Routes>
-	);
-  }
+        <Route path="/accounts" element={<Accounts />} />
+        <Route path="/singleaccount" element={<SingleAccountPage />} />
+        <Route path="/properties" element={<Properties />} />      
+  </Routes>
+  );
+}

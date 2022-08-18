@@ -1,24 +1,11 @@
 @use '../../style/custom' as *;
 
-
 .sidebar {
-  background-color: #f8f9fa;
+  background-color: $n0;
   z-index: 5;
-  a {
-    color: #000;
-    text-decoration: none;
-  }
+  position: relative;
 
-  .sidebar-links{
-    width: 200px;
-    border: 2px solid transparent;
-    &:hover{
-      background-color: $p50;
-      border: 2px solid $p50;
-    }
-
-    &:active {
-      border: 2px solid $n500;
-    }
+  .nav{
+    width: 16.7%;
   }
 }

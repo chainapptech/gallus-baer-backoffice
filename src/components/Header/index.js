@@ -1,41 +1,132 @@
-import React, { useEffect } from 'react';
+import React, { useState } from "react";
 import {
+  Offcanvas,
   Navbar,
-  Col,
-  Row,
+  Nav,
   Container,
   DropdownButton,
   Dropdown,
-} from 'react-bootstrap';
+} from "react-bootstrap";
+import { Link } from "react-router-dom";
+import NotificationsOutline from "../../stories/svg/NotificationsOutline";
+import ProfileIcon from "../ProfileIcon";
+//icons
+import HouseOutline from "../../stories/svg/HouseOutline";
+import HouseFill from "../../stories/svg/HouseFill";
+// import PeopleOutline from "stories/svg/PeopleOutline";
+// import PeopleFill from "stories/svg/PeopleFill";
+import DocumentOutline from "stories/svg/DocumentOutline";
+import DocumentFill from "stories/svg/DocumentFill";
+import PropertiesOutline from "stories/svg/PropertiesOutline";
+import PropertiesFill from "stories/svg/PropertiesFill";
+import { BsPeople, BsPeopleFill } from "react-icons/bs"; // error with PeopleOutline icon
 
-import NotificationsOutline from '../../stories/svg/NotificationsOutline';
-import ProfileIcon from '../ProfileIcon';
-import './styles.scss';
+import "./styles.scss";
 
 const Header = ({ name, surname }) => {
+  const [show, setShow] = useState(false);
+
+  const toggleOffCanvas = () => {
+    setShow((show) => !show);
+  };
+
+  const links = [
+    {
+      text: "Home",
+      path: "/",
+      icon: <HouseOutline />,
+      active_icon: <HouseFill />,
+    },
+    {
+      text: "Accounts",
+      path: "/accounts",
+      icon: <BsPeople />,
+      active_icon: <BsPeopleFill />,
+    },
+    {
+      text: "Inquiries",
+      path: "/inquiries",
+      icon: <DocumentOutline />,
+      active_icon: <DocumentFill />,
+    },
+    {
+      text: "Properties",
+      path: "/properties",
+      icon: <PropertiesOutline />,
+      active_icon: <PropertiesFill />,
+    },
+  ];
+
   return (
-    <Navbar fixed="top" expand="lg" variant="light" bg="light">
-      <Container fluid>
-        <Navbar.Brand href="#">
-          <img src="assets/logo.png" alt="logo" width={'20%'} />
-        </Navbar.Brand>
-        <Row className="d-flex align-items-center">
-          <Col className="d-flex align-items-center">
-            <DropdownButton
-              className="language-selector me-4"
-              id="dropdown-basic-button"
-              title={<h5 className='mb-0 language-item'>Eng</h5>}
-            >
-              <Dropdown.Item href="#/action-1"><h5 className='language-item'>Eng</h5></Dropdown.Item>
-            </DropdownButton>
-            <NotificationsOutline className="notification-outline-svg" />
-          </Col>
-          <Col>
-            <ProfileIcon name={name} surname={surname} />
-          </Col>
-        </Row>
-      </Container>
-    </Navbar>
+    <>
+      <Navbar collapseOnSelect bg="light" expand={"md"} className="fixed-top">
+        <Container fluid>
+          <Navbar.Brand href="#">
+            <img src="assets/logo.png" alt="logo" width={"166px"} />
+          </Navbar.Brand>
+          <Navbar.Toggle
+            aria-controls={`offcanvasNavbar-expand-md`}
+            onClick={toggleOffCanvas}
+          />
+          <Navbar.Offcanvas
+            id={`offcanvasNavbar-expand-md`}
+            aria-labelledby={`offcanvasNavbarLabel-expand-md`}
+            placement="end"
+            collapseOnSelect
+            show={show}
+            onHide={toggleOffCanvas}
+          >
+            <Offcanvas.Header closeButton>
+              <Offcanvas.Title id={`offcanvasNavbarLabel-expand-md`}>
+                <img src="assets/logo.png" alt="logo" width={"166px"} />
+              </Offcanvas.Title>
+            </Offcanvas.Header>
+            <Offcanvas.Body>
+              <Nav className="justify-content-end flex-grow-1 align-items-md-center pe-3">
+                {links.map((link, index) => (
+                  <Link
+                    key={index}
+                    className="mb-4 py-2 px-3 sidebar-links d-block d-md-none"
+                    to={`${link.path}`}
+                    onClick={toggleOffCanvas}
+                  >
+                    {link.icon}
+                    {link.text}
+                  </Link>
+                ))}
+
+                <DropdownButton
+                  className="d-flex language-selector me-4 d-none d-md-block"
+                  id="dropdown-basic-button"
+                  title={<h5 className="mb-0">Eng</h5>}
+                >
+                  <Dropdown.Item href="#/action-1">
+                    <h5 className="language-item">Eng</h5>
+                  </Dropdown.Item>
+                </DropdownButton>
+
+                <NotificationsOutline className="notification-outline-svg me-4 d-none d-md-block" />
+
+                <Dropdown>
+                  <Dropdown.Toggle
+                    id="dropdown-basic"
+                    className="profile-toggle"
+                  >
+                    <ProfileIcon name={name} surname={surname} size="md" className={"ms-3 ms-md-0"}/>
+                  </Dropdown.Toggle>
+
+                  <Dropdown.Menu className="profile-dropwdown">
+                    <Dropdown.Item>
+                      <Link to={"/"}>Logout</Link>
+                    </Dropdown.Item>
+                  </Dropdown.Menu>
+                </Dropdown>
+              </Nav>
+            </Offcanvas.Body>
+          </Navbar.Offcanvas>
+        </Container>
+      </Navbar>
+    </>
   );
 };
 export default Header;

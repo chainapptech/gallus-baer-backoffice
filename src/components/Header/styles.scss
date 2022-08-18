@@ -1,43 +1,81 @@
 @use '../../style/custom' as *;
 
 .navbar {
-  background-color: #fff !important;
-  z-index: 10;
+  background-color: $n0 !important;
+  z-index: 1000;
   border-bottom: 1px solid $s500;
+  height: 68px;
 
-  .notification-outline-svg{
+  .offcanvas-body{
+    height: 68px;
+  }
+
+  .notification-outline-svg {
     fill: $p700;
     width: 24px;
     height: 24px;
   }
 
-  .language-item{
+  .language-item {
     color: $p700;
+  }
+  
+  .profile-dropwdown{
+    margin-left: -100px;
   }
 }
 
+.profile-toggle{
+  display: flex;
+  background: $n0;
+  border: none;
+  outline: none;
+  box-shadow: none;
+  padding-right: 0;
+  margin-right: 0;
+  margin-left: 0;
+  padding-left: 0;
+
+  &:active{
+    background-color: $n0;
+  }
+
+  &:focus{
+    background-color: $n0;
+  }
+
+  &:hover{
+    background-color: $n0;
+  }
+
+  &::after {
+    display: none;
+  }
+}
+
+
 .language-selector {
-  font-family: "Ubuntu";
-  font-weight: bold;
   button {
-    background-color: #fff;
+    background-color: $n0;
     border: none;
     color: $p700;
+    display: flex;
+    align-items: center;
     &:hover {
-      background-color: #fff;
+      background-color: $n0;
       color: $p700;
     }
     &:active {
-      background-color: #fff;
+      background-color: $n0;
       color: $p700;
     }
     &:focus {
-      background-color: #fff;
+      background-color: $n0;
       color: $p700;
     }
   }
   .dropdown-toggle {
-    background-color: #fff !important;
+    background-color: $n0 !important;
     color: $p700 !important;
     box-shadow: none !important;
     border: none !important;

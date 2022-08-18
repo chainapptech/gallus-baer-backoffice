@@ -1,11 +1,10 @@
-import React, { useEffect } from 'react';
-import { Badge } from 'react-bootstrap';
+import { Badge } from "react-bootstrap";
 
-import './styles.scss';
+import "./styles.scss";
 
 const PropertyTag = ({ children }) => {
   return (
-    <Badge className="property-tag" bg="primary">
+    <Badge className="property-tag" pill bg="primary">
       <p className="small-text">{children}</p>
     </Badge>
   );

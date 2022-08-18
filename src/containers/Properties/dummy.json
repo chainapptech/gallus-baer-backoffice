@@ -1,0 +1,258 @@
+[
+  {
+    "id": 1,
+    "property": {
+      "img": "dummy-property-1.png",
+      "price": 1585000,
+      "previous-price": 1280000,
+      "tags": ["For Sale", "House"],
+      "address": "372 Central Park West, Unit 17",
+      "approved": true
+    },
+    "user": {
+      "img": "account-1.jpg",
+      "name": "John",
+      "surname": "Doe"
+    }
+  },
+  {
+    "id": 2,
+    "property": {
+      "img": "dummy-property-2.png",
+      "price": 1585000,
+      "previous-price": 1280000,
+      "tags": ["For Sale", "House"],
+      "address": "354 Bridle Ave.Frederick, MD 21701",
+      "approved": false
+    },
+    "user": {
+      "img": "account-1.jpg",
+      "name": "John",
+      "surname": "Doe"
+    }
+  },
+  {
+    "id": 3,
+    "property": {
+      "img": "dummy-property-3.png",
+      "price": 1585000,
+      "previous-price": 1280000,
+      "tags": ["For Sale", "House"],
+      "address": "583 Fairview Rd Brooks (GA), 30205",
+      "approved": true
+    },
+    "user": {
+      "img": "account-1.jpg",
+      "name": "John",
+      "surname": "Doe"
+    }
+  },
+  {
+    "id": 4,
+    "property": {
+      "img": "dummy-property-4.png",
+      "price": 1585000,
+      "previous-price": 1280000,
+      "tags": ["For Sale", "House"],
+      "address": "1651 California Rd Ridgway (PA), 15853",
+      "approved": true
+    },
+    "user": {
+      "img": "account-1.jpg",
+      "name": "John",
+      "surname": "Doe"
+    }
+  },
+  {
+    "id": 5,
+    "property": {
+      "img": "dummy-property-5.png",
+      "price": 1585000,
+      "previous-price": 1280000,
+      "tags": ["For Sale", "House"],
+      "address": "4917 Cedar Ln Thomson (IL), 61285",
+      "approved": true
+    },
+    "user": {
+      "img": "account-1.jpg",
+      "name": "John",
+      "surname": "Doe"
+    }
+  },
+  {
+    "id": 6,
+    "property": {
+      "img": "dummy-property-6.png",
+      "price": 1585000,
+      "previous-price": 1280000,
+      "tags": ["For Sale", "House"],
+      "address": "3640 W 125th St Alsip (IL), 60803",
+      "approved": true
+    },
+    "user": {
+      "img": "account-1.jpg",
+      "name": "John",
+      "surname": "Doe"
+    }
+  },
+  {
+    "id": 7,
+    "property": {
+      "img": "dummy-property-7.png",
+      "price": 1585000,
+      "previous-price": 1280000,
+      "tags": ["For Sale", "House"],
+      "address": "Camp Lejeune, North Carolina(NC), 28547",
+      "approved": true
+    },
+    "user": {
+      "img": "account-1.jpg",
+      "name": "John",
+      "surname": "Doe"
+    }
+  },
+  {
+    "id": 8,
+    "property": {
+      "img": "dummy-property-8.png",
+      "price": 1585000,
+      "previous-price": 1280000,
+      "tags": ["For Sale", "House"],
+      "address": "104 Baytree Rd San Carlos (CA), 94070",
+      "approved": true
+    },
+    "user": {
+      "img": "account-1.jpg",
+      "name": "John",
+      "surname": "Doe"
+    }
+  },
+  {
+    "id": 9,
+    "property": {
+      "img": "dummy-property-9.png",
+      "price": 1585000,
+      "previous-price": 1280000,
+      "tags": ["For Sale", "House"],
+      "address": "687 Doctors Dr Oviedo (FL), 32765",
+      "approved": true
+    },
+    "user": {
+      "img": "account-1.jpg",
+      "name": "John",
+      "surname": "Doe"
+    }
+  },
+  {
+    "id": 10,
+    "property": {
+      "img": "dummy-property-10.png",
+      "price": 1585000,
+      "previous-price": 1280000,
+      "tags": ["For Sale", "House"],
+      "address": "4079 Howard St Hobart (IN), 46342",
+      "approved": true
+    },
+    "user": {
+      "img": "account-1.jpg",
+      "name": "John",
+      "surname": "Doe"
+    }
+  },
+  {
+    "id": 11,
+    "property": {
+      "img": "dummy-property-11.png",
+      "price": 1585000,
+      "previous-price": 1280000,
+      "tags": ["For Sale", "House"],
+      "address": "687 Doctors Dr Oviedo (FL), 32765",
+      "approved": false
+    },
+    "user": {
+      "img": "account-1.jpg",
+      "name": "John",
+      "surname": "Doe"
+    }
+  },
+  {
+    "id": 12,
+    "property": {
+      "img": "dummy-property-12.png",
+      "price": 1585000,
+      "previous-price": 1280000,
+      "tags": ["For Sale", "House"],
+      "address": "470 S Burr Oak Rd Colon (MI), 49040",
+      "approved": false
+    },
+    "user": {
+      "img": "account-1.jpg",
+      "name": "John",
+      "surname": "Doe"
+    }
+  },
+  {
+    "id": 13,
+    "property": {
+      "img": "dummy-property-13.png",
+      "price": 1585000,
+      "previous-price": 1280000,
+      "tags": ["For Sale", "House"],
+      "address": "1983 Quail Dr Concord (NC), 28027",
+      "approved": false
+    },
+    "user": {
+      "img": "account-1.jpg",
+      "name": "John",
+      "surname": "Doe"
+    }
+  },
+  {
+    "id": 14,
+    "property": {
+      "img": "dummy-property-14.png",
+      "price": 1585000,
+      "previous-price": 1280000,
+      "tags": ["For Sale", "House"],
+      "address": "1188 Rosenwald Rd #72 Baton Rouge, Louisiana(LA), 70807",
+      "unapproved": true
+    },
+    "user": {
+      "img": "account-1.jpg",
+      "name": "John",
+      "surname": "Doe"
+    }
+  },
+  {
+    "id": 15,
+    "property": {
+      "img": "dummy-property-15.png",
+      "price": 1585000,
+      "previous-price": 1280000,
+      "tags": ["For Sale", "House"],
+      "address": "350 Windsor Ave #APT 50 Terrell, Texas(TX), 75160",
+      "unapproved": true
+    },
+    "user": {
+      "img": "account-1.jpg",
+      "name": "John",
+      "surname": "Doe"
+    }
+  },
+  {
+    "id": 16,
+    "property": {
+      "img": "dummy-property-16.png",
+      "price": 1585000,
+      "previous-price": 1280000,
+      "tags": ["For Sale", "House"],
+      "address": "2344 S Buntin Loop Kennewick, Washington(WA), 99337",
+      "approved": false
+    },
+    "user": {
+      "img": "account-1.jpg",
+      "name": "John",
+      "surname": "Doe"
+    }
+  }
+]
