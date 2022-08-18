@@ -1,7 +1,11 @@
 @use '../../style/custom' as *;
 
-.create-card-title {
-  color: $n500;
-  font-weight: bold;
-  border-left: 2px solid $s500;
+.create-card{
+
+  .card-body{
+    padding: 24px;
+  }
+  .create-card-title {
+    border-left: 4px solid $s500;
+  }
 }

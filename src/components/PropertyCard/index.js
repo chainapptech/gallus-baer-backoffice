@@ -23,7 +23,7 @@ const PropertyCard = ({ property, user }) => {
   };
 
   return (
-    <Card className="property-card">
+    <Card className="property-card h-100">
       <Card.Body className="position-relative">
         <IconButton
           className={"favorite-property-icon"}
