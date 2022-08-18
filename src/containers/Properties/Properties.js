@@ -43,7 +43,7 @@ const otherDetailsData = [
 ];
 
 const Properties = () => {
-  const [show, setShow] = useState(true);
+  const [show, setShow] = useState(false);
   const [properties, setProperties] = useState(data);
   const [searchTerm, setSearchTerm] = useState("");
   const [type, setType] = useState([]);
@@ -122,7 +122,7 @@ const Properties = () => {
                   .filter(({ property }) => property.approved)
                   .map(({ id, property, user }) => (
                     <Col key={id} sm={12} md={3}>
-                      <Property property={property} user={user} />
+                      <Property property={property} user={user} id={id} />
                     </Col>
                   ))}
               </Row>
@@ -151,7 +151,7 @@ const Properties = () => {
                   .filter(({ property }) => !property.approved)
                   .map(({ id, property, user }) => (
                     <Col key={id} sm={12} md={3}>
-                      <Property property={property} user={user} />
+                      <Property property={property} user={user} id={id} />
                     </Col>
                   ))}
               </Row>
@@ -180,7 +180,7 @@ const Properties = () => {
                   .filter(({ property }) => property.unapproved)
                   .map(({ id, property, user }) => (
                     <Col key={id} sm={12} md={3}>
-                      <Property property={property} user={user} />
+                      <Property property={property} user={user} id={id} />
                     </Col>
                   ))}
               </Row>

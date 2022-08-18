@@ -1,0 +1,55 @@
+.contact-info-card {
+  position: absolute;
+  top: 0;
+  right: 0;
+  max-width: 280px;
+  width: 100%;
+}
+
+.nav-tabs {
+  border: none;
+}
+
+.property-main-img {
+  max-width: 1000px;
+  width: 100%;
+  border-radius: 4px 4px 0px 0px;
+}
+
+.property-small-img {
+  max-width: 250px;
+  width: 100%;
+}
+
+.description {
+  max-width: 900px;
+}
+
+.details {
+  max-width: 900px;
+
+  .detail-label,
+  .detail-value {
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 18px;
+    color: #3b485c;
+  }
+}
+
+.location {
+  p {
+    max-width: 800px;
+  }
+  img {
+    max-width: 1000px;
+    width: 100%;
+  }
+}
+
+.virtual-tour {
+  img {
+    max-width: 1000px;
+    width: 100%;
+  }
+}

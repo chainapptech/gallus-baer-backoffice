@@ -3,7 +3,7 @@ import NotificationBadge from "../NotificationBadge";
 
 import "./styles.scss";
 
-const SidebarLink = ({ link, notificationNumber }) => {
+const SidebarLink = ({ link }) => {
   const [showFillIcon, setShowFillIcon] = useState(false);
 
   function showFillIconHandler() {
@@ -25,8 +25,8 @@ const SidebarLink = ({ link, notificationNumber }) => {
           {showFillIcon ? link.active_icon : link.icon}
           <p className="mb-0 link-text">{link.text}</p>
         </div>
-        {notificationNumber > 0 ? (
-          <NotificationBadge number={notificationNumber} />
+        {link.notificationNumber > 0 ? (
+          <NotificationBadge number={link.notificationNumber} />
         ) : (
           <></>
         )}

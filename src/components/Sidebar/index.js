@@ -43,6 +43,7 @@ const Sidebar = () => {
       path: "/accounts",
       icon: <BsPeople />,
       active_icon: <BsPeopleFill />,
+      notificationNumber: 3,
     },
     {
       text: "Inquiries",
@@ -55,6 +56,7 @@ const Sidebar = () => {
       path: "/properties",
       icon: <PropertiesOutline />,
       active_icon: <PropertiesFill />,
+      notificationNumber: 9,
     },
   ];
 
@@ -75,15 +77,6 @@ const Sidebar = () => {
               <SidebarLink link={link} notificationNumber={0} />
             </Link>
           ))}
-
-          {/* <Link
-              className="mb-4 py-2 px-3 sidebar-links"
-              to={"/login"}
-              onClick={handleLogout}
-            >
-              <BsArrowBarLeft className="me-3" />
-              Logout
-            </Link> */}
         </Nav>
       </Col>
     </>
