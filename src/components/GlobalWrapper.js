@@ -1,14 +1,15 @@
 import { Row, Col, Container} from 'react-bootstrap';
+import { useAppContext } from 'lib/contextLib';
 import Sidebar from 'components/Sidebar';
 import AuthenticatedRoute from './AuthenticatedRoute';
 import UnathenticatedRoute from './UnauthenticatedRoute';
 import Header from 'components/Header';
-const auth = true;
 
 const GlobalWrapper = () => {
+  const { authenticated } = useAppContext();
   return (
     <>
-      {!auth ? (
+      {!authenticated ? (
         <UnathenticatedRoute />
       ) : (
         <>

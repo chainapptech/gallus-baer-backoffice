@@ -63,7 +63,9 @@ const ForgotPassword = () => {
             />
           </div>
           <Link to="/forgot-password">Forgot password</Link>
-          <Button className="mt-4 login-button">Login</Button>
+          <Link to="/new-password">
+            <Button className="mt-4 login-button">Send reset link</Button>
+          </Link>
         </Form>
       </Col>
     </Row>

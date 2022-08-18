@@ -1,15 +1,18 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { Row, Col, Form } from "react-bootstrap";
+import Button from "components/Button";
+import Input from "components/Input";
+import { useAppContext } from "lib/contextLib";
 // import LoaderButton from "../../components/LoaderButton";
 // import { useAppContext } from "../../lib/contextLib";
 // import { onError } from "../../lib/errorLib";
 // import { Auth } from "aws-amplify";
 import "./SignIn.scss";
-import Button from "components/Button";
-import Input from "components/Input";
+
 
 const SignIn = () => {
+  const { setAuthenticated } = useAppContext();
   const nav = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -38,6 +41,11 @@ const SignIn = () => {
       }
     }
   }
+
+  const loginHandler = () => {
+    setAuthenticated(true);
+    nav("/");
+  };
   return (
     <Row className="g-0 login-page">
       <Col
@@ -74,7 +82,7 @@ const SignIn = () => {
             />
           </div>
           <Link to="/forgot-password">Forgot password</Link>
-          <Button className="mt-4 login-button">Login</Button>
+          <Button className="mt-4 login-button" onClick={loginHandler}>Login</Button>
         </Form>
       </Col>
     </Row>
