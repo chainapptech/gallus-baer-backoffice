@@ -5,14 +5,13 @@ import { Row, Col, Form } from "react-bootstrap";
 // import { useAppContext } from "../../lib/contextLib";
 // import { onError } from "../../lib/errorLib";
 // import { Auth } from "aws-amplify";
-import "./SignIn.scss";
+import "./ForgotPassword.scss";
 import Button from "components/Button";
 import Input from "components/Input";
 
-const SignIn = () => {
+const ForgotPassword = () => {
   const nav = useNavigate();
   const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
   const [isLoading, setIsLoading] = useState(false);
 
   function validateForm() {
@@ -46,10 +45,10 @@ const SignIn = () => {
       ></Col>
       <Col md={3} className="right">
         <img src="/assets/logo.png" alt="logo" className="logo mb-5" />
-        <h1 className="mb-4">Sign in</h1>
+        <h1 className="mb-4">Forgot your password?</h1>
         <p className="mb-4">
-          Join us and find your dream home with us! Best options, great
-          locations and professional who are here to help you achive your goal!
+          No problem! We’ll send you a link to reset it. Enter the email address
+          and continue.
         </p>
 
         <Form onSubmit={handleSubmit}>
@@ -63,16 +62,6 @@ const SignIn = () => {
               onChange={(e) => setEmail(e.target.value)}
             />
           </div>
-          <div className="inputContainer">
-            <Input
-              label={"Password"}
-              autoFocus
-              type="password"
-              value={password}
-              placeholder={"input your password"}
-              onChange={(e) => setPassword(e.target.value)}
-            />
-          </div>
           <Link to="/forgot-password">Forgot password</Link>
           <Button className="mt-4 login-button">Login</Button>
         </Form>
@@ -81,4 +70,4 @@ const SignIn = () => {
   );
 };
 
-export default SignIn;
+export default ForgotPassword;

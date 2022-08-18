@@ -15,7 +15,7 @@ const InputComponent = ({
   search,
 }) => (
   <Col className="input-wrapper d-flex flex-column">
-    <h6 className='mb-1'>{label}</h6>
+    <h6 className='mb-2 ms-2'>{label}</h6>
     {type === 'select' ? (
       <DropdownButton
         disabled={disabled}
@@ -36,7 +36,7 @@ const InputComponent = ({
         />
         {type === 'search' && (
           <Button
-            children="Search"
+            // children="Search"
             leadingIcon={<MagnifyingGlass className="add-outline-svg" />}
             className="position-absolute end-0"
           />

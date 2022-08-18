@@ -5,14 +5,14 @@ import { Row, Col, Form } from "react-bootstrap";
 // import { useAppContext } from "../../lib/contextLib";
 // import { onError } from "../../lib/errorLib";
 // import { Auth } from "aws-amplify";
-import "./SignIn.scss";
+import "./ForgotUsername.scss";
 import Button from "components/Button";
 import Input from "components/Input";
 
-const SignIn = () => {
+const ForgotUsername = () => {
   const nav = useNavigate();
   const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+
   const [isLoading, setIsLoading] = useState(false);
 
   function validateForm() {
@@ -46,16 +46,16 @@ const SignIn = () => {
       ></Col>
       <Col md={3} className="right">
         <img src="/assets/logo.png" alt="logo" className="logo mb-5" />
-        <h1 className="mb-4">Sign in</h1>
+        <h1 className="mb-4">Forgot your username?</h1>
         <p className="mb-4">
-          Join us and find your dream home with us! Best options, great
-          locations and professional who are here to help you achive your goal!
+          No problem! We’ll send you a username in email. Enter the email
+          address and continue.
         </p>
 
         <Form onSubmit={handleSubmit}>
           <div className="inputContainer">
             <Input
-              label={"Username or Email"}
+              label={"Email"}
               autoFocus
               type={"email"}
               value={email}
@@ -63,22 +63,11 @@ const SignIn = () => {
               onChange={(e) => setEmail(e.target.value)}
             />
           </div>
-          <div className="inputContainer">
-            <Input
-              label={"Password"}
-              autoFocus
-              type="password"
-              value={password}
-              placeholder={"input your password"}
-              onChange={(e) => setPassword(e.target.value)}
-            />
-          </div>
-          <Link to="/forgot-password">Forgot password</Link>
-          <Button className="mt-4 login-button">Login</Button>
+          <Button className="mt-4 login-button">Send username</Button>
         </Form>
       </Col>
     </Row>
   );
 };
 
-export default SignIn;
+export default ForgotUsername;
