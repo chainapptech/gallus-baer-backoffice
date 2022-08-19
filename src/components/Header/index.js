@@ -75,7 +75,7 @@ const Header = ({ name, surname }) => {
 
         <Container fluid>
           <Navbar.Brand href="#">
-            <img src="assets/logo.png" alt="logo" width={"166px"} />
+            <img src="/assets/logo.png" alt="logo" width={"166px"} />
           </Navbar.Brand>
           <Navbar.Toggle
             aria-controls={`offcanvasNavbar-expand-md`}

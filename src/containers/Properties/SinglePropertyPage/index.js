@@ -46,158 +46,171 @@ const SingleProperty = () => {
     <>
       {propertyData ? (
         <Row className="mt-5 property">
-          <Col className="mb-4 position-relative">
-            <p className="mb-3">
-              Approved Properties
-              <span className="opacity-50">/ Single Property</span>
-            </p>
-            <Row className="ms-0 mb-3">
-              {propertyData.property.tags.map((tag) => (
-                <PropertyTag key={tag}>{tag}</PropertyTag>
-              ))}
-            </Row>
-            <Col className="d-flex w-100 align-items-center">
-              <h2 className="me-4">
-                CHF {numberWithCommas(propertyData.property.price)},00
-              </h2>
-              <h4 className="opacity-75 fw-bold mb-0">
-                CHF {numberWithCommas(propertyData.property["previous-price"])}
-                ,00
-              </h4>
-            </Col>
-            <p className="mt-2">{propertyData.property.address}</p>
-            <ContactInfoCard
-              phoneNumbers={["+312513213", "+31241233"]}
-              emails={["johndoe@gmail.com", "john1@gmail.com"]}
-              className="w-50 contact-info-card-property"
-            />
-          </Col>
-
-          <Tabs
-            defaultActiveKey="process"
-            id="uncontrolled-tab-example"
-            className="mb-4"
-          >
-            <Tab
-              eventKey="details"
-              title="Property properties"
-              tabClassName="position-relative"
-            >
-              <Row>
-                <img
-                  className="property-main-img"
-                  src={`/assets/${propertyData.property.img}`}
-                  alt="property"
-                />
-                <Row className="mt-3 d-flex align-items-center">
-                  {Object.keys([1, 2, 3, 4]).map((key) => (
-                    <img
-                      key={key}
-                      className="property-small-img"
-                      src={`/assets/${propertyData.property.img}`}
-                      alt="property"
-                    />
+          <Col sm={12} className="mb-4">
+            <Row>
+              <Col sm={12} md={9} className="">
+                <p className="mb-3">
+                  Approved Properties
+                  <span className="opacity-50">/ Single Property</span>
+                </p>
+                <Row className="ms-0 mb-3">
+                  {propertyData.property.tags.map((tag) => (
+                    <PropertyTag key={tag}>{tag}</PropertyTag>
                   ))}
                 </Row>
-              </Row>
-              <Col className="mt-4 description">
-                <h3>Description</h3>
-                <p className="mt-4 mb-3">
-                  New Construction ready now in the SOWA Art & Design District!
-                  2 Bed (1 interior) 2 Bath home w/ 1 garage parking license.
-                  Custom kitchen w/white oak & grey dovetailed cabinets, all
-                  Miele appliances (including washer/dryer), gas cooking that
-                  vents out,{" "}
-                </p>
-                <p>
-                  Caesarstone counters &quot;rugged concrete&quot;, quartz slab
-                  backsplash, long wood bar & pendant lighting. Laundry
-                  room/pantry, is tucked off kitchen. Oversized black mullion
-                  windows, 9’ ceilings, 6&quot; wide quarter sawn white oak
-                  hardwood floors throughout. Shared daytime Concierge, 10-7,
-                  the Commercial units.{" "}
-                </p>
-              </Col>
-              <Col className="mt-4 details">
-                <h3>Property details</h3>
-                <Col className="mt-4">
-                  {detailLabels.map((label) => (
-                    <Row
-                      className="detail-row border-bottom py-3 ps-2"
-                      key={label}
-                    >
-                      <Col className="detail-label">
-                        <p>{label}</p>
-                      </Col>
-                      <Col className="detail-value">
-                        <p>
-                          {
-                            propertyData.property[
-                              label.toLowerCase().replaceAll(" ", "-")
-                            ]
-                          }
-                        </p>
-                      </Col>
-                    </Row>
-                  ))}
-                </Col>
-              </Col>
-              <Col className="mt-4 location">
-                <h3>Location</h3>
-                <Col className="mt-3">
-                  <p className="mb-3">
-                    One of the bes locations in the City. Very close to stores,
-                    hospitals, schools. Great oportunity for young couples with
-                    cosmopolitan life style.
-                  </p>
-                  <img src="/assets/map.png" alt="map" />
-                </Col>
-              </Col>
-              <Col className="mt-4">
-                <h3>Virtual tour</h3>
-                <Col className="mt-3">
-                  <p className="mb-3">
-                    Take a virtual tour and know exactly what you’r buying!
-                  </p>
-                  <img src="/assets/tour.png" alt="map" />
-                </Col>
-              </Col>
-            </Tab>
-            <Tab
-              eventKey="process"
-              title="Process information"
-              tabClassName="position-relative"
-            >
-              <DocumentTable />
-            </Tab>
-            <Tab
-              eventKey="inquiries"
-              title="Inquiries"
-              tabClassName="position-relative"
-            ></Tab>
-            <Tab
-              eventKey="overview"
-              title="Overview"
-              tabClassName="position-relative"
-            >
-              <Row className="g-3 gy-4">
-                {overviewData.map(({id, overviewData}) => (
-                  <Col key={id} sm={12} md={6}>
-                    <OverviewDataCard data={overviewData} />
-                  </Col>
-                ))}
-              </Row>
-
-              <Row className="gy-3 mt-4">
-                <h3 className="mb-2">Customer feedback</h3>
-                {customerFeedbakData.map(({id, feedback}) =>(
-                    <Col sm={8}>
-                      <CustomerFeedbackCard key={id} feedback={feedback} />
+                  <Row>
+                    <Col className="d-flex flex-column flex-md-row align-items-md-center">
+                    <h2 className="me-4">
+                    CHF {numberWithCommas(propertyData.property.price)},00
+                  </h2>
+                    <h4 className="opacity-75 fw-bold mb-0">
+                    CHF{" "}
+                    {numberWithCommas(propertyData.property["previous-price"])}
+                    ,00
+                  </h4>
                     </Col>
-                ))}
-              </Row>
-            </Tab>
-          </Tabs>
+                  </Row>
+                <Row>
+                  <Col sm={12}>
+                    <p className="mt-2">{propertyData.property.address}</p>
+                  </Col>
+                </Row>
+
+                <Tabs
+                  defaultActiveKey="process"
+                  id="uncontrolled-tab-example"
+                  className="mb-4"
+                >
+                  <Tab
+                    eventKey="details"
+                    title="Property properties"
+                    tabClassName="position-relative"
+                  >
+                    <Row>
+                      <img
+                        className="property-main-img"
+                        src={`/assets/${propertyData.property.img}`}
+                        alt="property"
+                      />
+                      <Row className="mt-3 d-flex align-items-center">
+                        {Object.keys([1, 2, 3, 4]).map((key) => (
+                          <img
+                            key={key}
+                            className="property-small-img"
+                            src={`/assets/${propertyData.property.img}`}
+                            alt="property"
+                          />
+                        ))}
+                      </Row>
+                    </Row>
+                    <Col className="mt-4 description">
+                      <h3>Description</h3>
+                      <p className="mt-4 mb-3">
+                        New Construction ready now in the SOWA Art & Design
+                        District! 2 Bed (1 interior) 2 Bath home w/ 1 garage
+                        parking license. Custom kitchen w/white oak & grey
+                        dovetailed cabinets, all Miele appliances (including
+                        washer/dryer), gas cooking that vents out,{" "}
+                      </p>
+                      <p>
+                        Caesarstone counters &quot;rugged concrete&quot;, quartz
+                        slab backsplash, long wood bar & pendant lighting.
+                        Laundry room/pantry, is tucked off kitchen. Oversized
+                        black mullion windows, 9’ ceilings, 6&quot; wide quarter
+                        sawn white oak hardwood floors throughout. Shared
+                        daytime Concierge, 10-7, the Commercial units.{" "}
+                      </p>
+                    </Col>
+                    <Col className="mt-4 details">
+                      <h3>Property details</h3>
+                      <Col className="mt-4">
+                        {detailLabels.map((label) => (
+                          <Row
+                            className="detail-row border-bottom py-3 ps-2"
+                            key={label}
+                          >
+                            <Col className="detail-label">
+                              <p>{label}</p>
+                            </Col>
+                            <Col className="detail-value">
+                              <p>
+                                {
+                                  propertyData.property[
+                                    label.toLowerCase().replaceAll(" ", "-")
+                                  ]
+                                }
+                              </p>
+                            </Col>
+                          </Row>
+                        ))}
+                      </Col>
+                    </Col>
+                    <Col className="mt-4 location">
+                      <h3>Location</h3>
+                      <Col className="mt-3">
+                        <p className="mb-3">
+                          One of the bes locations in the City. Very close to
+                          stores, hospitals, schools. Great oportunity for young
+                          couples with cosmopolitan life style.
+                        </p>
+                        <img src="/assets/map.png" alt="map" />
+                      </Col>
+                    </Col>
+                    <Col className="mt-4">
+                      <h3>Virtual tour</h3>
+                      <Col className="mt-3">
+                        <p className="mb-3">
+                          Take a virtual tour and know exactly what you’r
+                          buying!
+                        </p>
+                        <img src="/assets/tour.png" alt="map" />
+                      </Col>
+                    </Col>
+                  </Tab>
+                  <Tab
+                    eventKey="process"
+                    title="Process information"
+                    tabClassName="position-relative"
+                  >
+                    <DocumentTable />
+                  </Tab>
+                  <Tab
+                    eventKey="inquiries"
+                    title="Inquiries"
+                    tabClassName="position-relative"
+                  ></Tab>
+                  <Tab
+                    eventKey="overview"
+                    title="Overview"
+                    tabClassName="position-relative"
+                  >
+                    <Row className="g-3 gy-4">
+                      {overviewData.map(({ id, overviewData }) => (
+                        <Col key={id} sm={12} md={6}>
+                          <OverviewDataCard data={overviewData} />
+                        </Col>
+                      ))}
+                    </Row>
+
+                    <Row className="gy-3 mt-4">
+                      <h3 className="mb-2">Customer feedback</h3>
+                      {customerFeedbakData.map(({ id, feedback }) => (
+                        <Col sm={12} md={11}>
+                          <CustomerFeedbackCard key={id} feedback={feedback} />
+                        </Col>
+                      ))}
+                    </Row>
+                  </Tab>
+                </Tabs>
+              </Col>
+              <Col sm={12} md={3}>
+                <ContactInfoCard
+                  phoneNumbers={["+312513213", "+31241233"]}
+                  emails={["johndoe@gmail.com", "john1@gmail.com"]}
+                />
+              </Col>
+            </Row>
+          </Col>
         </Row>
       ) : null}
     </>
