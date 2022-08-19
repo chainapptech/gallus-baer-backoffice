@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "avatar": "account-1.jpg",
+    "name": "John Doe",
+    "phone": "+41 467 6655",
+    "date": "13.03.2022",
+    "time": "12:34",
+    "details": "Etiam dictum nisi sed dui pretium facilisis. Sed nec nulla ullamcorper, iaculis mi et, tincidunt urna. Aliquam eget velit eget elit facilisis rhoncus quis at ligula. Curabitur vitae feugiat neque. Suspendisse dapibus rutrum metus, id malesuada nibh maximus accumsan. Proin condimentum metus eget venenatis mollis."
+  },
+  {
+    "id": 2,
+    "avatar": "account-1.jpg",
+    "name": "John Doe",
+    "phone": "+41 467 6655",
+    "date": "13.03.2022",
+    "time": "12:34",
+    "details": "Etiam dictum nisi sed dui pretium facilisis. Sed nec nulla ullamcorper, iaculis mi et, tincidunt urna. Aliquam eget velit eget elit facilisis rhoncus quis at ligula. Curabitur vitae feugiat neque. Suspendisse dapibus rutrum metus, id malesuada nibh maximus accumsan. Proin condimentum metus eget venenatis mollis."
+  }
+]
