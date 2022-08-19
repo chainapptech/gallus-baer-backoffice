@@ -1,4 +1,4 @@
-import { Col, Row, Container, Tabs, Tab, Carousel } from "react-bootstrap";
+import { Col, Row, Tabs, Tab } from "react-bootstrap";
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 
@@ -8,7 +8,15 @@ import DocumentTable from "components/DocumentTable";
 import ContactInfoCard from "components/ContactInfoCard";
 import CustomerFeedbackCard from "components/CustomerFeedbackCard";
 import OverviewDataCard from "components/OverviewData";
+import Button from "components/Button";
+import ProfileIcon from "components/ProfileIcon";
+import Phone from "stories/svg/Phone";
+import ClockOutline from "stories/svg/ClockOutline";
+import PaperPlaneOutline from "stories/svg/PaperPlaneOutline";
+import CalendarPopluated from "stories/svg/CalendarPopulated";
+import CheckedOutline from "stories/svg/CheckedOutline";
 
+import inquiriesData from "./inquiries.json";
 import data from "../dummy.json";
 import customerFeedbakData from "./customer-feedback.json";
 import overviewData from "./overview-data.json";
@@ -58,18 +66,20 @@ const SingleProperty = () => {
                     <PropertyTag key={tag}>{tag}</PropertyTag>
                   ))}
                 </Row>
-                  <Row>
-                    <Col className="d-flex flex-column flex-md-row align-items-md-center">
+                <Row>
+                  <Col className="d-flex flex-column flex-md-row align-items-md-center">
                     <h2 className="me-4">
-                    CHF {numberWithCommas(propertyData.property.price)},00
-                  </h2>
+                      CHF {numberWithCommas(propertyData.property.price)},00
+                    </h2>
                     <h4 className="opacity-75 fw-bold mb-0">
-                    CHF{" "}
-                    {numberWithCommas(propertyData.property["previous-price"])}
-                    ,00
-                  </h4>
-                    </Col>
-                  </Row>
+                      CHF{" "}
+                      {numberWithCommas(
+                        propertyData.property["previous-price"]
+                      )}
+                      ,00
+                    </h4>
+                  </Col>
+                </Row>
                 <Row>
                   <Col sm={12}>
                     <p className="mt-2">{propertyData.property.address}</p>
@@ -77,13 +87,13 @@ const SingleProperty = () => {
                 </Row>
 
                 <Tabs
-                  defaultActiveKey="process"
+                  defaultActiveKey="details"
                   id="uncontrolled-tab-example"
-                  className="mb-4"
+                  className="mb-4 mt-4"
                 >
                   <Tab
                     eventKey="details"
-                    title="Property properties"
+                    title="Property details"
                     tabClassName="position-relative"
                   >
                     <Row>
@@ -156,7 +166,7 @@ const SingleProperty = () => {
                         <img src="/assets/map.png" alt="map" />
                       </Col>
                     </Col>
-                    <Col className="mt-4">
+                    <Col className="virtual-tour mt-4">
                       <h3>Virtual tour</h3>
                       <Col className="mt-3">
                         <p className="mb-3">
@@ -178,7 +188,140 @@ const SingleProperty = () => {
                     eventKey="inquiries"
                     title="Inquiries"
                     tabClassName="position-relative"
-                  ></Tab>
+                  >
+                    <Tabs
+                      defaultActiveKey="new"
+                      id="uncontrolled-tab-example"
+                      className="mb-4 mt-4"
+                    >
+                      <Tab
+                        eventKey="new"
+                        title="New inquiries"
+                        tabClassName="position-relative"
+                      >
+                        {inquiriesData.map(
+                          ({
+                            avatar,
+                            name,
+                            details,
+                            phone,
+                            time,
+                            date,
+                            id,
+                          }) => (
+                            <div className="inquirie ms-1 mb-5" key={id}>
+                              <div className="inquirie-details mb-3">
+                                <ProfileIcon image={avatar} />
+                                <Row className="ms-1">
+                                  <h4 className="mb-1">{name}</h4>
+                                  <div className="info-wrapper mb-2">
+                                    <p>
+                                      <Phone />
+                                      {phone}
+                                    </p>
+                                    <p>
+                                      <CalendarPopluated />
+                                      {date}
+                                    </p>
+                                    <p>
+                                      <ClockOutline />
+                                      {time}
+                                    </p>
+                                  </div>
+                                </Row>
+                                <div className="logo-wrapper">
+                                  <p>Listing Portal Logo</p>
+                                </div>
+                                <div className="check">
+                                  <CheckedOutline />
+                                </div>
+                              </div>
+                              <div className="details">
+                                <p>{details}</p>
+                                <div className="d-flex mt-3">
+                                  <Button
+                                    leadingIcon={<CalendarPopluated />}
+                                    type="text"
+                                  >
+                                    Make an appointment
+                                  </Button>
+                                  <Button
+                                    leadingIcon={<PaperPlaneOutline />}
+                                    type="text"
+                                  >
+                                    Send mail
+                                  </Button>
+                                </div>
+                              </div>
+                            </div>
+                          )
+                        )}
+                      </Tab>
+                      <Tab
+                        eventKey="answered"
+                        title="Answered inquiries"
+                        tabClassName="position-relative"
+                      >
+                        {inquiriesData.map(
+                          ({
+                            avatar,
+                            name,
+                            details,
+                            phone,
+                            time,
+                            date,
+                            id,
+                          }) => (
+                            <div className="inquirie ms-1 mb-5" key={id}>
+                              <div className="inquirie-details mb-3">
+                                <ProfileIcon image={avatar} />
+                                <Row className="ms-1">
+                                  <h4 className="mb-1">{name}</h4>
+                                  <div className="info-wrapper mb-2">
+                                    <p>
+                                      <Phone />
+                                      {phone}
+                                    </p>
+                                    <p>
+                                      <CalendarPopluated />
+                                      {date}
+                                    </p>
+                                    <p>
+                                      <ClockOutline />
+                                      {time}
+                                    </p>
+                                  </div>
+                                </Row>
+                                <div className="logo-wrapper">
+                                  <p>Listing Portal Logo</p>
+                                </div>
+                                <div className="check">
+                                  <CheckedOutline />
+                                </div>
+                              </div>
+                              <div className="details">
+                                <p>{details}</p>
+                                <div className="d-flex mt-3">
+                                  <Button
+                                    leadingIcon={<CalendarPopluated />}
+                                    type="text"
+                                  >
+                                    Make an appointment
+                                  </Button>
+                                  <Button
+                                    leadingIcon={<PaperPlaneOutline />}
+                                    type="text"
+                                  >
+                                    Send mail
+                                  </Button>
+                                </div>
+                              </div>
+                            </div>
+                          )
+                        )}
+                      </Tab>
+                    </Tabs>
+                  </Tab>
                   <Tab
                     eventKey="overview"
                     title="Overview"
