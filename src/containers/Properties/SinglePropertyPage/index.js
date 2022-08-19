@@ -97,21 +97,28 @@ const SingleProperty = () => {
                     tabClassName="position-relative"
                   >
                     <Row>
+                      <Col sm={12}>
                       <img
                         className="property-main-img"
                         src={`/assets/${propertyData.property.img}`}
                         alt="property"
                       />
-                      <Row className="mt-3 d-flex align-items-center">
+                      </Col>
+                      <Col sm={12}>
+                      <Row className="mt-3">
+                      
                         {Object.keys([1, 2, 3, 4]).map((key) => (
-                          <img
-                            key={key}
-                            className="property-small-img"
-                            src={`/assets/${propertyData.property.img}`}
-                            alt="property"
-                          />
+                          <Col  key={key} sm={6} md={3}>
+                            <img
+                              className="property-small-img"
+                              src={`/assets/${propertyData.property.img}`}
+                              alt="property"
+                            />
+                           </Col>
                         ))}
+                       
                       </Row>
+                      </Col>
                     </Row>
                     <Col className="mt-4 description">
                       <h3>Description</h3>
