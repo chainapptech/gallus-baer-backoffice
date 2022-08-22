@@ -9,8 +9,8 @@ import data from "./accounts.json";
 const Accounts = () => {
   return (
     <>
-      <Row className="accounts-container">
-        <Col>
+      <Row className="pt-4">
+        <Col className="pt-3">
           <Table accounts={data} />
         </Col>
       </Row>
