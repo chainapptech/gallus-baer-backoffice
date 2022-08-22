@@ -1,20 +1,17 @@
 import React from "react";
 import { Auth } from "aws-amplify";
 import { useNavigate, Link } from "react-router-dom";
-import { Col, Container, Nav } from "react-bootstrap";
+import { Col, Nav } from "react-bootstrap";
 import SidebarLink from "components/SidebarLink";
-import { BsArrowBarLeft } from "react-icons/bs";
-
 //icons
 import HouseOutline from "../../stories/svg/HouseOutline";
 import HouseFill from "../../stories/svg/HouseFill";
-// import PeopleOutline from "stories/svg/PeopleOutline";
-// import PeopleFill from "stories/svg/PeopleFill";
 import DocumentOutline from "stories/svg/DocumentOutline";
 import DocumentFill from "stories/svg/DocumentFill";
 import PropertiesOutline from "stories/svg/PropertiesOutline";
 import PropertiesFill from "stories/svg/PropertiesFill";
-import { BsPeople, BsPeopleFill } from "react-icons/bs"; // error with PeopleOutline icon
+import AccountsOutline from "stories/svg/AccountsOutline";
+import AccountsFill from "stories/svg/AccountsFill";
 
 import { useAppContext } from "../../lib/contextLib";
 
@@ -41,8 +38,8 @@ const Sidebar = () => {
     {
       text: "Accounts",
       path: "/accounts",
-      icon: <BsPeople />,
-      active_icon: <BsPeopleFill />,
+      icon: <AccountsOutline />,
+      active_icon: <AccountsFill />,
       notificationNumber: 3,
     },
     {
