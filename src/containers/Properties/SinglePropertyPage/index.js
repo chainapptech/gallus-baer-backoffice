@@ -55,7 +55,7 @@ const SingleProperty = () => {
       {propertyData ? (
         <Row className="mt-5 property">
           <Col sm={12} className="mb-4">
-            <Row>
+            <Row className="gy-3">
               <Col sm={12} md={9} className="">
                 <p className="mb-3">
                   Approved Properties
@@ -120,7 +120,8 @@ const SingleProperty = () => {
                       </Row>
                       </Col>
                     </Row>
-                    <Col className="mt-4 description">
+                    <Row>
+                    <Col sm={12} className="mt-4 description">
                       <h3>Description</h3>
                       <p className="mt-4 mb-3">
                         New Construction ready now in the SOWA Art & Design
@@ -138,7 +139,7 @@ const SingleProperty = () => {
                         daytime Concierge, 10-7, the Commercial units.{" "}
                       </p>
                     </Col>
-                    <Col className="mt-4 details">
+                    <Col sm={12} className="mt-4 details">
                       <h3>Property details</h3>
                       <Col className="mt-4">
                         {detailLabels.map((label) => (
@@ -162,7 +163,7 @@ const SingleProperty = () => {
                         ))}
                       </Col>
                     </Col>
-                    <Col className="mt-4 location">
+                    <Col sm={12} className="mt-4 location">
                       <h3>Location</h3>
                       <Col className="mt-3">
                         <p className="mb-3">
@@ -183,6 +184,7 @@ const SingleProperty = () => {
                         <img src="/assets/tour.png" alt="map" />
                       </Col>
                     </Col>
+                    </Row>
                   </Tab>
                   <Tab
                     eventKey="process"
@@ -357,6 +359,7 @@ const SingleProperty = () => {
                 <ContactInfoCard
                   phoneNumbers={["+312513213", "+31241233"]}
                   emails={["johndoe@gmail.com", "john1@gmail.com"]}
+                  className={"sticky-top contact-info-sticky"}
                 />
               </Col>
             </Row>
