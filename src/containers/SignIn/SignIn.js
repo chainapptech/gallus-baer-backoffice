@@ -10,7 +10,6 @@ import { useAppContext } from "lib/contextLib";
 // import { Auth } from "aws-amplify";
 import "./SignIn.scss";
 
-
 const SignIn = () => {
   const { setAuthenticated } = useAppContext();
   const nav = useNavigate();
@@ -54,7 +53,7 @@ const SignIn = () => {
       ></Col>
       <Col md={3} className="right">
         <img src="/assets/logo.png" alt="logo" className="logo mb-5" />
-        <h1 className="mb-4">Sign in</h1>
+        <h2 className="mb-4">Sign in</h2>
         <p className="mb-4">
           Join us and find your dream home with us! Best options, great
           locations and professional who are here to help you achive your goal!
@@ -82,7 +81,9 @@ const SignIn = () => {
             />
           </div>
           <Link to="/forgot-password">Forgot password</Link>
-          <Button className="mt-4 login-button" onClick={loginHandler}>Login</Button>
+          <Button className="mt-4 login-button" onClick={loginHandler}>
+            Login
+          </Button>
         </Form>
       </Col>
     </Row>

@@ -21,6 +21,7 @@ import FilledArrowDown from "stories/svg/FilledArrowDown";
 import data from "./dummy.json";
 
 import "./styles.scss";
+import SearchInput from "components/SearchInput";
 
 const typeOptions = [
   { label: "Apartment", value: "apartment" },
@@ -98,21 +99,21 @@ const Properties = () => {
               title="Approved properties"
               tabClassName="position-relative"
             >
-              <Row className="d-flex justify-content-end mb-2 w-100">
-                <Col sm={12} md={4}>
-                  <InputGroup className="d-flex align-items-center mb-3 ps-3 bg-white rounded-1 border border-1 border-grey">
-                    <MagnifyingGlass fill="#000" scale={0.8} />
-                    <FormControl
-                      placeholder="Search property by address"
-                      className="p-2 border-0 bg-transparent shadow-none"
+              <Row className="d-flex align-items-center justify-content-end mb-2">
+                <Col sm={12} md={7}>
+                  <div className="d-flex mt-4 mb-4">
+                    <SearchInput
+                      placeholder={"Search property by address"}
                       onChange={(e) => setSearchTerm(e.target.value)}
                     />
-                  </InputGroup>
-                </Col>
-                <Col sm={12} md={1}>
-                  <Button type="secondary" onClick={handleShow}>
-                    Filters
-                  </Button>
+                    <Button
+                      className={"ms-3"}
+                      type="secondary"
+                      onClick={handleShow}
+                    >
+                      Filters
+                    </Button>
+                  </div>
                 </Col>
               </Row>
 
@@ -127,21 +128,21 @@ const Properties = () => {
               </Row>
             </Tab>
             <Tab eventKey="waiting-for-approval" title="Waitting for approval">
-              <Row className="d-flex justify-content-end mb-2 w-100">
-                <Col sm={12} md={4}>
-                  <InputGroup className="d-flex align-items-center mb-3 ps-3 bg-white rounded-1 border border-1 border-grey">
-                    <MagnifyingGlass fill="#000" scale={0.8} />
-                    <FormControl
-                      placeholder="Search property by address"
-                      className="p-2 border-0 bg-transparent shadow-none"
+              <Row className="d-flex align-items-center justify-content-end mb-2">
+                <Col sm={12} md={7}>
+                  <div className="d-flex mt-4 mb-4">
+                    <SearchInput
+                      placeholder={"Search property by address"}
                       onChange={(e) => setSearchTerm(e.target.value)}
                     />
-                  </InputGroup>
-                </Col>
-                <Col sm={12} md={1}>
-                  <Button type="secondary" onClick={handleShow}>
-                    Filters
-                  </Button>
+                    <Button
+                      className={"ms-3"}
+                      type="secondary"
+                      onClick={handleShow}
+                    >
+                      Filters
+                    </Button>
+                  </div>
                 </Col>
               </Row>
 
@@ -156,21 +157,21 @@ const Properties = () => {
               </Row>
             </Tab>
             <Tab eventKey="unnaproved" title="Unapproved properties">
-              <Row className="d-flex justify-content-end mb-2 w-100">
-                <Col sm={12} md={4}>
-                  <InputGroup className="d-flex align-items-center mb-3 ps-3 bg-white rounded-1 border border-1 border-grey">
-                    <MagnifyingGlass fill="#000" scale={0.8} />
-                    <FormControl
-                      placeholder="Search property by address"
-                      className="p-2 border-0 bg-transparent shadow-none"
+              <Row className="d-flex align-items-center justify-content-end mb-2">
+                <Col sm={12} md={7}>
+                  <div className="d-flex mt-4 mb-4">
+                    <SearchInput
+                      placeholder={"Search property by address"}
                       onChange={(e) => setSearchTerm(e.target.value)}
                     />
-                  </InputGroup>
-                </Col>
-                <Col sm={12} md={1}>
-                  <Button type="secondary" onClick={handleShow}>
-                    Filters
-                  </Button>
+                    <Button
+                      className={"ms-3"}
+                      type="secondary"
+                      onClick={handleShow}
+                    >
+                      Filters
+                    </Button>
+                  </div>
                 </Col>
               </Row>
 

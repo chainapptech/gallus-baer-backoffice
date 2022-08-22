@@ -46,7 +46,7 @@ const ForgotUsername = () => {
       ></Col>
       <Col md={3} className="right">
         <img src="/assets/logo.png" alt="logo" className="logo mb-5" />
-        <h1 className="mb-4">Forgot your username?</h1>
+        <h2 className="mb-4">Forgot your username?</h2>
         <p className="mb-4">
           No problem! We’ll send you a username in email. Enter the email
           address and continue.
