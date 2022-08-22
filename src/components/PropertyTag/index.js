@@ -5,7 +5,7 @@ import "./styles.scss";
 const PropertyTag = ({ children }) => {
   return (
     <Badge className="property-tag" pill bg="primary">
-      <p className="small-text">{children}</p>
+      <p>{children}</p>
     </Badge>
   );
 };

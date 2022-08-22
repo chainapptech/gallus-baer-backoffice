@@ -45,7 +45,7 @@ const ForgotPassword = () => {
       ></Col>
       <Col md={3} className="right">
         <img src="/assets/logo.png" alt="logo" className="logo mb-5" />
-        <h1 className="mb-4">Forgot your password?</h1>
+        <h2 className="mb-4">Forgot your password?</h2>
         <p className="mb-4">
           No problem! We’ll send you a link to reset it. Enter the email address
           and continue.

@@ -15,6 +15,7 @@ import Button from "components/Button";
 import MagnifyingGlass from "stories/svg/MagnifyingGlass";
 
 import "./styles.scss";
+import SearchInput from "components/SearchInput";
 
 const Table = ({ accounts }) => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -43,16 +44,12 @@ const Table = ({ accounts }) => {
 
         <Col sm={12} md={7}>
           <div className="d-flex">
-            <InputGroup className="d-flex align-items-center ps-3 bg-white rounded-1 border border-1 border-grey">
-              <MagnifyingGlass fill="#000" scale={0.8} />
-              <FormControl
-                placeholder="Search accopunt by account name, role"
-                className="p-2 border-0 bg-transparent shadow-none"
-                onChange={(e) => setSearchTerm(e.target.value)}
-              />
-            </InputGroup>
+            <SearchInput
+              placeholder={"Search account by account name, role"}
+              onChange={(e) => setSearchTerm(e.target.value)}
+            />
 
-            <Button className={"ms-2"} type="secondary">
+            <Button className={"ms-3"} type="secondary">
               Filters
             </Button>
           </div>

@@ -46,7 +46,7 @@ const NewPassword = () => {
       ></Col>
       <Col md={3} className="right">
         <img src="/assets/logo.png" alt="logo" className="logo mb-5" />
-        <h1 className="mb-4">Enter new password!</h1>
+        <h2 className="mb-4">Enter new password!</h2>
         <p className="mb-4">
           No problem! Enter your new password and continue.
         </p>
