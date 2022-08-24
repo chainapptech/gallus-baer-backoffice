@@ -17,18 +17,21 @@ const PropertyCard = ({ property, user, id }) => {
   const ref = useRef();
   const [isFavorite, setIsFavorite] = useState(false);
   const [isActionsClicked, setIsActionsClicked] = useState(false);
+  const [disableLink, setDisableLink] = useState(true);
 
   useOnClickOutside(ref, () => setIsActionsClicked(false));
 
   return (
     <Card className="property-card h-100">
-      <Link to={`/properties/${id}`}>
+      <Link to={disableLink ? `/properties/${id}` : '#'}>
         <Card.Body className="position-relative">
           <IconButton
             className={"favorite-property-icon"}
             icon={<OutlineHeart fill={isFavorite} />}
             size={"sm"}
             onClick={() => setIsFavorite((state) => !state)}
+            onMouseEnter={() => setDisableLink(false)}
+            onMouseLeave={() => setDisableLink(true)}
           />
           {property.img ? (
             <Card.Img
@@ -55,6 +58,8 @@ const PropertyCard = ({ property, user, id }) => {
                 className="actions"
                 ref={ref}
                 onClick={() => setIsActionsClicked((state) => !state)}
+                onMouseEnter={() => setDisableLink(false)}
+                onMouseLeave={() => setDisableLink(true)}
               >
                 <Dots className="p-1" />
                 {isActionsClicked && <PropertyActions />}
