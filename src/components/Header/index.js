@@ -91,7 +91,7 @@ const Header = ({ name, surname }) => {
           >
             <Offcanvas.Header closeButton>
               <Offcanvas.Title id={`offcanvasNavbarLabel-expand-md`}>
-                <img src="assets/logo.png" alt="logo" width={"166px"} />
+                <img src="/assets/logo.png" alt="logo" width={"166px"} />
               </Offcanvas.Title>
             </Offcanvas.Header>
             <Offcanvas.Body>

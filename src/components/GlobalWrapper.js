@@ -19,7 +19,7 @@ const GlobalWrapper = () => {
                 <Header name={"Johhn"} surname={"Doe"} />
                 <Row>
                   <Sidebar />
-                  <Col sm={12} md={10} className="mt-4 pt-4 wrapper">
+                  <Col sm={12} md={10} className="mt-4 pt-4 wrapper px-0">
                     <Container fluid>
                       <AuthenticatedRoute />
                     </Container>

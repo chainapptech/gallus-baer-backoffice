@@ -8,6 +8,8 @@ import Property from "components/PropertyCard";
 import AccountHistory from "components/AccountHistory";
 import NotFoundProperty from "components/NotFoundProperty";
 
+import BackgroundImage from "stories/assets/account-background.jpg";
+
 import "./styles.scss";
 
 import data from "../accounts.json";
@@ -25,8 +27,8 @@ const SingleAccountPage = () => {
   return (
     <>
       {accountData ? (
-        <Row className="pt-4">
-          <Col sm={12} className="pt-3">
+        <Row className="pt-3">
+          <Col sm={12} className="pt-3 pb-4 account-banner w-100" style={{background: `url(${BackgroundImage})`, backgroundPosition: "center", backgroundSize: "cover"}}>
             <h3>Accounts</h3>
             <Breadcrumb>
               <Breadcrumb.Item>
@@ -34,7 +36,7 @@ const SingleAccountPage = () => {
                   <p>Accounts</p>
                 </Link>
               </Breadcrumb.Item>
-              <Breadcrumb.Item active>
+              <Breadcrumb.Item active className="breadcrumb-active-link">
                 {accountData.account.name}
               </Breadcrumb.Item>
             </Breadcrumb>
