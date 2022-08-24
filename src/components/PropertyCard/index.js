@@ -45,7 +45,7 @@ const PropertyCard = ({ property, user, id }) => {
           )}
           <Col className="px-3 pb-3">
             <Col className="d-flex align-items-start justify-content-between">
-              <div>
+              <div className="col-md-10">
                 <h4>CHF {numberWithCommas(property.price)},00</h4>
                 <p className="opacity-75">
                   CHF {numberWithCommas(property["previous-price"])},00
@@ -87,21 +87,6 @@ const PropertyCard = ({ property, user, id }) => {
       </Link>
     </Card>
   );
-};
-
-PropertyCard.defaultProps = {
-  property: {
-    img: "dummy-property-1.png",
-    price: 1585000,
-    "previous-price": 1280000,
-    tags: ["For Sale", "House"],
-    address: "372 Central Park West, Unit 17",
-  },
-  user: {
-    img: "account-1.jpg",
-    name: "John",
-    surname: "Doe",
-  },
 };
 
 export default PropertyCard;

@@ -121,7 +121,7 @@ const Properties = () => {
                 {properties
                   .filter(({ property }) => property.approved)
                   .map(({ id, property, user }) => (
-                    <Col key={id} sm={12} md={3}>
+                    <Col key={id} sm={12} md={6}>
                       <Property property={property} user={user} id={id} />
                     </Col>
                   ))}
@@ -146,11 +146,11 @@ const Properties = () => {
                 </Col>
               </Row>
 
-              <Row className="g-3">
+              <Row className="g-3" sm={1} md={3} lg={4}>
                 {properties
                   .filter(({ property }) => !property.approved)
                   .map(({ id, property, user }) => (
-                    <Col key={id} sm={12} md={3}>
+                    <Col key={id} sm={12} md={6}>
                       <Property property={property} user={user} id={id} />
                     </Col>
                   ))}
@@ -175,11 +175,11 @@ const Properties = () => {
                 </Col>
               </Row>
 
-              <Row className="g-3">
+              <Row className="g-3" sm={1} md={3} lg={4}>
                 {properties
                   .filter(({ property }) => property.unapproved)
                   .map(({ id, property, user }) => (
-                    <Col key={id} sm={12} md={3}>
+                    <Col key={id} sm={12} md={6}>
                       <Property property={property} user={user} id={id} />
                     </Col>
                   ))}

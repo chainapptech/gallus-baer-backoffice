@@ -1,6 +1,6 @@
-@use '../../style/custom' as *;
+@use "../../style/custom" as *;
 
-.sidebar-links{
+.sidebar-links {
     width: 100%;
     border: 2px solid transparent;
     border-left: 4px solid transparent;
@@ -9,8 +9,10 @@
     outline: none;
     transition: background 100ms;
 
-    .inner-button{
+    .inner-button {
         width: 100%;
+        padding-top: 13px;
+        padding-bottom: 11px;
     }
 
     &:focus:not(:focus-visible) {
@@ -18,11 +20,11 @@
         border: 2px solid transparent;
         border-left: 4px solid $p500;
         background-color: $p50;
-        .link-text{
+        .link-text {
             color: $p500;
             font-weight: 700;
         }
-        svg{
+        svg {
             fill: $p500;
         }
 
@@ -33,35 +35,35 @@
         }
     }
 
-    svg{
+    svg {
         width: 20px;
         height: 20px;
         margin-right: 8px;
         fill: $n500;
     }
 
-    &:hover{
-      background-color: $p50;
-      border: 2px solid $p50;
-      border-left: 4px solid $p50;
-      padding-left: -2px;
+    &:hover {
+        background-color: $p50;
+        border: 2px solid $p50;
+        border-left: 4px solid $p50;
+        padding-left: -2px;
     }
 
     &:active {
         border: 2px solid transparent;
         border-left: 4px solid $p500;
         background-color: $p50;
-        .link-text{
+        .link-text {
             color: $p500;
             font-weight: 700;
         }
-        svg{
+        svg {
             fill: $p500;
         }
     }
 
     &:focus,
-    .focus-visible:focus:not(:focus-visible){
+    .focus-visible:focus:not(:focus-visible) {
         background-color: $p50;
         border: 2px solid $n500;
         border-left: 2px solid $n500;
