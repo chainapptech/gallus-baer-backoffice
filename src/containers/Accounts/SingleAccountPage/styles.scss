@@ -1,3 +1,5 @@
+@use '../../../style/custom' as *;
+
 .user-info{
     .profile-icon{
         width: 100px;
@@ -10,4 +12,26 @@
 
 .contact-info-sticky{
     top:100px;
+}
+
+.account-banner{
+    h3{
+        color: $n0
+    }
+
+    h4{
+        color: $n0
+    }
+
+    p{
+        color: $n0
+    }
+
+    .breadcrumb-active-link{
+        color: &n100;
+    }
+
+    .link{
+        color: $n50;
+    }
 }
