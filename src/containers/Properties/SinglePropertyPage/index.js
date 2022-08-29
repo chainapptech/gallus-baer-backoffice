@@ -354,8 +354,8 @@ const SingleProperty = () => {
                     <Row className="gy-3 mt-4">
                       <h3 className="mb-2">Customer feedback</h3>
                       {customerFeedbakData.map(({ id, feedback }) => (
-                        <Col sm={12} md={11}>
-                          <CustomerFeedbackCard key={id} feedback={feedback} />
+                        <Col key={id} sm={12} md={11}>
+                          <CustomerFeedbackCard feedback={feedback} />
                         </Col>
                       ))}
                     </Row>
