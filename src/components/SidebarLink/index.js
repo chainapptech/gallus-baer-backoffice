@@ -9,7 +9,7 @@ const SidebarLink = ({ link }) => {
 
   return (
     <button
-      className={`d-flex mb-4 py-2 px-3 sidebar-links ${
+      className={`d-flex mb-2 px-3 sidebar-links ${
         isLinkActive && "active-link"
       }`}
     >

@@ -81,18 +81,30 @@ const Properties = () => {
   return (
     <>
       <Row className="mt-4 properties">
-        <Col sm={6} md={12}>
-          <Col className="d-flex align-items-center justify-content-between">
-            <h2 className="py-3 mb-2">Properties</h2>
-            <Button leadingIcon={<Plus fill="#EBD3BD" />}>
-              Create new property
-            </Button>
-          </Col>
+        <Col sm={12} md={12}>
+          <Row
+            className="d-flex align-items-center justify-content-center"
+            sm={12}
+            md={6}
+          >
+            <Col sm={12} md={6}>
+              <h2 className="py-3 mb-2">Properties</h2>
+            </Col>
+            <Col
+              sm={12}
+              md={6}
+              className="d-md-flex align-items-md-center justify-content-md-end"
+            >
+              <Button leadingIcon={<Plus fill="#EBD3BD" />}>
+                Create new property
+              </Button>
+            </Col>
+          </Row>
 
           <Tabs
             defaultActiveKey="approved"
             id="uncontrolled-tab-example"
-            className="mb-4"
+            className="mt-3 mb-4"
           >
             <Tab
               eventKey="approved"

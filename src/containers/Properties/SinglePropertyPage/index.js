@@ -1,5 +1,5 @@
-import { Col, Row, Tabs, Tab } from "react-bootstrap";
-import { useParams } from "react-router-dom";
+import { Col, Row, Tabs, Tab, Breadcrumb } from "react-bootstrap";
+import { Link, useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 
 import { numberWithCommas } from "utils/numberWithCommas";
@@ -57,10 +57,18 @@ const SingleProperty = () => {
           <Col sm={12} className="mb-4">
             <Row className="gy-3">
               <Col sm={12} md={9} className="">
-                <p className="mb-3">
-                  Approved Properties
-                  <span className="opacity-50">/ Single Property</span>
-                </p>
+                <h3>West Park Apartment</h3>
+                <Breadcrumb className="mt-2 mb-3">
+                  <Breadcrumb.Item>
+                    <Link to={"/properties"}>
+                      <p>Properties</p>
+                    </Link>
+                  </Breadcrumb.Item>
+                  <Breadcrumb.Item active className="breadcrumb-active-link">
+                    {/* {propertyData.property} */}
+                    {id}
+                  </Breadcrumb.Item>
+                </Breadcrumb>
                 <Row className="ms-0 mb-3">
                   {propertyData.property.tags.map((tag) => (
                     <PropertyTag key={tag}>{tag}</PropertyTag>
@@ -98,92 +106,91 @@ const SingleProperty = () => {
                   >
                     <Row>
                       <Col sm={12}>
-                      <img
-                        className="property-main-img"
-                        src={`/assets/${propertyData.property.img}`}
-                        alt="property"
-                      />
+                        <img
+                          className="property-main-img"
+                          src={`/assets/${propertyData.property.img}`}
+                          alt="property"
+                        />
                       </Col>
                       <Col sm={12}>
-                      <Row className="mt-3">
-                      
-                        {Object.keys([1, 2, 3, 4]).map((key) => (
-                          <Col  key={key} sm={6} md={3}>
-                            <img
-                              className="property-small-img"
-                              src={`/assets/${propertyData.property.img}`}
-                              alt="property"
-                            />
-                           </Col>
-                        ))}
-                       
-                      </Row>
+                        <Row className="mt-3">
+                          {Object.keys([1, 2, 3, 4]).map((key) => (
+                            <Col key={key} sm={6} md={3}>
+                              <img
+                                className="property-small-img"
+                                src={`/assets/${propertyData.property.img}`}
+                                alt="property"
+                              />
+                            </Col>
+                          ))}
+                        </Row>
                       </Col>
                     </Row>
                     <Row>
-                    <Col sm={12} className="mt-4 description">
-                      <h3>Description</h3>
-                      <p className="mt-4 mb-3">
-                        New Construction ready now in the SOWA Art & Design
-                        District! 2 Bed (1 interior) 2 Bath home w/ 1 garage
-                        parking license. Custom kitchen w/white oak & grey
-                        dovetailed cabinets, all Miele appliances (including
-                        washer/dryer), gas cooking that vents out,{" "}
-                      </p>
-                      <p>
-                        Caesarstone counters &quot;rugged concrete&quot;, quartz
-                        slab backsplash, long wood bar & pendant lighting.
-                        Laundry room/pantry, is tucked off kitchen. Oversized
-                        black mullion windows, 9’ ceilings, 6&quot; wide quarter
-                        sawn white oak hardwood floors throughout. Shared
-                        daytime Concierge, 10-7, the Commercial units.{" "}
-                      </p>
-                    </Col>
-                    <Col sm={12} className="mt-4 details">
-                      <h3>Property details</h3>
-                      <Col className="mt-4">
-                        {detailLabels.map((label) => (
-                          <Row
-                            className="detail-row border-bottom py-3 ps-2"
-                            key={label}
-                          >
-                            <Col className="detail-label">
-                              <p>{label}</p>
-                            </Col>
-                            <Col className="detail-value">
-                              <p>
-                                {
-                                  propertyData.property[
-                                    label.toLowerCase().replaceAll(" ", "-")
-                                  ]
-                                }
-                              </p>
-                            </Col>
-                          </Row>
-                        ))}
-                      </Col>
-                    </Col>
-                    <Col sm={12} className="mt-4 location">
-                      <h3>Location</h3>
-                      <Col className="mt-3">
-                        <p className="mb-3">
-                          One of the bes locations in the City. Very close to
-                          stores, hospitals, schools. Great oportunity for young
-                          couples with cosmopolitan life style.
+                      <Col sm={12} className="mt-4 description">
+                        <h3>Description</h3>
+                        <p className="mt-4 mb-3">
+                          New Construction ready now in the SOWA Art & Design
+                          District! 2 Bed (1 interior) 2 Bath home w/ 1 garage
+                          parking license. Custom kitchen w/white oak & grey
+                          dovetailed cabinets, all Miele appliances (including
+                          washer/dryer), gas cooking that vents out,{" "}
                         </p>
-                        <img src="/assets/map.png" alt="map" />
-                      </Col>
-                    </Col>
-                    <Col className="virtual-tour mt-4">
-                      <h3>Virtual tour</h3>
-                      <Col className="mt-3">
-                        <p className="mb-3">
-                          Take a virtual tour and know exactly what you’r
-                          buying!
+                        <p>
+                          Caesarstone counters &quot;rugged concrete&quot;,
+                          quartz slab backsplash, long wood bar & pendant
+                          lighting. Laundry room/pantry, is tucked off kitchen.
+                          Oversized black mullion windows, 9’ ceilings, 6&quot;
+                          wide quarter sawn white oak hardwood floors
+                          throughout. Shared daytime Concierge, 10-7, the
+                          Commercial units.{" "}
                         </p>
-                        <img src="/assets/tour.png" alt="map" />
                       </Col>
-                    </Col>
+                      <Col sm={12} className="mt-4 details">
+                        <h3>Property details</h3>
+                        <Col className="mt-4">
+                          {detailLabels.map((label) => (
+                            <Row
+                              className="detail-row border-bottom py-3 ps-2"
+                              key={label}
+                            >
+                              <Col className="detail-label">
+                                <p>{label}</p>
+                              </Col>
+                              <Col className="detail-value">
+                                <p>
+                                  {
+                                    propertyData.property[
+                                      label.toLowerCase().replaceAll(" ", "-")
+                                    ]
+                                  }
+                                </p>
+                              </Col>
+                            </Row>
+                          ))}
+                        </Col>
+                      </Col>
+                      <Col sm={12} className="mt-4 location">
+                        <h3>Location</h3>
+                        <Col className="mt-3">
+                          <p className="mb-3">
+                            One of the bes locations in the City. Very close to
+                            stores, hospitals, schools. Great oportunity for
+                            young couples with cosmopolitan life style.
+                          </p>
+                          <img src="/assets/map.png" alt="map" />
+                        </Col>
+                      </Col>
+                      <Col className="virtual-tour mt-4">
+                        <h3>Virtual tour</h3>
+                        <Col className="mt-3">
+                          <p className="mb-3">
+                            Take a virtual tour and know exactly what you’r
+                            buying!
+                          </p>
+                          <img src="/assets/tour.png" alt="map" />
+                        </Col>
+                      </Col>
                     </Row>
                   </Tab>
                   <Tab
@@ -347,8 +354,8 @@ const SingleProperty = () => {
                     <Row className="gy-3 mt-4">
                       <h3 className="mb-2">Customer feedback</h3>
                       {customerFeedbakData.map(({ id, feedback }) => (
-                        <Col sm={12} md={11}>
-                          <CustomerFeedbackCard key={id} feedback={feedback} />
+                        <Col key={id} sm={12} md={11}>
+                          <CustomerFeedbackCard feedback={feedback} />
                         </Col>
                       ))}
                     </Row>

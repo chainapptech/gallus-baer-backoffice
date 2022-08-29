@@ -58,25 +58,24 @@ const Sidebar = () => {
   ];
 
   return (
-    <>
-      <Col
-        sm={12}
-        md={2}
-        className="mt-4 pt-4 ps-0 min-vh-100 sidebar d-none d-md-block"
+    <Col
+      sm={12}
+      md={2}
+      className="mt-4 pt-4 ps-0 min-vh-100 sidebar d-none d-md-block"
+    >
+      <Nav
+        fixed="top"
+        defaultActiveKey="/home"
+        className="flex-column mt-4 pt-4 position-fixed"
       >
-        <Nav
-          fixed="top"
-          defaultActiveKey="/home"
-          className="flex-column mt-4 pt-4 position-fixed"
-        >
-          {links.map((link, index) => (
-            <Link key={index} to={`${link.path}`}>
-              <SidebarLink link={link} notificationNumber={0} />
-            </Link>
-          ))}
-        </Nav>
-      </Col>
-    </>
+        <p className="ms-4 mb-4">WELCOME, LUCIA</p>
+        {links.map((link, index) => (
+          <Link key={index} to={`${link.path}`}>
+            <SidebarLink link={link} notificationNumber={0} />
+          </Link>
+        ))}
+      </Nav>
+    </Col>
   );
 };
 
