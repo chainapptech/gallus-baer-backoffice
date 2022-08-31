@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 
 import NotificationBadge from "../NotificationBadge";
@@ -5,7 +6,26 @@ import "./styles.scss";
 
 const SidebarLink = ({ link }) => {
   const { pathname } = useLocation();
-  const isLinkActive = pathname === link.path;
+  const [isLinkActive, setIsLinkActive] = useState(false);
+
+  useEffect(() => {
+    if (pathname.substring(1).indexOf("/") > 0) {
+      if (
+        pathname.substring(0, pathname.substring(1).indexOf("/") + 1) ===
+        link.path
+      ) {
+        setIsLinkActive(true);
+      } else {
+        setIsLinkActive(false);
+      }
+    } else {
+      if (pathname === link.path) {
+        setIsLinkActive(true);
+      } else {
+        setIsLinkActive(false);
+      }
+    }
+  }, [pathname]);
 
   return (
     <button
