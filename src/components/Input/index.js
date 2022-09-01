@@ -25,7 +25,7 @@ const InputComponent = ({
         <Dropdown.Item href="#">Eng</Dropdown.Item>
       </DropdownButton>
     ) : (
-      <div className="d-flex position-relative">
+      <div className="d-flex align-items-center justify-content-center position-relative">
         <input
           id={name}
           type={type}
