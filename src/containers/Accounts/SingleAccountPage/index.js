@@ -28,7 +28,15 @@ const SingleAccountPage = () => {
     <>
       {accountData ? (
         <Row className="pt-3">
-          <Col sm={12} className="pt-3 pb-4 account-banner w-100" style={{background: `url(${BackgroundImage})`, backgroundPosition: "center", backgroundSize: "cover"}}>
+          <Col
+            sm={12}
+            className="pt-3 pb-4 account-banner w-100"
+            style={{
+              background: `url(${BackgroundImage})`,
+              backgroundPosition: "center",
+              backgroundSize: "cover",
+            }}
+          >
             <h3>Accounts</h3>
             <Breadcrumb>
               <Breadcrumb.Item>
@@ -109,6 +117,9 @@ const SingleAccountPage = () => {
                   phoneNumbers={accountData.account.phone}
                   emails={accountData.account.email}
                   className={"sticky-top contact-info-sticky"}
+                  img={accountData.account.img}
+                  name={accountData.account.name}
+                  surname={accountData.account.surname}
                 />
               </Col>
             </Row>

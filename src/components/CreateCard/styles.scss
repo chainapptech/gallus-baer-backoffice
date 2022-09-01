@@ -1,8 +1,7 @@
-@use '../../style/custom' as *;
+@use "../../style/custom" as *;
 
-.create-card{
-
-  .card-body{
+.create-card {
+  .card-body {
     padding: 24px;
   }
   .create-card-title {

@@ -22,6 +22,8 @@ import customerFeedbakData from "./customer-feedback.json";
 import overviewData from "./overview-data.json";
 
 import "./styles.scss";
+import InputComponent from "components/Input";
+import Carousel from "react-bootstrap/Carousel";
 
 const detailLabels = [
   "Town",
@@ -54,11 +56,10 @@ const SingleProperty = () => {
     <>
       {propertyData ? (
         <Row className="mt-5 property">
-          <Col sm={12} className="mb-4">
+          <Col sm={12} className="mb-2">
             <Row className="gy-3">
               <Col sm={12} md={9} className="">
-                <h3>West Park Apartment</h3>
-                <Breadcrumb className="mt-2 mb-3">
+                <Breadcrumb className="mt-2 mb-2">
                   <Breadcrumb.Item>
                     <Link to={"/properties"}>
                       <p>Properties</p>
@@ -69,6 +70,7 @@ const SingleProperty = () => {
                     {id}
                   </Breadcrumb.Item>
                 </Breadcrumb>
+                <h3>West Park Apartment</h3>
                 <Row className="ms-0 mb-3">
                   {propertyData.property.tags.map((tag) => (
                     <PropertyTag key={tag}>{tag}</PropertyTag>
@@ -77,14 +79,14 @@ const SingleProperty = () => {
                 <Row>
                   <Col className="d-flex flex-column flex-md-row align-items-md-center">
                     <h2 className="me-4">
-                      CHF {numberWithCommas(propertyData.property.price)},00
+                      CHF {numberWithCommas(propertyData.property.price)}.00
                     </h2>
                     <h4 className="opacity-75 fw-bold mb-0">
                       CHF{" "}
                       {numberWithCommas(
                         propertyData.property["previous-price"]
                       )}
-                      ,00
+                      .00
                     </h4>
                   </Col>
                 </Row>
@@ -102,15 +104,26 @@ const SingleProperty = () => {
                   <Tab
                     eventKey="details"
                     title="Property details"
-                    tabClassName="position-relative"
+                    tabClassName="position-relative pt-3 pb-3 ps-4 pe-4 bg-transparent"
                   >
                     <Row>
                       <Col sm={12}>
-                        <img
-                          className="property-main-img"
-                          src={`/assets/${propertyData.property.img}`}
-                          alt="property"
-                        />
+                        <Carousel>
+                          <Carousel.Item>
+                            <img
+                              className="d-block w-100"
+                              src={`/assets/${propertyData.property.img}`}
+                              alt="First slide"
+                            />
+                          </Carousel.Item>
+                          <Carousel.Item>
+                            <img
+                              className="d-block w-100"
+                              src={`/assets/${propertyData.property.img}`}
+                              alt="First slide"
+                            />
+                          </Carousel.Item>
+                        </Carousel>
                       </Col>
                       <Col sm={12}>
                         <Row className="mt-3">
@@ -127,7 +140,7 @@ const SingleProperty = () => {
                       </Col>
                     </Row>
                     <Row>
-                      <Col sm={12} className="mt-4 description">
+                      <Col sm={12} className="description">
                         <h3>Description</h3>
                         <p className="mt-4 mb-3">
                           New Construction ready now in the SOWA Art & Design
@@ -146,9 +159,9 @@ const SingleProperty = () => {
                           Commercial units.{" "}
                         </p>
                       </Col>
-                      <Col sm={12} className="mt-4 details">
+                      <Col sm={12} className="details">
                         <h3>Property details</h3>
-                        <Col className="mt-4">
+                        <Col className="details-table">
                           {detailLabels.map((label) => (
                             <Row
                               className="detail-row border-bottom py-3 ps-2"
@@ -170,9 +183,9 @@ const SingleProperty = () => {
                           ))}
                         </Col>
                       </Col>
-                      <Col sm={12} className="mt-4 location">
+                      <Col sm={12} className="location">
                         <h3>Location</h3>
-                        <Col className="mt-3">
+                        <Col className="location-desc">
                           <p className="mb-3">
                             One of the bes locations in the City. Very close to
                             stores, hospitals, schools. Great oportunity for
@@ -181,9 +194,9 @@ const SingleProperty = () => {
                           <img src="/assets/map.png" alt="map" />
                         </Col>
                       </Col>
-                      <Col className="virtual-tour mt-4">
+                      <Col className="virtual-tour">
                         <h3>Virtual tour</h3>
-                        <Col className="mt-3">
+                        <Col className="virtual-tour-desc">
                           <p className="mb-3">
                             Take a virtual tour and know exactly what you’r
                             buying!
@@ -196,16 +209,16 @@ const SingleProperty = () => {
                   <Tab
                     eventKey="process"
                     title="Process information"
-                    tabClassName="position-relative"
+                    tabClassName="position-relative pt-3 pb-3 ps-4 pe-4 bg-transparent"
                   >
                     <DocumentTable />
                   </Tab>
                   <Tab
                     eventKey="inquiries"
                     title="Inquiries"
-                    tabClassName="position-relative"
+                    tabClassName="position-relative pt-3 pb-3 ps-4 pe-4 bg-transparent"
                   >
-                    <Tabs
+                    {/* <Tabs
                       defaultActiveKey="new"
                       id="uncontrolled-tab-example"
                       className="mb-4 mt-4"
@@ -213,8 +226,19 @@ const SingleProperty = () => {
                       <Tab
                         eventKey="new"
                         title="New inquiries"
-                        tabClassName="position-relative"
-                      >
+                        tabClassName="position-relative pt-3 pb-3 ps-4 pe-4 bg-transparent"
+                      > */}
+                    <>
+                      <Row>
+                        <Col sm={10} md={8}>
+                          <InputComponent
+                            placeholder="Search..."
+                            type={"search"}
+                          />
+                        </Col>
+                      </Row>
+
+                      <div className="mt-4">
                         {inquiriesData.map(
                           ({
                             avatar,
@@ -225,8 +249,8 @@ const SingleProperty = () => {
                             date,
                             id,
                           }) => (
-                            <div className="inquirie ms-1 mb-5" key={id}>
-                              <div className="inquirie-details mb-3">
+                            <div className="inquirie ms-1" key={id}>
+                              <div className="inquirie-details">
                                 <ProfileIcon image={avatar} />
                                 <Row className="ms-1">
                                   <h4 className="mb-1">{name}</h4>
@@ -257,13 +281,14 @@ const SingleProperty = () => {
                                 <div className="d-flex mt-3">
                                   <Button
                                     leadingIcon={<CalendarPopluated />}
-                                    type="text"
+                                    type="secondary"
+                                    className={"me-4"}
                                   >
                                     Make an appointment
                                   </Button>
                                   <Button
                                     leadingIcon={<PaperPlaneOutline />}
-                                    type="text"
+                                    type="secondary"
                                   >
                                     Send mail
                                   </Button>
@@ -272,11 +297,13 @@ const SingleProperty = () => {
                             </div>
                           )
                         )}
-                      </Tab>
-                      <Tab
+                      </div>
+                    </>
+                    {/* </Tab> */}
+                    {/* <Tab
                         eventKey="answered"
                         title="Answered inquiries"
-                        tabClassName="position-relative"
+                        tabClassName="position-relative pt-3 pb-3 ps-4 pe-4 bg-transparent"
                       >
                         {inquiriesData.map(
                           ({
@@ -335,13 +362,13 @@ const SingleProperty = () => {
                             </div>
                           )
                         )}
-                      </Tab>
-                    </Tabs>
+                      </Tab> */}
+                    {/* </Tabs> */}
                   </Tab>
                   <Tab
                     eventKey="overview"
                     title="Overview"
-                    tabClassName="position-relative"
+                    tabClassName="position-relative pt-3 pb-3 ps-4 pe-4 bg-transparent"
                   >
                     <Row className="g-3 gy-4">
                       {overviewData.map(({ id, overviewData }) => (
@@ -367,6 +394,8 @@ const SingleProperty = () => {
                   phoneNumbers={["+312513213", "+31241233"]}
                   emails={["johndoe@gmail.com", "john1@gmail.com"]}
                   className={"sticky-top contact-info-sticky"}
+                  name={"John"}
+                  surname={"Doe"}
                 />
               </Col>
             </Row>

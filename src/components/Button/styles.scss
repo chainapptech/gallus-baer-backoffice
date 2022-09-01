@@ -1,8 +1,8 @@
-@use '../../style/custom' as *;
+@use "../../style/custom" as *;
 
 .btn {
-  padding: 8px 20px;
-  font-family: 'Ubuntu';
+  padding: 12px 20px;
+  font-family: "Ubuntu";
   font-weight: bold;
   grid-gap: 10px;
 
@@ -11,7 +11,7 @@
     align-items: center;
   }
 
-  .svg{
+  .svg {
     width: 24px;
     height: 24px;
   }
@@ -31,12 +31,12 @@
   &:focus:not(:focus-visible) {
     box-shadow: none;
     background-color: $p900;
-    h5{
+    h5 {
       color: $s300;
     }
-   }
+  }
 
-  h5{
+  h5 {
     color: $s200;
   }
   background-color: $p500;
@@ -47,7 +47,7 @@
 
   &:hover {
     background-color: $p800;
-    h5{
+    h5 {
       color: $s300;
     }
     svg {
@@ -57,7 +57,7 @@
 
   &:active {
     background-color: $p900;
-    h5{
+    h5 {
       color: $s300;
     }
     svg {
@@ -73,7 +73,7 @@
 
   &:disabled {
     background-color: $n50;
-    h5{
+    h5 {
       color: $n200;
     }
     border: none;
@@ -90,13 +90,13 @@
   &:focus:not(:focus-visible) {
     box-shadow: none;
     background-color: $s300;
-    h5{
-      color:$p700;
+    h5 {
+      color: $p700;
     }
-   }
+  }
 
-  h5{
-    color:$p700;
+  h5 {
+    color: $p700;
   }
 
   svg {
@@ -113,22 +113,22 @@
     background-color: $s100;
     border: solid 1px $s700;
 
-    h5{
-      color:$p700;
+    h5 {
+      color: $p700;
     }
   }
 
   &:active {
     background-color: $s300;
     border: solid 1px $s800;
-    h5{
-      color:$p700;
+    h5 {
+      color: $p700;
     }
   }
 
   &:disabled {
     background-color: $n50;
-    h5{
+    h5 {
       color: $n200;
     }
     border: none;
@@ -139,15 +139,15 @@
   &:focus:not(:focus-visible) {
     box-shadow: none;
     background-color: $s200;
-    h5{
+    h5 {
       color: $n500;
     }
     svg {
       fill: $n500;
     }
-   }
+  }
 
-  h5{
+  h5 {
     color: $p700;
   }
 
@@ -163,7 +163,7 @@
 
   &:hover {
     background-color: $s50;
-    h5{
+    h5 {
       color: $p700;
     }
     svg {
@@ -173,7 +173,7 @@
 
   &:active {
     background-color: $s200;
-    h5{
+    h5 {
       color: $n500;
     }
 
@@ -186,7 +186,7 @@
     background-color: $n50;
     border: none;
 
-    h5{
+    h5 {
       color: $n200;
     }
 

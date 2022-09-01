@@ -1,10 +1,14 @@
 .contact-info-card {
   z-index: 200;
+  .contact-info-title {
+    margin-bottom: 16px;
+  }
   .contact-name {
     margin-top: 16px;
   }
 
   .btn {
     margin-top: 16px;
+    width: 100%;
   }
 }

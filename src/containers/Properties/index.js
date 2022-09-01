@@ -109,7 +109,7 @@ const Properties = () => {
             <Tab
               eventKey="approved"
               title="Approved properties"
-              tabClassName="position-relative"
+              tabClassName="position-relative pt-3 pb-3 ps-4 pe-4 bg-transparent"
             >
               <Row className="d-flex align-items-center justify-content-end mb-2">
                 <Col sm={12} md={7}>
@@ -139,7 +139,11 @@ const Properties = () => {
                   ))}
               </Row>
             </Tab>
-            <Tab eventKey="waiting-for-approval" title="Waitting for approval">
+            <Tab
+              eventKey="waiting-for-approval"
+              title="Waitting for approval"
+              tabClassName="pt-3 pb-3 ps-4 pe-4 bg-transparent"
+            >
               <Row className="d-flex align-items-center justify-content-end mb-2">
                 <Col sm={12} md={7}>
                   <div className="d-flex mt-4 mb-4">
@@ -168,7 +172,11 @@ const Properties = () => {
                   ))}
               </Row>
             </Tab>
-            <Tab eventKey="unnaproved" title="Unapproved properties">
+            <Tab
+              eventKey="unnaproved"
+              title="Unapproved properties"
+              tabClassName="pt-3 pb-3 ps-4 pe-4 bg-transparent"
+            >
               <Row className="d-flex align-items-center justify-content-end mb-2">
                 <Col sm={12} md={7}>
                   <div className="d-flex mt-4 mb-4">
