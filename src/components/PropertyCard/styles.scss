@@ -1,4 +1,4 @@
-@use '../../style/custom' as *;
+@use "../../style/custom" as *;
 
 .property-card {
   border-radius: 8px;
@@ -22,6 +22,8 @@
   }
 
   .property-address {
+    margin-top: 16px;
+    margin-bottom: 16px;
     color: $n300;
   }
 
