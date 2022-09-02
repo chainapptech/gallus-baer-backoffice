@@ -64,7 +64,11 @@ const PropertyCard = ({ property, user, id }) => {
                 ))}
               </Row>
             </Container>
-            <p className="property-address">{property.address}</p>
+            <p className="property-address">
+              {property.address.length < 35
+                ? property.address
+                : `${property.address.slice(0, 30)}...`}
+            </p>
             <hr />
             <Row>
               <Col className="d-flex">
