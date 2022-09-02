@@ -83,24 +83,14 @@ const Properties = () => {
       <Row className="mt-4 properties">
         <Col sm={12} md={12}>
           <Row
-            className="d-flex align-items-center justify-content-center"
+            className="d-flex align-items-center justify-content-start"
             sm={12}
             md={6}
           >
             <Col sm={12} md={6}>
               <h2 className="py-3 mb-2">Properties</h2>
             </Col>
-            <Col
-              sm={12}
-              md={6}
-              className="d-md-flex align-items-md-center justify-content-md-end"
-            >
-              <Button leadingIcon={<Plus fill="#EBD3BD" />}>
-                Create new property
-              </Button>
-            </Col>
           </Row>
-
           <Tabs
             defaultActiveKey="approved"
             id="uncontrolled-tab-example"
@@ -108,7 +98,15 @@ const Properties = () => {
           >
             <Tab
               eventKey="approved"
-              title="Approved properties"
+              title={
+                <>
+                  Approved properties
+                  <NotificationBadge
+                    className="position-absolute notification"
+                    number={0}
+                  />
+                </>
+              }
               tabClassName="position-relative pt-3 pb-3 ps-4 pe-4 bg-transparent"
             >
               <Row className="d-flex align-items-center justify-content-end mb-2">
@@ -122,6 +120,7 @@ const Properties = () => {
                       className={"ms-3"}
                       type="secondary"
                       onClick={handleShow}
+                      notificationNumber={3}
                     >
                       Filters
                     </Button>
@@ -141,8 +140,16 @@ const Properties = () => {
             </Tab>
             <Tab
               eventKey="waiting-for-approval"
-              title="Waitting for approval"
-              tabClassName="pt-3 pb-3 ps-4 pe-4 bg-transparent"
+              title={
+                <>
+                  Waitting for approval
+                  <NotificationBadge
+                    className="position-absolute notification"
+                    number={100}
+                  />
+                </>
+              }
+              tabClassName="position-relative pt-3 pb-3 ps-4 pe-4 bg-transparent"
             >
               <Row className="d-flex align-items-center justify-content-end mb-2">
                 <Col sm={12} md={7}>
@@ -174,8 +181,16 @@ const Properties = () => {
             </Tab>
             <Tab
               eventKey="unnaproved"
-              title="Unapproved properties"
-              tabClassName="pt-3 pb-3 ps-4 pe-4 bg-transparent"
+              title={
+                <>
+                  Unapproved properties
+                  <NotificationBadge
+                    className="position-absolute notification"
+                    number={0}
+                  />
+                </>
+              }
+              tabClassName="position-relative pt-3 pb-3 ps-4 pe-4 bg-transparent"
             >
               <Row className="d-flex align-items-center justify-content-end mb-2">
                 <Col sm={12} md={7}>

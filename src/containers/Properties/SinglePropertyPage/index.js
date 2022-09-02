@@ -55,11 +55,11 @@ const SingleProperty = () => {
   return (
     <>
       {propertyData ? (
-        <Row className="mt-5 property">
+        <Row className="mt-4 property">
           <Col sm={12} className="mb-2">
             <Row className="gy-3">
               <Col sm={12} md={9} className="">
-                <Breadcrumb className="mt-2 mb-2">
+                <Breadcrumb className="mt-4 ">
                   <Breadcrumb.Item>
                     <Link to={"/properties"}>
                       <p>Properties</p>
@@ -70,8 +70,8 @@ const SingleProperty = () => {
                     {id}
                   </Breadcrumb.Item>
                 </Breadcrumb>
-                <h3>West Park Apartment</h3>
-                <Row className="ms-0 mb-3">
+                <h3 className="mt-2">West Park Apartment</h3>
+                <Row className="ms-0 mt-2 mb-3">
                   {propertyData.property.tags.map((tag) => (
                     <PropertyTag key={tag}>{tag}</PropertyTag>
                   ))}
@@ -90,11 +90,11 @@ const SingleProperty = () => {
                     </h4>
                   </Col>
                 </Row>
-                <Row>
+                {/* <Row>
                   <Col sm={12}>
                     <p className="mt-2">{propertyData.property.address}</p>
                   </Col>
-                </Row>
+                </Row> */}
 
                 <Tabs
                   defaultActiveKey="details"

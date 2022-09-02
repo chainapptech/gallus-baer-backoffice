@@ -2,9 +2,11 @@ import React, { useEffect } from "react";
 import FilledArrowDown from "../../stories/svg/FilledArrowDown";
 import AddOutline from "../../stories/svg/AddOutline";
 import "./styles.scss";
+import NotificationBadge from "components/NotificationBadge";
 
 const Button = ({
   children,
+  notificationNumber,
   leadingIcon,
   endIcon,
   type,
@@ -24,6 +26,10 @@ const Button = ({
         <AddOutline className="add-outline-svg" />
       )}
       <h5 className="mb-0">{children}</h5>
+      <NotificationBadge
+        className={"button-notification"}
+        number={notificationNumber}
+      />
       {endIcon && <FilledArrowDown className="filled-arrow-svg" />}
     </button>
   );
@@ -31,6 +37,7 @@ const Button = ({
 
 Button.defaultProps = {
   children: "Button",
+  notificationNumber: 0,
   type: "primary",
   leadingIcon: false,
   endIcon: false,

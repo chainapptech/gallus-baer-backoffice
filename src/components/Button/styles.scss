@@ -5,6 +5,13 @@
   font-family: "Ubuntu";
   font-weight: bold;
   grid-gap: 10px;
+  position: relative;
+
+  .button-notification {
+    position: absolute;
+    top: -11px;
+    right: -8px;
+  }
 
   h5 {
     display: flex;
