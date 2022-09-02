@@ -23,7 +23,7 @@ const PropertyCard = ({ property, user, id }) => {
 
   return (
     <Card className="property-card h-100">
-      <Link to={disableLink ? `/properties/${id}` : '#'}>
+      <Link to={disableLink ? `/properties/${id}` : "#"}>
         <Card.Body className="position-relative">
           <IconButton
             className={"favorite-property-icon"}
@@ -34,24 +34,16 @@ const PropertyCard = ({ property, user, id }) => {
             onMouseLeave={() => setDisableLink(true)}
           />
           {property.img ? (
-            <Card.Img
-              className="mb-3"
-              variant="top"
-              src={`/assets/${property.img}`}
-            />
+            <Card.Img variant="top" src={`/assets/${property.img}`} />
           ) : (
-            <Card.Img
-              className="mb-4"
-              variant="top"
-              src={`assets/no-property.png`}
-            />
+            <Card.Img variant="top" src={`assets/no-property.png`} />
           )}
-          <Col className="px-3 pb-3">
+          <Col className="p-3">
             <Col className="d-flex align-items-start justify-content-between">
               <div className="col-md-10">
-                <h4>CHF {numberWithCommas(property.price)},00</h4>
+                <h4>CHF {numberWithCommas(property.price)}.00</h4>
                 <p className="opacity-75">
-                  CHF {numberWithCommas(property["previous-price"])},00
+                  CHF {numberWithCommas(property["previous-price"])}.00
                 </p>
               </div>
               <div
@@ -72,7 +64,7 @@ const PropertyCard = ({ property, user, id }) => {
                 ))}
               </Row>
             </Container>
-            <p className="property-address mt-4 pt-2">{property.address}</p>
+            <p className="property-address">{property.address}</p>
             <hr />
             <Row>
               <Col className="d-flex">
