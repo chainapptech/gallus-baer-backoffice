@@ -1,6 +1,6 @@
-@use '../../style/custom' as *;
+@use "../../style/custom" as *;
 
-.property-tag{
+.property-tag {
     background-color: $n50 !important;
     border: 1px solid $p200;
     border-radius: 8px;
@@ -9,4 +9,31 @@
     margin-top: 8px;
     width: fit-content;
     display: block;
+}
+
+.property-tag-unassigned {
+    background-color: #d23e3f !important;
+    border: 1px solid #c73031;
+    border-radius: 99px;
+}
+
+.property-tag-documents-ready {
+    background-color: #388452 !important;
+    border: 1px solid #2b7141;
+    border-radius: 99px;
+}
+
+.property-tag-assigned-to-agent {
+    background-color: #d6a67a !important;
+    border: 1px solid #cc9567;
+    border-radius: 99px;
+}
+.text-unassigned {
+    color: #ffffff !important;
+}
+.text-documents-ready {
+    color: #ffffff !important;
+}
+.text-assigned-to-agent {
+    color: #ffffff !important;
 }

@@ -13,7 +13,7 @@ import Dots from "stories/svg/Dots";
 
 import "./styles.scss";
 
-const PropertyCard = ({ property, user, id }) => {
+const PropertyCard = ({ property, user, id, waitingForApproval }) => {
   const ref = useRef();
   const [isFavorite, setIsFavorite] = useState(false);
   const [isActionsClicked, setIsActionsClicked] = useState(false);
@@ -63,6 +63,13 @@ const PropertyCard = ({ property, user, id }) => {
                   <PropertyTag key={tag}>{tag}</PropertyTag>
                 ))}
               </Row>
+              {waitingForApproval && (
+                <Row className="mt-2">
+                  <PropertyTag type={waitingForApproval}>
+                    {waitingForApproval}
+                  </PropertyTag>
+                </Row>
+              )}
             </Container>
             <p className="property-address">
               {property.address.length < 35
