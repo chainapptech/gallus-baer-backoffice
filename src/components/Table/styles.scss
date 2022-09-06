@@ -1,16 +1,16 @@
-@use '../../style/custom' as *;
+@use "../../style/custom" as *;
 
-.accounts-table{
+.accounts-table {
   background-color: $n0;
   border-radius: 8px;
   border: 1px solid $n100;
 
-  .table-footer{
+  .table-footer {
     height: 65px;
     border-top: 1px solid $n100;
   }
 
-  .table-name{
+  .table-name {
     padding: 21px 16px;
     border-bottom: 1px solid $n100;
     display: flex;
@@ -21,11 +21,12 @@
     grid-gap: 10px;
     border-bottom: 1px solid $n100;
 
-    h5{
+    h5 {
+      margin: 0;
       color: $n700;
     }
 
-    .role-name{
+    .role-name {
       margin-right: 100px;
     }
   }
@@ -33,5 +34,4 @@
   .table-body {
     border: none;
   }
-
 }

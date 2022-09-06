@@ -1,4 +1,4 @@
-import { Col, Row, Tabs, Tab, Breadcrumb } from "react-bootstrap";
+import { Col, Row, Tabs, Tab, Breadcrumb, Modal } from "react-bootstrap";
 import { Link, useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 
@@ -43,6 +43,7 @@ const detailLabels = [
 const SingleProperty = () => {
   const { id } = useParams();
   const [propertyData, setProperty] = useState(null);
+  const [activeSlide, setActiveSlide] = useState(0);
 
   useEffect(() => {
     const singleProperty = data.filter(
@@ -77,7 +78,10 @@ const SingleProperty = () => {
                   ))}
                 </Row>
                 <Row>
-                  <Col className="d-flex flex-column flex-md-row align-items-md-center">
+                  <Col
+                    md={10}
+                    className="d-flex flex-column flex-md-row align-items-md-center"
+                  >
                     <h2 className="me-4">
                       CHF {numberWithCommas(propertyData.property.price)}.00
                     </h2>
@@ -90,11 +94,6 @@ const SingleProperty = () => {
                     </h4>
                   </Col>
                 </Row>
-                {/* <Row>
-                  <Col sm={12}>
-                    <p className="mt-2">{propertyData.property.address}</p>
-                  </Col>
-                </Row> */}
 
                 <Tabs
                   defaultActiveKey="details"
@@ -108,28 +107,28 @@ const SingleProperty = () => {
                   >
                     <Row>
                       <Col sm={12}>
-                        <Carousel>
-                          <Carousel.Item>
-                            <img
-                              className="d-block w-100"
-                              src={`/assets/${propertyData.property.img}`}
-                              alt="First slide"
-                            />
-                          </Carousel.Item>
-                          <Carousel.Item>
-                            <img
-                              className="d-block w-100"
-                              src={`/assets/${propertyData.property.img}`}
-                              alt="First slide"
-                            />
-                          </Carousel.Item>
+                        <Carousel
+                          onSelect={(e) => setActiveSlide(e)}
+                          activeIndex={activeSlide}
+                        >
+                          {Object.keys([0, 1, 2, 3]).map((key) => (
+                            <Carousel.Item key={key}>
+                              <img
+                                className="d-block w-100"
+                                src={`/assets/${propertyData.property.img}`}
+                                alt="Slide"
+                              />
+                            </Carousel.Item>
+                          ))}
                         </Carousel>
                       </Col>
                       <Col sm={12}>
                         <Row className="mt-3">
-                          {Object.keys([1, 2, 3, 4]).map((key) => (
-                            <Col key={key} sm={6} md={3}>
+                          {Object.keys([0, 1, 2, 3]).map((item, index) => (
+                            <Col key={item} sm={6} md={3}>
                               <img
+                                onSelect={activeSlide}
+                                onClick={() => setActiveSlide(index)}
                                 className="property-small-img"
                                 src={`/assets/${propertyData.property.img}`}
                                 alt="property"
@@ -387,6 +386,11 @@ const SingleProperty = () => {
                       ))}
                     </Row>
                   </Tab>
+                  <Tab
+                    eventKey="ads"
+                    title="Create Ads"
+                    tabClassName="position-relative pt-3 pb-3 ps-4 pe-4 bg-transparent"
+                  ></Tab>
                 </Tabs>
               </Col>
               <Col sm={12} md={3}>
