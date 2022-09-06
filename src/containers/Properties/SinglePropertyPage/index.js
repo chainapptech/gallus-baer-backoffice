@@ -24,6 +24,14 @@ import overviewData from "./overview-data.json";
 import "./styles.scss";
 import InputComponent from "components/Input";
 import Carousel from "react-bootstrap/Carousel";
+import Share from "stories/svg/Share";
+import ModalButton from "components/ModalButton/input";
+import CopyIcon from "stories/svg/CopyIcon";
+import LinkedinLogoColor from "stories/svg/LinkedinLogoColor";
+import InstagramLogoColor from "stories/svg/InstagramLogoColor";
+import TikTokLogoPrimary from "stories/svg/TikTokLogoPrimary";
+import WhatsAppLogoColor from "stories/svg/WhatsAppLogoColor";
+import FacebookLogoColor from "stories/svg/FacebookLogoColor";
 
 const detailLabels = [
   "Town",
@@ -44,6 +52,7 @@ const SingleProperty = () => {
   const { id } = useParams();
   const [propertyData, setProperty] = useState(null);
   const [activeSlide, setActiveSlide] = useState(0);
+  const [showModal, setShowModal] = useState(false);
 
   useEffect(() => {
     const singleProperty = data.filter(
@@ -53,9 +62,12 @@ const SingleProperty = () => {
     setProperty(singleProperty[0]);
   }, []);
 
+  const handleClose = () => setShowModal(false);
+  const handleShow = () => setShowModal(true);
+
   return (
     <>
-      {propertyData ? (
+      {propertyData && (
         <Row className="mt-4 property">
           <Col sm={12} className="mb-2">
             <Row className="gy-3">
@@ -93,8 +105,62 @@ const SingleProperty = () => {
                       .00
                     </h4>
                   </Col>
+                  <Col
+                    md={2}
+                    className="d-flex align-items-center justify-content-center"
+                  >
+                    <Button
+                      onClick={handleShow}
+                      type="text"
+                      leadingIcon={<Share fill="#EBD3BD" />}
+                    >
+                      Share
+                    </Button>
+                  </Col>
                 </Row>
-
+                {/* MODAL */}
+                <Modal centered show={showModal} onHide={handleClose}>
+                  <Modal.Header closeButton>
+                    <Modal.Title>Share this property</Modal.Title>
+                  </Modal.Header>
+                  <Modal.Body className="pb-0 modal-body-share-property">
+                    <Row>
+                      <Col md={6}>
+                        <ModalButton text={"Copy link"} logo={<CopyIcon />} />
+                      </Col>
+                      <Col md={6}>
+                        <ModalButton
+                          text={"Linkedin"}
+                          logo={<LinkedinLogoColor />}
+                        />
+                      </Col>
+                      <Col md={6}>
+                        <ModalButton
+                          text={"Instagram"}
+                          logo={<InstagramLogoColor />}
+                        />
+                      </Col>
+                      <Col md={6}>
+                        <ModalButton
+                          text={"Tik Tok"}
+                          logo={<TikTokLogoPrimary />}
+                        />
+                      </Col>
+                      <Col md={6}>
+                        <ModalButton
+                          text={"Facebook"}
+                          logo={<FacebookLogoColor />}
+                        />
+                      </Col>
+                      <Col md={6}>
+                        <ModalButton
+                          text={"What’s App"}
+                          logo={<WhatsAppLogoColor />}
+                        />
+                      </Col>
+                    </Row>
+                  </Modal.Body>
+                </Modal>
                 <Tabs
                   defaultActiveKey="details"
                   id="uncontrolled-tab-example"
@@ -405,7 +471,7 @@ const SingleProperty = () => {
             </Row>
           </Col>
         </Row>
-      ) : null}
+      )}
     </>
   );
 };
