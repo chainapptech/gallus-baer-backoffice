@@ -174,7 +174,12 @@ const Properties = () => {
                   .filter(({ property }) => !property.approved)
                   .map(({ id, property, user }) => (
                     <Col key={id} sm={12} md={6}>
-                      <Property property={property} user={user} id={id} />
+                      <Property
+                        waitingForApproval={"unassigned"}
+                        property={property}
+                        user={user}
+                        id={id}
+                      />
                     </Col>
                   ))}
               </Row>
