@@ -177,7 +177,7 @@ const SingleProperty = () => {
                           onSelect={(e) => setActiveSlide(e)}
                           activeIndex={activeSlide}
                         >
-                          {Object.keys([0, 1, 2, 3]).map((key) => (
+                          {Object.keys([0, 1, 2, 3, 4]).map((key) => (
                             <Carousel.Item key={key}>
                               <img
                                 className="d-block w-100"
@@ -188,9 +188,9 @@ const SingleProperty = () => {
                           ))}
                         </Carousel>
                       </Col>
-                      <Col sm={12}>
-                        <Row className="mt-3">
-                          {Object.keys([0, 1, 2, 3]).map((item, index) => (
+                      <Col sm={12} className="d-none d-md-block">
+                        <Row className="mt-3 photo-gallery">
+                          {Object.keys([0, 1, 2, 3, 4]).map((item, index) => (
                             <Col key={item} sm={6} md={3}>
                               <img
                                 onSelect={activeSlide}
@@ -206,47 +206,58 @@ const SingleProperty = () => {
                     </Row>
                     <Row>
                       <Col sm={12} className="description">
-                        <h3>Description</h3>
-                        <p className="mt-4 mb-3">
-                          New Construction ready now in the SOWA Art & Design
-                          District! 2 Bed (1 interior) 2 Bath home w/ 1 garage
-                          parking license. Custom kitchen w/white oak & grey
-                          dovetailed cabinets, all Miele appliances (including
-                          washer/dryer), gas cooking that vents out,{" "}
-                        </p>
-                        <p>
-                          Caesarstone counters &quot;rugged concrete&quot;,
-                          quartz slab backsplash, long wood bar & pendant
-                          lighting. Laundry room/pantry, is tucked off kitchen.
-                          Oversized black mullion windows, 9’ ceilings, 6&quot;
-                          wide quarter sawn white oak hardwood floors
-                          throughout. Shared daytime Concierge, 10-7, the
-                          Commercial units.{" "}
-                        </p>
+                        <Row>
+                          <Col sm={12} md={11}>
+                            <h3>Description</h3>
+                            <p className="mt-4 mb-3">
+                              New Construction ready now in the SOWA Art &
+                              Design District! 2 Bed (1 interior) 2 Bath home w/
+                              1 garage parking license. Custom kitchen w/white
+                              oak & grey dovetailed cabinets, all Miele
+                              appliances (including washer/dryer), gas cooking
+                              that vents out,{" "}
+                            </p>
+                            <p>
+                              Caesarstone counters &quot;rugged concrete&quot;,
+                              quartz slab backsplash, long wood bar & pendant
+                              lighting. Laundry room/pantry, is tucked off
+                              kitchen. Oversized black mullion windows, 9’
+                              ceilings, 6&quot; wide quarter sawn white oak
+                              hardwood floors throughout. Shared daytime
+                              Concierge, 10-7, the Commercial units.{" "}
+                            </p>
+                          </Col>
+                        </Row>
                       </Col>
                       <Col sm={12} className="details">
-                        <h3>Property details</h3>
-                        <Col className="details-table">
-                          {detailLabels.map((label) => (
-                            <Row
-                              className="detail-row border-bottom py-3 ps-2"
-                              key={label}
-                            >
-                              <Col className="detail-label">
-                                <p>{label}</p>
-                              </Col>
-                              <Col className="detail-value">
-                                <p>
-                                  {
-                                    propertyData.property[
-                                      label.toLowerCase().replaceAll(" ", "-")
-                                    ]
-                                  }
-                                </p>
-                              </Col>
-                            </Row>
-                          ))}
-                        </Col>
+                        <Row>
+                          <Col sm={12} md={11}>
+                            <h3>Property details</h3>
+                            <Col className="details-table">
+                              {detailLabels.map((label) => (
+                                <Row
+                                  className="detail-row border-bottom py-3 ps-2"
+                                  key={label}
+                                >
+                                  <Col className="detail-label">
+                                    <p>{label}</p>
+                                  </Col>
+                                  <Col className="detail-value">
+                                    <p>
+                                      {
+                                        propertyData.property[
+                                          label
+                                            .toLowerCase()
+                                            .replaceAll(" ", "-")
+                                        ]
+                                      }
+                                    </p>
+                                  </Col>
+                                </Row>
+                              ))}
+                            </Col>
+                          </Col>
+                        </Row>
                       </Col>
                       <Col sm={12} className="location">
                         <h3>Location</h3>
