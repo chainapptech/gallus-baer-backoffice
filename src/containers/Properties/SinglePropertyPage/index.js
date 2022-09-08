@@ -33,6 +33,7 @@ import InstagramLogoColor from "stories/svg/InstagramLogoColor";
 import TikTokLogoPrimary from "stories/svg/TikTokLogoPrimary";
 import WhatsAppLogoColor from "stories/svg/WhatsAppLogoColor";
 import FacebookLogoColor from "stories/svg/FacebookLogoColor";
+import CreateAdsTable from "components/CreateAdsTable";
 
 const detailLabels = [
   "Town",
@@ -525,7 +526,9 @@ const SingleProperty = () => {
                     eventKey="ads"
                     title="Create Ads"
                     tabClassName="position-relative pt-3 pb-3 ps-4 pe-4 bg-transparent"
-                  ></Tab>
+                  >
+                    <CreateAdsTable />
+                  </Tab>
                 </Tabs>
               </Col>
               <Col sm={12} md={3}>

@@ -60,6 +60,26 @@ const StatusLabel = ({ status }) => {
             <p>Error</p>
           </Badge>
         );
+      case 6:
+        return (
+          <Badge
+            bg="none"
+            className="d-flex align-items-center status-label publishedLabel"
+          >
+            <CheckedColor />
+            <p>Published</p>
+          </Badge>
+        );
+      case 7:
+        return (
+          <Badge
+            bg="none"
+            className="d-flex align-items-center status-label notPublishedLabel"
+          >
+            <Pause />
+            <p>Not published</p>
+          </Badge>
+        );
       default:
         return (
           <Badge

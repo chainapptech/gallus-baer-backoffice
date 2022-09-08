@@ -1,7 +1,7 @@
 .table-wrapper {
   max-width: 1000px;
   background-color: white;
-  .document-table {
+  .ads-table {
     thead {
       th {
         padding: 16px;
@@ -18,12 +18,14 @@
       td {
         border: none;
         padding: 14px 10px;
-
-        &:first-child {
-          width: 35%;
+        .table-ads-logo {
+          width: 86px;
         }
-        &:nth-child(2) {
+        &:first-child {
           width: 15%;
+        }
+        &:last-child {
+          width: 20%;
         }
       }
 
@@ -32,6 +34,10 @@
         font-size: 14px;
         line-height: 20px;
       }
+      h5 {
+        color: #084474;
+      }
+
       span {
         color: #3d6c9e;
         font-size: 16px;
