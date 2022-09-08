@@ -27,11 +27,20 @@
 }
 
 .property-small-img {
-  width: 100%;
+  // width: 100%;
   cursor: pointer;
 }
 
-.photo-gallery{
+.slick-track {
+  display: flex !important;
+  flex-wrap: nowrap;
+}
+
+.slick-slide {
+  padding-right: 16px;
+}
+
+.photo-gallery {
   flex-wrap: nowrap;
   overflow-x: scroll;
   // &::-webkit-scrollbar {

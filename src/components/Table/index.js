@@ -63,11 +63,11 @@ const Table = ({ accounts }) => {
           </div>
         </Col>
       </Row>
-      <Modal show={showModal} onHide={handleClose}>
+      <Modal centered show={showModal} onHide={handleClose}>
         <Modal.Header closeButton>
           <Modal.Title>Invite a new user</Modal.Title>
         </Modal.Header>
-        <Modal.Body>
+        <Modal.Body className="modal-body-share-property">
           <p className="mb-3">
             Enter the login mobile phone for account. The user will receive a
             link for registration... Lorem ipsum dolor sit amet, vince

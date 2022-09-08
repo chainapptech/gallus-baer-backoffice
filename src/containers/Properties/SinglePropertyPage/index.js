@@ -20,6 +20,7 @@ import inquiriesData from "./inquiries.json";
 import data from "../dummy.json";
 import customerFeedbakData from "./customer-feedback.json";
 import overviewData from "./overview-data.json";
+import Slider from "react-slick";
 
 import "./styles.scss";
 import InputComponent from "components/Input";
@@ -47,6 +48,41 @@ const detailLabels = [
   "City",
   "Address",
 ];
+
+let settings = {
+  dots: false,
+  infinite: false,
+  speed: 500,
+  slidesToShow: 4,
+  slidesToScroll: 4,
+  initialSlide: 0,
+  responsive: [
+    {
+      breakpoint: 1024,
+      settings: {
+        slidesToShow: 3,
+        slidesToScroll: 3,
+        infinite: true,
+        dots: false,
+      },
+    },
+    {
+      breakpoint: 600,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 2,
+        initialSlide: 2,
+      },
+    },
+    {
+      breakpoint: 480,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1,
+      },
+    },
+  ],
+};
 
 const SingleProperty = () => {
   const { id } = useParams();
@@ -119,7 +155,14 @@ const SingleProperty = () => {
                   </Col>
                 </Row>
                 {/* MODAL */}
-                <Modal centered show={showModal} onHide={handleClose}>
+                <Modal
+                  centered
+                  className="w-60"
+                  size="lg"
+                  backdropClassName="nikola"
+                  show={showModal}
+                  onHide={handleClose}
+                >
                   <Modal.Header closeButton>
                     <Modal.Title>Share this property</Modal.Title>
                   </Modal.Header>
@@ -189,6 +232,21 @@ const SingleProperty = () => {
                         </Carousel>
                       </Col>
                       <Col sm={12} className="d-none d-md-block">
+                        <Row className="mt-3">
+                          <Slider {...settings}>
+                            {Object.keys([0, 1, 2, 3, 4]).map((item, index) => (
+                              <img
+                                onSelect={activeSlide}
+                                onClick={() => setActiveSlide(index)}
+                                className="property-small-img"
+                                src={`/assets/${propertyData.property.img}`}
+                                alt="property"
+                              />
+                            ))}
+                          </Slider>
+                        </Row>
+                      </Col>
+                      {/* <Col sm={12} className="d-none d-md-block">
                         <Row className="mt-3 photo-gallery">
                           {Object.keys([0, 1, 2, 3, 4]).map((item, index) => (
                             <Col key={item} sm={6} md={3}>
@@ -202,7 +260,7 @@ const SingleProperty = () => {
                             </Col>
                           ))}
                         </Row>
-                      </Col>
+                      </Col> */}
                     </Row>
                     <Row>
                       <Col sm={12} className="description">

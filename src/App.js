@@ -2,6 +2,8 @@ import { useState, useEffect } from "react";
 import { AppContextProvider } from "lib/contextLib";
 import { Auth } from "aws-amplify";
 import GlobalWrapper from "components/GlobalWrapper";
+import "slick-carousel/slick/slick.css"; 
+import "slick-carousel/slick/slick-theme.css";
 
 function App() {
   // const [isAuthenticating, setIsAuthenticating] = useState(true);
