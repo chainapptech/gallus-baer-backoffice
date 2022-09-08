@@ -51,19 +51,19 @@ const ContactInfoCard = ({
         ))}
         <p className="mt-3">Social network</p>
         <div className="social-network d-flex align-items-center justify-content-start">
-          <div className="me-4">
+          <div className="social-logo me-4">
             <InstagramLogo />
           </div>
-          <div className="me-4">
+          <div className="social-logo me-4">
             <LinkedinLogo />
           </div>
-          <div className="me-4">
+          <div className="social-logo me-4">
             <FacebookLogo />
           </div>
-          <div className="me-4">
+          <div className="social-logo me-4">
             <TikTokLogo />
           </div>
-          <div className="me-4">
+          <div className="social-logo me-4">
             <WhatsAppLogo />
           </div>
         </div>

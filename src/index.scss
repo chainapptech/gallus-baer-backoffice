@@ -1,4 +1,4 @@
-@use './style/custom' as *;
+@use "./style/custom" as *;
 @import "~bootstrap/scss/bootstrap.scss";
 
 /* Box sizing rules */
@@ -10,6 +10,7 @@
 
 body {
   overflow-x: hidden;
+  padding: 0;
 }
 
 /* Remove default margin */

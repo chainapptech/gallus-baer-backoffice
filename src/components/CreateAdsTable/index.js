@@ -8,10 +8,10 @@ import data from "./dummy-documents.json";
 
 import "./styles.scss";
 
-const DocumentTable = () => {
+const CreateAdsTable = () => {
   const [rowsPerPage, setRowPerPage] = useState(10);
   const [currentPage, setCurrentPage] = useState(1);
-  const [showedData, showData] = useState(data.slice(0, rowsPerPage));
+  const [showedData, showData] = useState(data?.slice(0, rowsPerPage));
 
   const handleClick = (page) => {
     setCurrentPage(page);
@@ -23,26 +23,25 @@ const DocumentTable = () => {
 
   return (
     <Col className="table-wrapper">
-      <Table className="document-table">
+      <Table className="ads-table" responsive>
         <thead>
           <tr>
-            <th>Document name</th>
+            <th>Logo</th>
+            <th>Portal name</th>
             <th>Status</th>
-            <th>Uploader</th>
           </tr>
         </thead>
         <tbody>
-          {showedData.map(({ name, status, uploader, img }, index) => (
+          {showedData.map(({ logo, name, status }, index) => (
             <tr key={index} className="table-item ">
               <td>
-                <span className="ps-2">{name}</span>
+                <img className="table-ads-logo" src={`/assets/${logo}`} />
               </td>
               <td>
-                <StatusLabel status={status} />
+                <h5>{name}</h5>
               </td>
-              <td className="d-flex align-items-center ">
-                <ProfileIcon image={img} size="sm" className="me-2" />
-                <p>{uploader}</p>
+              <td className="w-20">
+                <StatusLabel status={status} />
               </td>
             </tr>
           ))}
@@ -70,4 +69,4 @@ const DocumentTable = () => {
   );
 };
 
-export default DocumentTable;
+export default CreateAdsTable;

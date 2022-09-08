@@ -27,17 +27,32 @@
 }
 
 .property-small-img {
-  max-width: 250px;
-  width: 100%;
+  // width: 100%;
+  cursor: pointer;
+}
+
+.slick-track {
+  display: flex !important;
+  flex-wrap: nowrap;
+}
+
+.slick-slide {
+  padding-right: 16px;
+}
+
+.photo-gallery {
+  flex-wrap: nowrap;
+  overflow-x: scroll;
+  // &::-webkit-scrollbar {
+  //   display: none;
+  // }
 }
 
 .description {
-  max-width: 900px;
   margin-top: 40px;
 }
 
 .details {
-  max-width: 900px;
   margin-top: 40px;
   .details-table {
     margin-top: 24px;
