@@ -1,189 +1,98 @@
-// import React from 'react';
-import { Row, Col, Table, Accordion, Button, Badge } from 'react-bootstrap';
-import InquiriesTableRow from 'components/InquiriesTableRow';
-import { BsArrowRight } from 'react-icons/bs';
-import { Link } from 'react-router-dom';
+import { Row, Col, Table, Accordion } from "react-bootstrap";
+import InquiriesTableRow from "components/InquiriesTableRow";
+import { Link } from "react-router-dom";
+import "./styles.scss";
+import PropertyTag from "components/PropertyTag";
+import inquiries from "./inqueries-data.json";
+import Button from "components/Button";
+import ArrowRight from "stories/svg/ArrowRight";
+import ArrowDown from "stories/svg/ArrowDown";
 
 const Inquiries = () => {
   return (
-    <Row>
+    <Row className="inquires-wrapper">
       <Col sm={12} md={12}>
-        <h2 className="py-3">Inquiries</h2>
         <Row>
+          <Col sm={12} md={12}>
+            <h2 className="title-inquires">Inquiries</h2>
+          </Col>
+          <Col
+            className="d-flex align-items-center justify-content-end"
+            sm={12}
+            md={12}
+          >
+            <Button type="text" endIcon={<ArrowDown fill="#063561" />}>
+              Newest first
+            </Button>
+          </Col>
           <Col>
             <Accordion>
-              <Accordion.Item eventKey="0">
-                <Accordion.Header>
-                  <img
-                    className="me-2"
-                    src="assets/lisitng-portal-white.png"
-                    alt="portal-logo"
-                    width={'80px'}
-                  />{' '}
-                  Listing portal name{' '}
-                  <Badge pill bg="primary" className="ms-2">
-                    3 new
-                  </Badge>
-                  <Badge pill bg="primary" className="ms-2">
-                    20 total
-                  </Badge>
-                </Accordion.Header>
-                <Accordion.Body>
-                  <Table striped>
-                    <thead>
-                      <tr>
-                        <th>Name</th>
-                        <th>Property name</th>
-                        <th>Date</th>
-                        <th>Time</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <InquiriesTableRow
-                        name={'Seth'}
-                        surname={'Warren'}
-                        address={'76 Wareham Street, Unit 6E'}
-                        date={'25.03.2022.'}
-                        time={'22:50'}
-                      />
-                      <InquiriesTableRow
-                        name={'Seth'}
-                        surname={'Warren'}
-                        address={'76 Wareham Street, Unit 6E'}
-                        date={'25.03.2022.'}
-                        time={'22:50'}
-                      />
-                      <InquiriesTableRow
-                        name={'Seth'}
-                        surname={'Warren'}
-                        address={'76 Wareham Street, Unit 6E'}
-                        date={'25.03.2022.'}
-                        time={'22:50'}
-                      />
-                    </tbody>
-                  </Table>
-                  <Row>
-                    <Col className="d-flex justify-content-end">
-                      <Link to={'/singleportal'}>
-                        <Button variant="light">
-                          View all <BsArrowRight className="ms-2" />
-                        </Button>
-                      </Link>
-                    </Col>
-                  </Row>
-                </Accordion.Body>
-              </Accordion.Item>
-              <Accordion.Item eventKey="1">
-                <Accordion.Header>
-                  <img
-                    className="me-2"
-                    src="assets/lisitng-portal-white.png"
-                    alt="portal-logo"
-                    width={'80px'}
-                  />
-                  Listing portal name
-                </Accordion.Header>
-                <Accordion.Body>
-                  <Table striped>
-                    <thead>
-                      <tr>
-                        <th>Name</th>
-                        <th>Property name</th>
-                        <th>Date</th>
-                        <th>Time</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <InquiriesTableRow
-                        name={'Seth'}
-                        surname={'Warren'}
-                        address={'76 Wareham Street, Unit 6E'}
-                        date={'25.03.2022.'}
-                        time={'22:50'}
-                      />
-                      <InquiriesTableRow
-                        name={'Seth'}
-                        surname={'Warren'}
-                        address={'76 Wareham Street, Unit 6E'}
-                        date={'25.03.2022.'}
-                        time={'22:50'}
-                      />
-                      <InquiriesTableRow
-                        name={'Seth'}
-                        surname={'Warren'}
-                        address={'76 Wareham Street, Unit 6E'}
-                        date={'25.03.2022.'}
-                        time={'22:50'}
-                      />
-                    </tbody>
-                  </Table>
-                  <Row>
-                    <Col className="d-flex justify-content-end">
-                      <Link to={'/singleportal'}>
-                        <Button variant="light">
-                          View all <BsArrowRight className="ms-2" />
-                        </Button>
-                      </Link>
-                    </Col>
-                  </Row>
-                </Accordion.Body>
-              </Accordion.Item>
-
-              <Accordion.Item eventKey="2">
-                <Accordion.Header>
-                  <img
-                    className="me-2"
-                    src="assets/lisitng-portal-white.png"
-                    alt="portal-logo"
-                    width={'80px'}
-                  />
-                  Listing portal name
-                </Accordion.Header>
-                <Accordion.Body>
-                  <Table striped>
-                    <thead>
-                      <tr>
-                        <th>Name</th>
-                        <th>Property name</th>
-                        <th>Date</th>
-                        <th>Time</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <InquiriesTableRow
-                        name={'Seth'}
-                        surname={'Warren'}
-                        address={'76 Wareham Street, Unit 6E'}
-                        date={'25.03.2022.'}
-                        time={'22:50'}
-                      />
-                      <InquiriesTableRow
-                        name={'Seth'}
-                        surname={'Warren'}
-                        address={'76 Wareham Street, Unit 6E'}
-                        date={'25.03.2022.'}
-                        time={'22:50'}
-                      />
-                      <InquiriesTableRow
-                        name={'Seth'}
-                        surname={'Warren'}
-                        address={'76 Wareham Street, Unit 6E'}
-                        date={'25.03.2022.'}
-                        time={'22:50'}
-                      />
-                    </tbody>
-                  </Table>
-                  <Row>
-                    <Col className="d-flex justify-content-end">
-                      <Link to={'/singleportal'}>
-                        <Button variant="light">
-                          View all <BsArrowRight className="ms-2" />
-                        </Button>
-                      </Link>
-                    </Col>
-                  </Row>
-                </Accordion.Body>
-              </Accordion.Item>
+              {inquiries.map((item) => (
+                <Accordion.Item eventKey={item?.id}>
+                  <Accordion.Header>
+                    <img
+                      className="logo"
+                      src={`assets/${item?.logo}`}
+                      alt="Comparis"
+                      width={"80px"}
+                    />
+                    <div className="descr">
+                      <h5>{item?.companyName}</h5>
+                    </div>
+                    <PropertyTag type={"inquiries"} className={"me-2"}>
+                      7 new
+                    </PropertyTag>
+                    <PropertyTag type={"inquiries"}>31 total</PropertyTag>
+                  </Accordion.Header>
+                  <Accordion.Body>
+                    <Table striped>
+                      <thead>
+                        <tr>
+                          <th>
+                            <h6>User name & email adress</h6>
+                          </th>
+                          <th>
+                            <h6>Property name</h6>
+                          </th>
+                          <th>
+                            <h6>Date name</h6>
+                          </th>
+                          <th>
+                            <h6>Time</h6>
+                          </th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {item?.inquiry?.map((inquiryItem) => (
+                          <InquiriesTableRow
+                            name={inquiryItem.account.name}
+                            surname={inquiryItem.account.surname}
+                            img={inquiryItem.account.img}
+                            email={inquiryItem.account.email}
+                            address={inquiryItem.account.address}
+                            date={inquiryItem.date}
+                            time={inquiryItem.time}
+                          />
+                        ))}
+                      </tbody>
+                    </Table>
+                    <Row>
+                      <Col className="d-flex align-items-center justify-content-end">
+                        <div>
+                          <Link to={"/singleportal"}>
+                            <Button
+                              type="text"
+                              endIcon={<ArrowRight fill="#063561" />}
+                            >
+                              View all
+                            </Button>
+                          </Link>
+                        </div>
+                      </Col>
+                    </Row>
+                  </Accordion.Body>
+                </Accordion.Item>
+              ))}
             </Accordion>
           </Col>
         </Row>

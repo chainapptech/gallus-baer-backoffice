@@ -1,0 +1,101 @@
+[
+  {
+    "id": 1,
+    "logo": "LogoComparis.png",
+    "companyName": "Gallus baer",
+    "inquiry": [
+      {
+        "id": 1,
+        "account": {
+          "name": "Jenna",
+          "surname": "Jones",
+          "email": ["jennajones@gmail.com", "johndoe.ger.milano@gmail.com"],
+          "address": "14 NE 13th St, Miami",
+          "img": "account-1.jpg",
+          "phone": ["+414454543", "+414454543"]
+        },
+        "date": "25.03.2022.",
+        "time": "15:46"
+      },
+      {
+        "id": 2,
+        "account": {
+          "name": "John",
+          "surname": "Doe",
+          "email": ["johndoe@gmail.com", "johndoe.ger.milano@gmail.com"],
+          "address": "14 NE 13th St, Miami",
+          "img": "account-1.jpg",
+          "phone": ["+414454543", "+414454543"]
+        },
+        "date": "25.03.2022.",
+        "time": "15:46"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "logo": "LogoImmoScout24.png",
+    "companyName": "Immoscout",
+    "inquiry": [
+      {
+        "id": 1,
+        "account": {
+          "name": "John",
+          "surname": "Doe",
+          "email": ["johndoe@gmail.com", "johndoe.ger.milano@gmail.com"],
+          "address": "14 NE 13th St, Miami",
+          "img": "account-1.jpg",
+          "phone": ["+414454543", "+414454543"]
+        },
+        "date": "25.03.2022.",
+        "time": "15:46"
+      },
+      {
+        "id": 2,
+        "account": {
+          "name": "John",
+          "surname": "Doe",
+          "email": ["johndoe@gmail.com", "johndoe.ger.milano@gmail.com"],
+          "address": "14 NE 13th St, Miami",
+          "img": "account-1.jpg",
+          "phone": ["+414454543", "+414454543"]
+        },
+        "date": "25.03.2022.",
+        "time": "15:46"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "logo": "LogoImmoScout24.png",
+    "companyName": "Immoscout",
+    "inquiry": [
+      {
+        "id": 1,
+        "account": {
+          "name": "John",
+          "surname": "Doe",
+          "email": ["johndoe@gmail.com", "johndoe.ger.milano@gmail.com"],
+          "address": "14 NE 13th St, Miami",
+          "img": "account-1.jpg",
+          "phone": ["+414454543", "+414454543"]
+        },
+        "date": "25.03.2022.",
+        "time": "15:46"
+      },
+      {
+        "id": 2,
+        "account": {
+          "name": "John",
+          "surname": "Doe",
+          "email": ["johndoe@gmail.com", "johndoe.ger.milano@gmail.com"],
+          "address": "14 NE 13th St, Miami",
+          "img": "account-1.jpg",
+          "phone": ["+414454543", "+414454543"]
+        },
+        "date": "25.03.2022.",
+        "time": "15:46"
+      }
+    ]
+  }
+]
