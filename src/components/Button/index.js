@@ -30,7 +30,7 @@ const Button = ({
         className={"button-notification"}
         number={notificationNumber}
       />
-      {endIcon && <FilledArrowDown className="filled-arrow-svg" />}
+      {endIcon}
     </button>
   );
 };

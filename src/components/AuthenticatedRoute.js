@@ -4,6 +4,7 @@ import SingleAccountPage from "containers/Accounts/SingleAccountPage";
 import Properties from "containers/Properties";
 import Dashboard from "containers/Dashboard";
 import SingleProperty from "containers/Properties/SinglePropertyPage";
+import Inquiries from "containers/Inqueries/Inquiries";
 
 export default function AuthenticatedRoute() {
   return (
@@ -11,6 +12,7 @@ export default function AuthenticatedRoute() {
       <Route path="/" element={<Dashboard />} />
       <Route path="/accounts" element={<Accounts />} />
       <Route path="/accounts/:id" element={<SingleAccountPage />} />
+      <Route path="/inquiries" element={<Inquiries />} />
       <Route path="/properties" element={<Properties />} />
       <Route path="/properties/:id" element={<SingleProperty />} />
     </Routes>

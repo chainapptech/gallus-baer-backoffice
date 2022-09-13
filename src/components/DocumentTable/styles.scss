@@ -1,6 +1,10 @@
+@use "../../style/custom" as *;
+
 .table-wrapper {
   max-width: 1000px;
-  background-color: white;
+  background-color: $n0;
+  border: 1px solid $n100;
+  border-radius: 4px;
   .document-table {
     thead {
       th {
@@ -8,7 +12,7 @@
         font-weight: 700;
         font-size: 14px;
         line-height: 18px;
-        color: #3b485c;
+        color: $n700;
       }
     }
 
@@ -68,7 +72,7 @@
       font-weight: 700;
       font-size: 14px;
       line-height: 20px;
-      color: #3b485c;
+      color: $n700;
     }
   }
 }

@@ -1,0 +1,25 @@
+@use "../../style/custom" as *;
+
+.inquiries-table-row {
+    .info {
+        margin-left: 4px;
+        .profile-pict {
+            margin-left: 4px;
+            margin-right: 24px;
+        }
+        h5 {
+            margin: 0;
+        }
+        .small-text {
+            padding: 0;
+            color: $p500 !important;
+        }
+
+        p {
+            color: $p500 !important;
+        }
+    }
+    .inquire-address {
+        color: $p500 !important;
+    }
+}
