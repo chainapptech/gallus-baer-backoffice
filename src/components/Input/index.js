@@ -12,6 +12,7 @@ const InputComponent = ({
   disabled,
   onChange,
   placeholder,
+  title,
   search,
 }) => (
   <Col className="input-wrapper d-flex flex-column">
@@ -20,9 +21,9 @@ const InputComponent = ({
       <DropdownButton
         disabled={disabled}
         id="dropdown-basic-button"
-        title="Eng"
+        title={title ? <h5>{title}</h5> : "Eng"}
       >
-        <Dropdown.Item href="#">Eng</Dropdown.Item>
+        <Dropdown.Item href="#">0</Dropdown.Item>
       </DropdownButton>
     ) : (
       <div className="d-flex align-items-center justify-content-center position-relative">
