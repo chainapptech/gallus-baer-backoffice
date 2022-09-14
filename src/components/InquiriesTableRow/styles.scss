@@ -1,5 +1,50 @@
 @use "../../style/custom" as *;
 
+.offcanvas-body {
+    padding: 0 24px;
+}
+hr {
+    margin: 0;
+}
+
+.info-canvas {
+    margin-top: 24px;
+    .profile-pict {
+        margin-left: 4px;
+        margin-right: 24px;
+    }
+    h5 {
+        margin: 0;
+    }
+    .small-text {
+        padding: 0;
+        color: $p500 !important;
+    }
+
+    p {
+        color: $p500 !important;
+    }
+}
+
+.info-canvas-description {
+    margin-top: 32px;
+    margin-bottom: 32px;
+}
+
+.info-canvas-select {
+    margin-top: 40px;
+    margin-bottom: 215px;
+    .option-inq {
+        background-color: teal;
+        border: 1px solid red;
+        border-radius: 4px;
+    }
+}
+
+.inquire-address {
+    color: $p500 !important;
+}
+
 .inquiries-table-row {
     .info {
         margin-left: 4px;

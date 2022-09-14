@@ -64,15 +64,7 @@ const Inquiries = () => {
                       </thead>
                       <tbody>
                         {item?.inquiry?.map((inquiryItem) => (
-                          <InquiriesTableRow
-                            name={inquiryItem.account.name}
-                            surname={inquiryItem.account.surname}
-                            img={inquiryItem.account.img}
-                            email={inquiryItem.account.email}
-                            address={inquiryItem.account.address}
-                            date={inquiryItem.date}
-                            time={inquiryItem.time}
-                          />
+                          <InquiriesTableRow inquiryItem={inquiryItem} />
                         ))}
                       </tbody>
                     </Table>
