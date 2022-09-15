@@ -28,7 +28,7 @@ const Inquiries = () => {
           <Col>
             <Accordion>
               {inquiries.map((item) => (
-                <Accordion.Item eventKey={item?.id}>
+                <Accordion.Item key={item?.id} eventKey={item?.id}>
                   <Accordion.Header>
                     <img
                       className="logo"
@@ -64,7 +64,10 @@ const Inquiries = () => {
                       </thead>
                       <tbody>
                         {item?.inquiry?.map((inquiryItem) => (
-                          <InquiriesTableRow inquiryItem={inquiryItem} />
+                          <InquiriesTableRow
+                            key={inquiryItem.account.email}
+                            inquiryItem={inquiryItem}
+                          />
                         ))}
                       </tbody>
                     </Table>

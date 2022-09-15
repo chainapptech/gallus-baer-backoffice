@@ -34,6 +34,7 @@ import TikTokLogoPrimary from "stories/svg/TikTokLogoPrimary";
 import WhatsAppLogoColor from "stories/svg/WhatsAppLogoColor";
 import FacebookLogoColor from "stories/svg/FacebookLogoColor";
 import CreateAdsTable from "components/CreateAdsTable";
+import InquiryCard from "components/InquiryCard";
 
 const detailLabels = [
   "Town",
@@ -353,16 +354,6 @@ const SingleProperty = () => {
                     title="Inquiries"
                     tabClassName="position-relative pt-3 pb-3 ps-4 pe-4 bg-transparent"
                   >
-                    {/* <Tabs
-                      defaultActiveKey="new"
-                      id="uncontrolled-tab-example"
-                      className="mb-4 mt-4"
-                    >
-                      <Tab
-                        eventKey="new"
-                        title="New inquiries"
-                        tabClassName="position-relative pt-3 pb-3 ps-4 pe-4 bg-transparent"
-                      > */}
                     <>
                       <Row>
                         <Col sm={10} md={8}>
@@ -372,8 +363,7 @@ const SingleProperty = () => {
                           />
                         </Col>
                       </Row>
-
-                      <div className="mt-4">
+                      {/* <div className="mt-4">
                         {inquiriesData.map(
                           ({
                             avatar,
@@ -432,73 +422,15 @@ const SingleProperty = () => {
                             </div>
                           )
                         )}
-                      </div>
+                      </div> */}
+                      <Row>
+                        <Col sm={10} md={9}>
+                          <div className="mt-4">
+                            <InquiryCard />
+                          </div>
+                        </Col>
+                      </Row>
                     </>
-                    {/* </Tab> */}
-                    {/* <Tab
-                        eventKey="answered"
-                        title="Answered inquiries"
-                        tabClassName="position-relative pt-3 pb-3 ps-4 pe-4 bg-transparent"
-                      >
-                        {inquiriesData.map(
-                          ({
-                            avatar,
-                            name,
-                            details,
-                            phone,
-                            time,
-                            date,
-                            id,
-                          }) => (
-                            <div className="inquirie ms-1 mb-5" key={id}>
-                              <div className="inquirie-details mb-3">
-                                <ProfileIcon image={avatar} />
-                                <Row className="ms-1">
-                                  <h4 className="mb-1">{name}</h4>
-                                  <div className="info-wrapper mb-2">
-                                    <p>
-                                      <Phone />
-                                      {phone}
-                                    </p>
-                                    <p>
-                                      <CalendarPopluated />
-                                      {date}
-                                    </p>
-                                    <p>
-                                      <ClockOutline />
-                                      {time}
-                                    </p>
-                                  </div>
-                                </Row>
-                                <div className="logo-wrapper">
-                                  <p>Listing Portal Logo</p>
-                                </div>
-                                <div className="check">
-                                  <CheckedOutline />
-                                </div>
-                              </div>
-                              <div className="details">
-                                <p>{details}</p>
-                                <div className="d-flex mt-3">
-                                  <Button
-                                    leadingIcon={<CalendarPopluated />}
-                                    type="text"
-                                  >
-                                    Make an appointment
-                                  </Button>
-                                  <Button
-                                    leadingIcon={<PaperPlaneOutline />}
-                                    type="text"
-                                  >
-                                    Send mail
-                                  </Button>
-                                </div>
-                              </div>
-                            </div>
-                          )
-                        )}
-                      </Tab> */}
-                    {/* </Tabs> */}
                   </Tab>
                   <Tab
                     eventKey="overview"

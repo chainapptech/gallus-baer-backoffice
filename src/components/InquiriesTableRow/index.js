@@ -60,14 +60,14 @@ const InquiriesTableRow = ({ inquiryItem }) => {
               md={12}
               className="d-flex align-items-center justify-content-start pt-3 pb-3"
             >
-              <div className="d-flex align-items-center justify-content-start">
+              <div className="d-flex align-items-center justify-content-center">
                 <img
                   className="logo"
                   src={`assets/LogoImmoScout24.png`}
                   alt="Comparis"
                   width={"80px"}
                 />
-                <h5 className="ms-3 me-2">Gallus baer</h5>
+                <h5 className="ms-3 me-3 mb-0">Gallus baer</h5>
                 <PropertyTag type={"inquiries"} className={"me-2 ms-4"}>
                   7 new
                 </PropertyTag>
@@ -131,12 +131,19 @@ const InquiriesTableRow = ({ inquiryItem }) => {
                 <Col xs={12}>
                   <Row>
                     <Col md={7} className="pe-0">
-                      <Button type="secondary" leadingIcon={<CalendarDotted />}>
+                      <Button
+                        className={"single-inquiry-button"}
+                        type="secondary"
+                        leadingIcon={<CalendarDotted />}
+                      >
                         Make an appointment
                       </Button>
                     </Col>
                     <Col md={5}>
-                      <Button leadingIcon={<SendOutlined fill="#EBD3BD" />}>
+                      <Button
+                        className={"single-inquiry-button"}
+                        leadingIcon={<SendOutlined fill="#EBD3BD" />}
+                      >
                         Send mail
                       </Button>
                     </Col>
@@ -145,7 +152,7 @@ const InquiriesTableRow = ({ inquiryItem }) => {
                 <Col md={7} className="info-canvas-select">
                   <Form.Group>
                     <Form.Label className="m-0">
-                      <h5 className="ms-2">Label</h5>
+                      <h5 className="ms-2">Inquiry status</h5>
                     </Form.Label>
                     <Form.Select
                       className="mb-3"
