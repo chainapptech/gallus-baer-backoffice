@@ -1,0 +1,29 @@
+@use "../../../style/custom" as *;
+.single-inquiry-page-wrapper {
+    .single-inquiry-card {
+        margin-bottom: 32px;
+        .info-inquiry {
+            .profile-pict {
+                margin-left: 4px;
+                margin-right: 24px;
+            }
+            p {
+                color: $p500 !important;
+            }
+        }
+        .phone-date-time {
+            margin-top: 12px;
+            margin-bottom: 12px;
+        }
+        .single-inquiry-paragraph {
+            padding-top: 4px;
+            padding-bottom: 4px;
+            margin-top: 24px;
+            margin-bottom: 24px;
+        }
+    }
+
+    .inquiries-logo-company {
+        max-width: 250px;
+    }
+}

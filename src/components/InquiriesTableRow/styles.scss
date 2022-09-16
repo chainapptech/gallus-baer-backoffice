@@ -31,6 +31,10 @@ hr {
     margin-bottom: 32px;
 }
 
+.single-inquiry-button {
+    width: 100%;
+}
+
 .info-canvas-select {
     margin-top: 40px;
     margin-bottom: 215px;
@@ -52,9 +56,7 @@ hr {
             margin-left: 4px;
             margin-right: 24px;
         }
-        h5 {
-            margin: 0;
-        }
+
         .small-text {
             padding: 0;
             color: $p500 !important;
