@@ -1,14 +1,14 @@
-import React from 'react';
-import { Col } from 'react-bootstrap';
+import { Col } from "react-bootstrap";
 
-import './styles.scss';
+import "./styles.scss";
 
-const AccountHistory = ({ user, histories }) => (
+const AccountHistory = ({ account }) => (
   <Col className="account-history">
     <h2 className="mb-3">Account history</h2>
-    {histories.map(({ id, history }, index) => (
-      <p key={index} className="mb-2">
-        {history.date} {history.time} <span className="fw-bold">{`@${user}`}</span>{' '}
+    {account.histories.map(({ id, history }) => (
+      <p key={id} className="mb-2">
+        {history.date} {history.time}{" "}
+        <span className="fw-bold">{`@${account.name}`}</span>{" "}
         <span>{history.action}</span>
       </p>
     ))}

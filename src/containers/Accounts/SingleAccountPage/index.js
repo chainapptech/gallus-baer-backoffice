@@ -105,8 +105,9 @@ const SingleAccountPage = () => {
                 <Row className="mt-4 pt-2">
                   <Col>
                     <AccountHistory
-                      histories={accountData.account.histories}
-                      user={accountData.account.name}
+                      account={accountData.account}
+                      // histories={accountData.account.histories}
+                      // user={accountData.account.name}
                     />
                   </Col>
                 </Row>

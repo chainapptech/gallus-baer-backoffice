@@ -60,14 +60,17 @@ const PropertyCard = ({ property, user, id, waitingForApproval }) => {
             <Container>
               <Row>
                 {property.tags.map((tag) => (
-                  <PropertyTag key={tag} className={"tag-property-property-card"}>
+                  <PropertyTag
+                    key={tag}
+                    className={"tag-property-property-card"}
+                  >
                     {tag}
                   </PropertyTag>
                 ))}
               </Row>
               {waitingForApproval && (
                 <Row className="mt-2">
-                  <PropertyTag type={waitingForApproval}>
+                  <PropertyTag type={"waitingForApproval"}>
                     {waitingForApproval}
                   </PropertyTag>
                 </Row>
