@@ -1,21 +1,10 @@
 import { useEffect, useState } from "react";
-import {
-  Row,
-  Col,
-  Tabs,
-  Tab,
-  InputGroup,
-  FormControl,
-  Offcanvas,
-  Form,
-} from "react-bootstrap";
+import { Row, Col, Tabs, Tab, Offcanvas, Form } from "react-bootstrap";
 import { MultiSelect } from "react-multi-select-component";
 
 import Button from "components/Button";
-import Property from "components/PropertyCard";
+import PropertyCard from "components/PropertyCard";
 import NotificationBadge from "components/NotificationBadge";
-import MagnifyingGlass from "stories/svg/MagnifyingGlass";
-import Plus from "stories/svg/Plus";
 import FilterSvg from "stories/svg/Filter";
 import FilledArrowDown from "stories/svg/FilledArrowDown";
 import data from "./dummy.json";
@@ -133,7 +122,7 @@ const Properties = () => {
                   .filter(({ property }) => property.approved)
                   .map(({ id, property, user }) => (
                     <Col key={id} sm={12} md={6}>
-                      <Property property={property} user={user} id={id} />
+                      <PropertyCard property={property} user={user} id={id} />
                     </Col>
                   ))}
               </Row>
@@ -174,7 +163,7 @@ const Properties = () => {
                   .filter(({ property }) => !property.approved)
                   .map(({ id, property, user }) => (
                     <Col key={id} sm={12} md={6}>
-                      <Property
+                      <PropertyCard
                         waitingForApproval={"unassigned"}
                         property={property}
                         user={user}
@@ -220,7 +209,7 @@ const Properties = () => {
                   .filter(({ property }) => property.unapproved)
                   .map(({ id, property, user }) => (
                     <Col key={id} sm={12} md={6}>
-                      <Property property={property} user={user} id={id} />
+                      <PropertyCard property={property} user={user} id={id} />
                     </Col>
                   ))}
               </Row>

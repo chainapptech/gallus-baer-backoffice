@@ -8,11 +8,10 @@ import SendOutlined from "stories/svg/SendOutlined";
 import Time from "stories/svg/Time";
 import "./styles.scss";
 
-const selectOptions = ["Not answered", "Answered", "Assigned"];
-
 const InquiryCard = () => {
   const [option, setOption] = useState("Not answered");
 
+  const selectOptions = ["Not answered", "Answered", "Assigned"];
   return (
     <div className="single-inquiry-card">
       <Row>

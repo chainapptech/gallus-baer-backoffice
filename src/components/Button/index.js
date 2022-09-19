@@ -30,7 +30,7 @@ const Button = ({
         className={"button-notification"}
         number={notificationNumber}
       />
-      {endIcon}
+      {endIcon !== true ? endIcon : <AddOutline className="add-outline-svg" />}
     </button>
   );
 };

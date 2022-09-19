@@ -80,6 +80,16 @@ const StatusLabel = ({ status }) => {
             <p>Not published</p>
           </Badge>
         );
+      case 8:
+        return (
+          <Badge
+            bg="none"
+            className="d-flex align-items-center status-label pending"
+          >
+            <BlueClock />
+            <p>Pending</p>
+          </Badge>
+        );
       default:
         return (
           <Badge
@@ -92,6 +102,7 @@ const StatusLabel = ({ status }) => {
         );
     }
   };
+
   return <>{labelTypeHandler(status)}</>;
 };
 

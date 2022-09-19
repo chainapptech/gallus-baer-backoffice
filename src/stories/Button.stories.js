@@ -1,13 +1,11 @@
-import React from 'react';
-
-import Button from '../components/Button';
+import Button from "../components/Button";
 
 export default {
-  title: 'Components/Button',
+  title: "Components/Button",
   component: Button,
   argTypes: {
     type: {
-      control: { type: 'select', options: ['primary', 'secondary', 'text'] },
+      control: { type: "select", options: ["primary", "secondary", "text"] },
     },
   },
 };
@@ -16,7 +14,7 @@ const Template = (args) => <Button {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {
-  children: 'Button label',
+  children: "Button label",
   leadingIcon: false,
   endIcon: false,
   disabled: false,
