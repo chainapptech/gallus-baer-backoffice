@@ -12,6 +12,11 @@
     cursor: pointer;
   }
 
+  .tag-property-property-card {
+    margin-top: 8px;
+    margin-right: 8px;
+  }
+
   .card-body {
     padding: 0;
   }
@@ -33,8 +38,11 @@
     height: 2px;
   }
 
-  .user-name-surname {
-    margin-left: 8px;
+  .profile-icon-property-card {
+    margin-top: 16px;
+    .user-name-surname {
+      margin-left: 8px;
+    }
   }
 
   .favorite-property-icon {

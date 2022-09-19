@@ -33,32 +33,37 @@ const InquiryCard = () => {
                 <p className="link">jennajones@gmail.com</p>
               </div>
             </Col>
-            <Col
-              md={12}
-              className="d-flex align-items-center justify-content-start phone-date-time"
-            >
-              <div className="d-flex align-items-center justify-content-start me-3">
-                <div className="me-2">
-                  <Phone />
-                </div>
-                <p>+41 467 6655</p>
-              </div>
-              <div className="d-flex align-items-center justify-content-start ms-1 me-3">
-                <div className="me-2">
-                  <CalendarDotted />
-                </div>
-                <p>13.03.2022.</p>
-              </div>
-              <div className="d-flex align-items-center justify-content-start ms-1">
-                <div className="me-2">
-                  <Time />
-                </div>
-                <p>20:10</p>
-              </div>
+            <Col md={12} className="phone-date-time">
+              <Row className="ms-0 ms-md-0">
+                <Col sm={12} md={3} className="g-0 mb-2 mb-md-0 me-md-0">
+                  <div className="d-flex align-items-center justify-content-start">
+                    <div className="me-2">
+                      <Phone />
+                    </div>
+                    <p>+41 467 6655</p>
+                  </div>
+                </Col>
+                <Col sm={12} md={3} className="g-0 mb-2 mb-md-0 ms-md-0">
+                  <div className="d-flex align-items-center justify-content-start">
+                    <div className="me-2">
+                      <CalendarDotted />
+                    </div>
+                    <p>13.03.2022.</p>
+                  </div>
+                </Col>
+                <Col sm={12} md={3} className="g-0 mb-2 mb-md-0">
+                  <div className="d-flex align-items-center justify-content-start">
+                    <div className="me-2">
+                      <Time />
+                    </div>
+                    <p>20:10</p>
+                  </div>
+                </Col>
+              </Row>
             </Col>
             <Col
               md={12}
-              className="d-flex align-items-center justify-content-start"
+              className="d-flex align-items-center justify-content-start mb-3 mb-md-0"
             >
               <p className="me-1">Property:</p>
 
@@ -70,8 +75,8 @@ const InquiryCard = () => {
         </Col>
         <Col md={3}>
           <Form.Group>
-            <Form.Label className="m-0">
-              <h5 className="ms-2">Inquiry status</h5>
+            <Form.Label className="d-none d-md-block">
+              <h5 className="ms-2 ">Inquiry status</h5>
             </Form.Label>
             <Form.Select
               className="mb-3"
@@ -88,7 +93,7 @@ const InquiryCard = () => {
         </Col>
       </Row>
       <Row>
-        <Col md={12} className="single-inquiry-paragraph">
+        <Col md={12} className="single-inquiry-paragraph-p mt-0 mt-md-4">
           <p>
             Etiam dictum nisi sed dui pretium facilisis. Sed nec nulla
             ullamcorper, iaculis mi et, tincidunt urna. Aliquam eget velit eget
@@ -108,9 +113,9 @@ const InquiryCard = () => {
                 Make an appointment
               </Button>
             </Col>
-            <Col md={5}>
+            <Col md={4}>
               <Button
-                className={"single-inquiry-button"}
+                className={"single-inquiry-button mt-3 mt-md-0"}
                 leadingIcon={<SendOutlined fill="#EBD3BD" />}
               >
                 Send mail

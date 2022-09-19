@@ -60,7 +60,9 @@ const PropertyCard = ({ property, user, id, waitingForApproval }) => {
             <Container>
               <Row>
                 {property.tags.map((tag) => (
-                  <PropertyTag key={tag}>{tag}</PropertyTag>
+                  <PropertyTag key={tag} className={"tag-property-property-card"}>
+                    {tag}
+                  </PropertyTag>
                 ))}
               </Row>
               {waitingForApproval && (
@@ -78,7 +80,7 @@ const PropertyCard = ({ property, user, id, waitingForApproval }) => {
             </p>
             <hr />
             <Row>
-              <Col className="d-flex">
+              <Col className="d-flex profile-icon-property-card">
                 <ProfileIcon
                   name={user.name}
                   surname={user.surname}

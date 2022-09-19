@@ -122,9 +122,11 @@ const SingleProperty = () => {
                   </Breadcrumb.Item>
                 </Breadcrumb>
                 <h3 className="mt-2">West Park Apartment</h3>
-                <Row className="ms-0 mt-2 mb-3">
+                <Row className="ms-0 mt-3 mb-3">
                   {propertyData.property.tags.map((tag) => (
-                    <PropertyTag key={tag}>{tag}</PropertyTag>
+                    <PropertyTag key={tag} className={"tag-property"}>
+                      {tag}
+                    </PropertyTag>
                   ))}
                 </Row>
                 <Row>
@@ -426,6 +428,9 @@ const SingleProperty = () => {
                       <Row>
                         <Col sm={10} md={9}>
                           <div className="mt-4">
+                            <InquiryCard />
+                            <InquiryCard />
+                            <InquiryCard />
                             <InquiryCard />
                           </div>
                         </Col>
