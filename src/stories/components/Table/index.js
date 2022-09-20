@@ -1,14 +1,16 @@
 import { useState, useEffect } from "react";
 
-import SingleAccount from "../SingleAccount";
+import SingleAccount from "../../../components/SingleAccount";
+// import { Link } from "react-router-dom";
 import { Row, Col } from "react-bootstrap";
-import Button from "components/Button";
+import Button from "../../../components/Button";
 
 import "./styles.scss";
-import SearchInput from "components/SearchInput";
-import SendOutlined from "stories/svg/SendOutlined";
+import SearchInput from "../../../components/SearchInput";
 import Modal from "react-bootstrap/Modal";
-import InputComponent from "components/Input";
+import InputComponent from "../../../components/Input";
+import SendOutlined from "stories/svg/SendOutlined";
+// import SingleAccount from "components/SingleAccount";
 
 const Table = ({ accounts }) => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -100,7 +102,9 @@ const Table = ({ accounts }) => {
       </div>
       <div className="table-body">
         {accountsList.map(({ id, account }) => (
+          // <Link key={id} to={`/accounts/${id}`}>
           <SingleAccount user={account} table />
+          // </Link>
         ))}
       </div>
 

@@ -1,0 +1,40 @@
+@use "../../../style/custom" as *;
+
+.sidebar-links {
+  width: 100%;
+  border: 2px solid transparent;
+  border-left: 4px solid transparent;
+  cursor: pointer;
+  background: transparent;
+  outline: none;
+  transition: background 100ms;
+  padding-top: 15px;
+  padding-bottom: 13px;
+  .inner-button {
+    width: 100%;
+  }
+  svg {
+    width: 20px;
+    height: 20px;
+    margin-right: 8px;
+    fill: $n500;
+  }
+}
+.active-link {
+  box-shadow: none;
+  border: 2px solid transparent;
+  border-left: 4px solid $p500;
+  background-color: $p50;
+  .link-text {
+    color: $p500;
+    font-weight: 700;
+  }
+  svg {
+    fill: $p500;
+  }
+  &:before {
+    content: " ";
+    border: 0 solid transparent;
+    background-color: red;
+  }
+}

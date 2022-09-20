@@ -1,4 +1,4 @@
-import PropertyCard from "../components/PropertyCard";
+import PropertyCard from "../stories/components/PropertyCard";
 
 export default {
   title: "Components/PropertyCard",

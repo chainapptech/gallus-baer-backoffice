@@ -70,7 +70,7 @@ const PropertyCard = ({ property, user, id, waitingForApproval }) => {
               </Row>
               {waitingForApproval && (
                 <Row className="mt-2">
-                  <PropertyTag type={"waitingForApproval"}>
+                  <PropertyTag type={waitingForApproval}>
                     {waitingForApproval}
                   </PropertyTag>
                 </Row>
