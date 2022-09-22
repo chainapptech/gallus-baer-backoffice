@@ -9,6 +9,7 @@ import SearchInput from "components/SearchInput";
 import SendOutlined from "stories/svg/SendOutlined";
 import Modal from "react-bootstrap/Modal";
 import InputComponent from "components/Input";
+import { Link } from "react-router-dom";
 
 const Table = ({ accounts }) => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -35,31 +36,30 @@ const Table = ({ accounts }) => {
   return (
     <div className="d-flex flex-column accounts-table">
       <Row className="table-name">
-        <Col sm={12} md={3}>
+        <Col sm={12} md={5}>
           <h4>Accounts</h4>
         </Col>
 
-        <Col sm={12} md={6}>
-          <div className="d-flex">
-            <SearchInput
-              placeholder={"Search account by account name, role"}
-              onChange={(e) => setSearchTerm(e.target.value)}
-            />
-
-            <Button className={"ms-3"} type="secondary">
-              Filters
-            </Button>
-          </div>
-        </Col>
-        <Col sm={12} md={3}>
-          <div className="d-flex justify-content-end">
-            <Button
-              onClick={handleShow}
-              leadingIcon={<SendOutlined fill="#EBD3BD" />}
-            >
-              Invite a new user
-            </Button>
-          </div>
+        <Col sm={12} md={7}>
+          <Row className="d-flex align-items-center justify-content-end">
+            <Col md={6} className="pe-0">
+              <SearchInput
+                placeholder={"Search account by account name, role"}
+                onChange={(e) => setSearchTerm(e.target.value)}
+              />
+            </Col>
+            <Col md={2} className="pe-0 d-flex justify-content-end">
+              <Button type="secondary">Filters</Button>
+            </Col>
+            <Col md={4} className="d-flex justify-content-end">
+              <Button
+                onClick={handleShow}
+                leadingIcon={<SendOutlined fill="#EBD3BD" />}
+              >
+                Invite a new user
+              </Button>
+            </Col>
+          </Row>
         </Col>
       </Row>
       <Modal centered show={showModal} onHide={handleClose}>
@@ -100,7 +100,9 @@ const Table = ({ accounts }) => {
       </div>
       <div className="table-body">
         {accountsList.map(({ id, account }) => (
-          <SingleAccount user={account} table />
+          <Link key={id} to={`/accounts/${id}`}>
+            <SingleAccount user={account} table />
+          </Link>
         ))}
       </div>
 

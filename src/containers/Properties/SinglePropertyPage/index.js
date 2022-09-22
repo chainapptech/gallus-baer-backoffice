@@ -358,75 +358,16 @@ const SingleProperty = () => {
                   >
                     <>
                       <Row>
-                        <Col sm={10} md={8}>
+                        <Col sm={10} md={7}>
                           <InputComponent
                             placeholder="Search..."
                             type={"search"}
                           />
                         </Col>
                       </Row>
-                      {/* <div className="mt-4">
-                        {inquiriesData.map(
-                          ({
-                            avatar,
-                            name,
-                            details,
-                            phone,
-                            time,
-                            date,
-                            id,
-                          }) => (
-                            <div className="inquirie ms-1" key={id}>
-                              <div className="inquirie-details">
-                                <ProfileIcon image={avatar} />
-                                <Row className="ms-1">
-                                  <h4 className="mb-1">{name}</h4>
-                                  <div className="info-wrapper mb-2">
-                                    <p>
-                                      <Phone />
-                                      {phone}
-                                    </p>
-                                    <p>
-                                      <CalendarPopluated />
-                                      {date}
-                                    </p>
-                                    <p>
-                                      <ClockOutline />
-                                      {time}
-                                    </p>
-                                  </div>
-                                </Row>
-                                <div className="logo-wrapper">
-                                  <p>Listing Portal Logo</p>
-                                </div>
-                                <div className="check">
-                                  <CheckedOutline />
-                                </div>
-                              </div>
-                              <div className="details">
-                                <p>{details}</p>
-                                <div className="d-flex mt-3">
-                                  <Button
-                                    leadingIcon={<CalendarPopluated />}
-                                    type="secondary"
-                                    className={"me-4"}
-                                  >
-                                    Make an appointment
-                                  </Button>
-                                  <Button
-                                    leadingIcon={<PaperPlaneOutline />}
-                                    type="secondary"
-                                  >
-                                    Send mail
-                                  </Button>
-                                </div>
-                              </div>
-                            </div>
-                          )
-                        )}
-                      </div> */}
+
                       <Row>
-                        <Col sm={10} md={9}>
+                        <Col sm={10} md={10}>
                           <div className="mt-4">
                             <InquiryCard />
                             <InquiryCard />
@@ -451,9 +392,9 @@ const SingleProperty = () => {
                     </Row>
 
                     <Row className="gy-3 mt-4">
-                      <h3 className="mb-2">Customer feedback</h3>
+                      <h3 className="mb-4">Customer feedback</h3>
                       {customerFeedbakData.map(({ id, feedback }) => (
-                        <Col key={id} sm={12} md={11}>
+                        <Col key={id} sm={12} md={11} className="m-0">
                           <CustomerFeedbackCard feedback={feedback} />
                         </Col>
                       ))}

@@ -10,7 +10,14 @@
 
 body {
   overflow-x: hidden;
+  overflow-y: hidden;
   padding: 0;
+}
+
+.main-content {
+  max-height: 100vh;
+  overflow-y: scroll;
+  padding-bottom: 100px;
 }
 
 /* Remove default margin */

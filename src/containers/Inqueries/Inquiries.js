@@ -63,6 +63,32 @@ const Inquiries = () => {
               {inquiries.map((item) => (
                 <Accordion.Item key={item?.id} eventKey={item?.id}>
                   <Accordion.Header>
+                    {/* <Row>
+                      <Col md={2} className="pe-0 logo d-none d-md-block">
+                        <img
+                          src={`assets/${item?.logo}`}
+                          alt="Comparis"
+                          width={"80px"}
+                        />
+                      </Col>
+                      <Col md={2} className="descr d-none d-md-block">
+                        <h5>{item?.companyName}</h5>
+                      </Col>
+                      <Col md={2}>
+                        <div className="d-flex align-items-center justify-content-center">
+                          <PropertyTag type={"inquiries"} className={"me-2"}>
+                            7 new
+                          </PropertyTag>
+                          <PropertyTag
+                            type={"inquiries"}
+                            className={"d-none d-md-block"}
+                          >
+                            31 total
+                          </PropertyTag>
+                        </div>
+                      </Col>
+                      <Col md={6}></Col>
+                    </Row> */}
                     <img
                       className="logo d-none d-md-block"
                       src={`assets/${item?.logo}`}

@@ -8,8 +8,6 @@ import PropertyTag from "../PropertyTag";
 import IconButton from "../IconButton";
 import ProfileIcon from "../ProfileIcon";
 import OutlineHeart from "../../stories/svg/OutlineHeart";
-import PropertyActions from "./PropertyActions";
-import Dots from "stories/svg/Dots";
 
 import "./styles.scss";
 
@@ -39,14 +37,15 @@ const PropertyCard = ({ property, user, id, waitingForApproval }) => {
             <Card.Img variant="top" src={`assets/no-property.png`} />
           )}
           <Col className="p-3">
-            <Col className="d-flex align-items-start justify-content-between">
-              <div className="col-md-10">
-                <h4>CHF {numberWithCommas(property.price)}.00</h4>
-                <p className="opacity-75">
-                  CHF {numberWithCommas(property["previous-price"])}.00
-                </p>
-              </div>
-              <div
+            <Col
+              md={12}
+              className="d-flex align-items-start justify-content-between"
+            >
+              {/* <div className="col-md-10"> */}
+              <h4>CHF {numberWithCommas(property.price)}.00</h4>
+
+              {/* </div> */}
+              {/* <div
                 className="actions"
                 ref={ref}
                 onClick={() => setIsActionsClicked((state) => !state)}
@@ -55,7 +54,12 @@ const PropertyCard = ({ property, user, id, waitingForApproval }) => {
               >
                 <Dots className="p-1" />
                 {isActionsClicked && <PropertyActions />}
-              </div>
+              </div> */}
+            </Col>
+            <Col md={12}>
+              <p className="opacity-75">
+                CHF {numberWithCommas(property["previous-price"])}.00
+              </p>
             </Col>
             <Container>
               <Row>

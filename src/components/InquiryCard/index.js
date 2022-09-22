@@ -32,7 +32,7 @@ const InquiryCard = () => {
                 <p className="link">jennajones@gmail.com</p>
               </div>
             </Col>
-            <Col md={12} className="phone-date-time">
+            <Col md={10} className="phone-date-time">
               <Row className="ms-0 ms-md-0">
                 <Col sm={12} md={4} className="g-0 mb-2 mb-md-0 me-md-0">
                   <div className="d-flex align-items-center justify-content-start">

@@ -61,12 +61,12 @@ const Sidebar = () => {
     <Col
       sm={12}
       md={2}
-      className="mt-4 pt-4 ps-0 min-vh-100 sidebar d-none d-md-block"
+      className="mt-4 pt-4 px-0 min-vh-100 sidebar d-none d-md-block"
     >
       <Nav
         fixed="top"
         defaultActiveKey="/home"
-        className="flex-column mt-4 pt-4 position-fixed"
+        className="flex-column mt-4 pt-4 "
       >
         <p className="ms-4 mb-4">WELCOME, LUCIA</p>
         {links.map((link, index) => (
