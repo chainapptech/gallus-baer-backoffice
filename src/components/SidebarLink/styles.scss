@@ -6,17 +6,21 @@
   cursor: pointer;
   background: transparent;
   outline: none;
-  transition: background 100ms;
-  padding-top: 15px;
-  padding-bottom: 13px;
+
   .inner-button {
     width: 100%;
+    padding: 14px 0;
   }
+
   svg {
     width: 20px;
     height: 20px;
     margin-right: 8px;
     fill: $n500;
+  }
+
+  &:hover{
+    background-color: $p50;
   }
 }
 .active-link {
@@ -35,5 +39,41 @@
     content: " ";
     border: 0 solid transparent;
     background-color: red;
+  }
+}
+
+.active-link-accordion{
+  background-color: $p50;
+}
+
+.sidebar-accordion{
+  padding: 0;
+
+  .accordion-header{
+    &:hover{
+      background-color: $p50;
+    }
+  }
+
+  .link-text{
+    font-family: $font-main;
+    color: $n500;
+    font-weight: 400;
+    line-height: 20px;
+  }
+  
+  .accordion-item{
+    border: none;
+  }
+  .accordion-button{
+    padding: 0;
+    background-color: transparent;
+    box-shadow: none;
+  }
+
+  .accordion-body{
+     .inner-button {
+        padding: 8px 0;
+      }
   }
 }
