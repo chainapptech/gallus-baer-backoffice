@@ -54,7 +54,7 @@ const Inquiries = () => {
             sm={12}
             md={12}
           >
-            <Button type="text" endIcon={<ArrowDown fill="#063561" />}>
+            <Button className={"mb-2"} type="text" endIcon={<ArrowDown fill="#063561" />}>
               Newest first
             </Button>
           </Col>

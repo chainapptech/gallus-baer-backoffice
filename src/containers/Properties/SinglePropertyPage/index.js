@@ -55,7 +55,7 @@ let settings = {
   dots: false,
   infinite: false,
   speed: 500,
-  slidesToShow: 4,
+  slidesToShow: 4.2,
   slidesToScroll: 4,
   initialSlide: 0,
   responsive: [
@@ -224,11 +224,11 @@ const SingleProperty = () => {
                           onSelect={(e) => setActiveSlide(e)}
                           activeIndex={activeSlide}
                         >
-                          {Object.keys([0, 1, 2, 3, 4]).map((key) => (
-                            <Carousel.Item key={key}>
+                          {propertyData.property.images.map((img, index) => (
+                            <Carousel.Item key={index}>
                               <img
                                 className="d-block w-100"
-                                src={`/assets/${propertyData.property.img}`}
+                                src={`/assets/${img}`}
                                 alt="Slide"
                               />
                             </Carousel.Item>
@@ -238,12 +238,13 @@ const SingleProperty = () => {
                       <Col sm={12} className="d-none d-md-block">
                         <Row className="mt-3">
                           <Slider {...settings}>
-                            {Object.keys([0, 1, 2, 3, 4]).map((item, index) => (
+                            {propertyData.property.images.map((img, index) => (
                               <img
+                                key={index}
                                 onSelect={activeSlide}
                                 onClick={() => setActiveSlide(index)}
                                 className="property-small-img"
-                                src={`/assets/${propertyData.property.img}`}
+                                src={`/assets/${img}`}
                                 alt="property"
                               />
                             ))}

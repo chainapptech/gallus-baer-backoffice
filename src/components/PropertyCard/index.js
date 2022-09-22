@@ -31,8 +31,8 @@ const PropertyCard = ({ property, user, id, waitingForApproval }) => {
             onMouseEnter={() => setDisableLink(false)}
             onMouseLeave={() => setDisableLink(true)}
           />
-          {property.img ? (
-            <Card.Img variant="top" src={`/assets/${property.img}`} />
+          {property.images[0] ? (
+            <Card.Img variant="top" src={`/assets/${property.images[0]}`} />
           ) : (
             <Card.Img variant="top" src={`assets/no-property.png`} />
           )}

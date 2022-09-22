@@ -18,7 +18,13 @@
         {
            "id": 1,
            "property": {
-             "img": "dummy-property-1.png",
+            "images": [
+              "dummy-property-1.png",
+              "dummy-property-2.png",
+              "dummy-property-3.png",
+              "dummy-property-4.png",
+              "dummy-property-5.png"
+            ],
              "price": 1585000,
              "previous-price": 1280000,
              "tags": ["For Sale", "House"],
@@ -29,7 +35,13 @@
          {
            "id": 2,
            "property": {
-             "img": "dummy-property-2.png",
+            "images": [
+              "dummy-property-2.png",
+              "dummy-property-1.png",
+              "dummy-property-3.png",
+              "dummy-property-4.png",
+              "dummy-property-5.png"
+            ],
              "price": 1585000,
              "previous-price": 1280000,
              "tags": ["For Sale", "House"],
@@ -40,7 +52,13 @@
          {
            "id": 3,
            "property": {
-             "img": "dummy-property-3.png",
+            "images": [
+              "dummy-property-3.png",
+              "dummy-property-2.png",
+              "dummy-property-1.png",
+              "dummy-property-4.png",
+              "dummy-property-5.png"
+            ],
              "price": 1585000,
              "previous-price": 1280000,
              "tags": ["For Sale", "House"],
@@ -51,7 +69,13 @@
          {
            "id": 4,
            "property": {
-             "img": "dummy-property-4.png",
+            "images": [
+              "dummy-property-4.png",
+              "dummy-property-2.png",
+              "dummy-property-3.png",
+              "dummy-property-1.png",
+              "dummy-property-5.png"
+            ],
              "price": 1585000,
              "previous-price": 1280000,
              "tags": ["For Sale", "House"],
@@ -62,7 +86,13 @@
          {
            "id": 5,
            "property": {
-             "img": "dummy-property-5.png",
+            "images": [
+              "dummy-property-5.png",
+              "dummy-property-2.png",
+              "dummy-property-3.png",
+              "dummy-property-1.png",
+              "dummy-property-4.png"
+            ],
              "price": 1585000,
              "previous-price": 1280000,
              "tags": ["For Sale", "House"],
