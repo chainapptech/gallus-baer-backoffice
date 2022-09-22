@@ -35,6 +35,8 @@ import WhatsAppLogoColor from "stories/svg/WhatsAppLogoColor";
 import FacebookLogoColor from "stories/svg/FacebookLogoColor";
 import CreateAdsTable from "components/CreateAdsTable";
 import InquiryCard from "components/InquiryCard";
+import InfoTabMessage from "components/InfoTabMessage";
+import Checked from "stories/svg/Checked";
 
 const detailLabels = [
   "Town",
@@ -91,6 +93,7 @@ const SingleProperty = () => {
   const [propertyData, setProperty] = useState(null);
   const [activeSlide, setActiveSlide] = useState(0);
   const [showModal, setShowModal] = useState(false);
+  const [successMessage, setSuccessMessage] = useState(true);
 
   useEffect(() => {
     const singleProperty = data.filter(
@@ -109,15 +112,26 @@ const SingleProperty = () => {
         <Row className="mt-4 property">
           <Col sm={12} className="mb-2">
             <Row className="gy-3">
-              <Col sm={12} md={9} className="">
-                <Breadcrumb className="mt-4 ">
+              <Col sm={12} md={9}>
+                <Row className="mt-4">
+                  <Col md={7}>
+                    <InfoTabMessage type={"success"} more={true} />
+                  </Col>
+                  {successMessage && (
+                    <Col md={5} className="d-flex justify-content-end">
+                      <Button leadingIcon={<Checked fill="#EBD3BD" />}>
+                        Approve property
+                      </Button>
+                    </Col>
+                  )}
+                </Row>
+                <Breadcrumb className="mt-4">
                   <Breadcrumb.Item>
                     <Link to={"/properties"}>
                       <p>Properties</p>
                     </Link>
                   </Breadcrumb.Item>
                   <Breadcrumb.Item active className="breadcrumb-active-link">
-                    {/* {propertyData.property} */}
                     {id}
                   </Breadcrumb.Item>
                 </Breadcrumb>

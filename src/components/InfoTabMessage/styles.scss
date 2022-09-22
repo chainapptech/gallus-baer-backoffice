@@ -1,0 +1,25 @@
+@use "../../style/custom" as *;
+
+.info-tab-message-wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 12px;
+    gap: 16px;
+}
+.error {
+    background-color: $e50;
+    border: 1px solid $e100;
+    border-radius: 4px;
+    .description-text {
+        color: $e500;
+    }
+}
+.success {
+    background: $g50;
+    border: 1px solid $g100;
+    border-radius: 4px;
+    .description-text {
+        color: $g500;
+    }
+}
