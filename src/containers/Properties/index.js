@@ -3,7 +3,7 @@ import { Row, Col, Tabs, Tab, Offcanvas, Form } from "react-bootstrap";
 import { MultiSelect } from "react-multi-select-component";
 
 import Button from "components/Button";
-import PropertyCard from "components/PropertyCard";
+import Property from "components/PropertyCard";
 import NotificationBadge from "components/NotificationBadge";
 import FilterSvg from "stories/svg/Filter";
 import FilledArrowDown from "stories/svg/FilledArrowDown";
@@ -122,7 +122,7 @@ const Properties = () => {
                   .filter(({ property }) => property.approved)
                   .map(({ id, property, user }) => (
                     <Col key={id} sm={12} md={6}>
-                      <PropertyCard property={property} user={user} id={id} />
+                      <Property property={property} user={user} id={id} />
                     </Col>
                   ))}
               </Row>
@@ -163,7 +163,7 @@ const Properties = () => {
                   .filter(({ property }) => !property.approved)
                   .map(({ id, property, user }) => (
                     <Col key={id} sm={12} md={6}>
-                      <PropertyCard
+                      <Property
                         waitingForApproval={"unassigned"}
                         property={property}
                         user={user}
@@ -209,7 +209,7 @@ const Properties = () => {
                   .filter(({ property }) => property.unapproved)
                   .map(({ id, property, user }) => (
                     <Col key={id} sm={12} md={6}>
-                      <PropertyCard property={property} user={user} id={id} />
+                      <Property property={property} user={user} id={id} />
                     </Col>
                   ))}
               </Row>

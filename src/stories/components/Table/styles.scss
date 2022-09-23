@@ -1,4 +1,4 @@
-@use "../../style/custom" as *;
+@use "../../../style/custom" as *;
 
 .accounts-table {
   background-color: $n0;
@@ -15,7 +15,6 @@
     border-bottom: 1px solid $n100;
     display: flex;
     align-items: center;
-    justify-content: space-between;
   }
   .table-header {
     padding: 16px;

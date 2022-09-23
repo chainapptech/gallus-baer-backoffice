@@ -1,11 +1,6 @@
-@use '../../style/custom' as *;
+@use "../../style/custom" as *;
 
 .sidebar {
   background-color: $n0;
   z-index: 5;
-  position: relative;
-
-  .nav{
-    width: 16.7%;
-  }
 }

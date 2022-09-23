@@ -1,27 +1,27 @@
 // Font Face
 @font-face {
-  font-family: 'Lato Regular';
-  src: url('../stories/fonts/Lato/Lato-Regular.ttf');
+  font-family: "Lato Regular";
+  src: url("../stories/fonts/Lato/Lato-Regular.ttf");
   font-style: normal;
   font-weight: 400;
 }
 
 @font-face {
-  font-family: 'Lato Bold';
+  font-family: "Lato Bold";
   src: url("../stories/fonts/Lato/Lato-Bold.ttf");
   font-style: bold;
   font-weight: 700;
 }
 
 @font-face {
-  font-family: 'Ubuntu Regular';
+  font-family: "Ubuntu Regular";
   src: url("../stories/fonts/Ubuntu/Ubuntu-Regular.ttf");
   font-style: normal;
   font-weight: 400;
 }
 
 @font-face {
-  font-family: 'Ubuntu Bold';
+  font-family: "Ubuntu Bold";
   src: url("../stories/fonts/Ubuntu/Ubuntu-Bold.ttf");
   font-style: bold;
   font-weight: 700;
@@ -29,8 +29,8 @@
 
 //Fonts
 
-$font-main: 'Lato Regular';
-$font-heading: 'Ubuntu Bold';
+$font-main: "Lato Regular";
+$font-heading: "Ubuntu Bold";
 
 //Primary colors
 
@@ -38,7 +38,7 @@ $p500: #084474;
 
 $p50: #e1e9ee;
 $p200: #84a2ba;
-$p300: #527C9E;
+$p300: #527c9e;
 $p800: #042d57;
 $p700: #063561;
 $p900: #021f44;
@@ -65,20 +65,26 @@ $n100: #e0e0e1;
 $n200: #96989b;
 $n300: #6b6f72;
 $n400: #4c5054;
-$n700: #3B485C;
+$n700: #3b485c;
 
+//Success
+
+$g50: #e7f0ea;
+$g100: #c3dacb;
+$g500: #388452;
 
 //Error colors
 
-$e500:#D23E3F;
-
+$e50: #fae8e8;
+$e100: #f2c5c5;
+$e500: #d23e3f;
 
 $primary: $p500;
 $secondary: $s500;
 
 // Global settings
 
-body{
+body {
   background-color: $n50;
 }
 
@@ -163,7 +169,16 @@ p {
   color: $n400;
 }
 
-.link{
+.link {
   color: $p500;
   line-height: 20px;
 }
+
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 2000px,
+);

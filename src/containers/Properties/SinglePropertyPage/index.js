@@ -35,6 +35,8 @@ import WhatsAppLogoColor from "stories/svg/WhatsAppLogoColor";
 import FacebookLogoColor from "stories/svg/FacebookLogoColor";
 import CreateAdsTable from "components/CreateAdsTable";
 import InquiryCard from "components/InquiryCard";
+import InfoTabMessage from "components/InfoTabMessage";
+import Checked from "stories/svg/Checked";
 
 const detailLabels = [
   "Town",
@@ -55,7 +57,7 @@ let settings = {
   dots: false,
   infinite: false,
   speed: 500,
-  slidesToShow: 4,
+  slidesToShow: 4.2,
   slidesToScroll: 4,
   initialSlide: 0,
   responsive: [
@@ -91,6 +93,7 @@ const SingleProperty = () => {
   const [propertyData, setProperty] = useState(null);
   const [activeSlide, setActiveSlide] = useState(0);
   const [showModal, setShowModal] = useState(false);
+  const [successMessage, setSuccessMessage] = useState(true);
 
   useEffect(() => {
     const singleProperty = data.filter(
@@ -109,15 +112,26 @@ const SingleProperty = () => {
         <Row className="mt-4 property">
           <Col sm={12} className="mb-2">
             <Row className="gy-3">
-              <Col sm={12} md={9} className="">
-                <Breadcrumb className="mt-4 ">
+              <Col sm={12} md={9}>
+                <Row className="mt-4">
+                  <Col md={7}>
+                    <InfoTabMessage type={"success"} more={true} />
+                  </Col>
+                  {successMessage && (
+                    <Col md={5} className="d-flex justify-content-end">
+                      <Button leadingIcon={<Checked fill="#EBD3BD" />}>
+                        Approve property
+                      </Button>
+                    </Col>
+                  )}
+                </Row>
+                <Breadcrumb className="mt-4">
                   <Breadcrumb.Item>
                     <Link to={"/properties"}>
                       <p>Properties</p>
                     </Link>
                   </Breadcrumb.Item>
                   <Breadcrumb.Item active className="breadcrumb-active-link">
-                    {/* {propertyData.property} */}
                     {id}
                   </Breadcrumb.Item>
                 </Breadcrumb>
@@ -224,11 +238,11 @@ const SingleProperty = () => {
                           onSelect={(e) => setActiveSlide(e)}
                           activeIndex={activeSlide}
                         >
-                          {Object.keys([0, 1, 2, 3, 4]).map((key) => (
-                            <Carousel.Item key={key}>
+                          {propertyData.property.images.map((img, index) => (
+                            <Carousel.Item key={index}>
                               <img
                                 className="d-block w-100"
-                                src={`/assets/${propertyData.property.img}`}
+                                src={`/assets/${img}`}
                                 alt="Slide"
                               />
                             </Carousel.Item>
@@ -238,12 +252,13 @@ const SingleProperty = () => {
                       <Col sm={12} className="d-none d-md-block">
                         <Row className="mt-3">
                           <Slider {...settings}>
-                            {Object.keys([0, 1, 2, 3, 4]).map((item, index) => (
+                            {propertyData.property.images.map((img, index) => (
                               <img
+                                key={index}
                                 onSelect={activeSlide}
                                 onClick={() => setActiveSlide(index)}
                                 className="property-small-img"
-                                src={`/assets/${propertyData.property.img}`}
+                                src={`/assets/${img}`}
                                 alt="property"
                               />
                             ))}
@@ -358,75 +373,16 @@ const SingleProperty = () => {
                   >
                     <>
                       <Row>
-                        <Col sm={10} md={8}>
+                        <Col sm={10} md={7}>
                           <InputComponent
                             placeholder="Search..."
                             type={"search"}
                           />
                         </Col>
                       </Row>
-                      {/* <div className="mt-4">
-                        {inquiriesData.map(
-                          ({
-                            avatar,
-                            name,
-                            details,
-                            phone,
-                            time,
-                            date,
-                            id,
-                          }) => (
-                            <div className="inquirie ms-1" key={id}>
-                              <div className="inquirie-details">
-                                <ProfileIcon image={avatar} />
-                                <Row className="ms-1">
-                                  <h4 className="mb-1">{name}</h4>
-                                  <div className="info-wrapper mb-2">
-                                    <p>
-                                      <Phone />
-                                      {phone}
-                                    </p>
-                                    <p>
-                                      <CalendarPopluated />
-                                      {date}
-                                    </p>
-                                    <p>
-                                      <ClockOutline />
-                                      {time}
-                                    </p>
-                                  </div>
-                                </Row>
-                                <div className="logo-wrapper">
-                                  <p>Listing Portal Logo</p>
-                                </div>
-                                <div className="check">
-                                  <CheckedOutline />
-                                </div>
-                              </div>
-                              <div className="details">
-                                <p>{details}</p>
-                                <div className="d-flex mt-3">
-                                  <Button
-                                    leadingIcon={<CalendarPopluated />}
-                                    type="secondary"
-                                    className={"me-4"}
-                                  >
-                                    Make an appointment
-                                  </Button>
-                                  <Button
-                                    leadingIcon={<PaperPlaneOutline />}
-                                    type="secondary"
-                                  >
-                                    Send mail
-                                  </Button>
-                                </div>
-                              </div>
-                            </div>
-                          )
-                        )}
-                      </div> */}
+
                       <Row>
-                        <Col sm={10} md={9}>
+                        <Col sm={10} md={10}>
                           <div className="mt-4">
                             <InquiryCard />
                             <InquiryCard />
@@ -451,9 +407,9 @@ const SingleProperty = () => {
                     </Row>
 
                     <Row className="gy-3 mt-4">
-                      <h3 className="mb-2">Customer feedback</h3>
+                      <h3 className="mb-4">Customer feedback</h3>
                       {customerFeedbakData.map(({ id, feedback }) => (
-                        <Col key={id} sm={12} md={11}>
+                        <Col key={id} sm={12} md={11} className="m-0">
                           <CustomerFeedbackCard feedback={feedback} />
                         </Col>
                       ))}

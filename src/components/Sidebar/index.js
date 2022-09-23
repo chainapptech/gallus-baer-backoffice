@@ -34,6 +34,7 @@ const Sidebar = () => {
       path: "/",
       icon: <HouseOutline />,
       active_icon: <HouseFill />,
+      sub_links:[]
     },
     {
       text: "Accounts",
@@ -41,12 +42,37 @@ const Sidebar = () => {
       icon: <AccountsOutline />,
       active_icon: <AccountsFill />,
       notificationNumber: 3,
+      sub_links:[]
     },
     {
       text: "Inquiries",
       path: "/inquiries",
       icon: <DocumentOutline />,
       active_icon: <DocumentFill />,
+      sub_links:[
+        {
+          text: "All inquiries",
+          path: "/inquiries",
+          notificationNumber: 7
+        },
+        {
+          text: "Our portal",
+          path: "/our_portal",
+        },
+        {
+          text: "Immoscout",
+          path: "/immoscout",
+          notificationNumber: 3
+        },
+        {
+          text: "Homegate",
+          path: "/homegate",
+        },
+        {
+          text: "Comparis",
+          path: "/comparis",
+        }
+      ]
     },
     {
       text: "Properties",
@@ -54,6 +80,7 @@ const Sidebar = () => {
       icon: <PropertiesOutline />,
       active_icon: <PropertiesFill />,
       notificationNumber: 9,
+      sub_links:[]
     },
   ];
 
@@ -61,17 +88,17 @@ const Sidebar = () => {
     <Col
       sm={12}
       md={2}
-      className="mt-4 pt-4 ps-0 min-vh-100 sidebar d-none d-md-block"
+      className="mt-4 pt-4 px-0 min-vh-100 sidebar d-none d-md-block"
     >
       <Nav
         fixed="top"
         defaultActiveKey="/home"
-        className="flex-column mt-4 pt-4 position-fixed"
+        className="flex-column mt-4 pt-4 "
       >
         <p className="ms-4 mb-4">WELCOME, LUCIA</p>
         {links.map((link, index) => (
           <Link key={index} to={`${link.path}`}>
-            <SidebarLink link={link} notificationNumber={0} />
+            <SidebarLink key={index} link={link} notificationNumber={0} />
           </Link>
         ))}
       </Nav>
