@@ -62,7 +62,7 @@ const ContactInfoCard = ({ account, className }) => {
         </div>
         <Button>Schedule an appointment</Button>
         <Button type="secondary">Send a brochure</Button>
-        <Button type="secondary">Schedule a viewing</Button>
+        <Button type="secondary">Export property</Button>
       </Card.Body>
     </Card>
   );
