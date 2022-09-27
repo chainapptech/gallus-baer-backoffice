@@ -1,56 +1,54 @@
+@use "../../style/custom" as *;
+
 .status-label {
   width: fit-content;
   padding: 2px 8px 2px 4px;
   gap: 4px;
 
   p {
-    color: #3b485c;
-    font-family: "Lato";
-    font-style: normal;
-    font-weight: 400;
+    color: $n700;
     font-size: 14px;
-    line-height: 16px;
   }
 }
 
-.success {
-  background: #e9f0e0;
-  border: 1px solid #498500;
+.status-label-success {
+  background: $g50;
+  border: 1px solid $g500;
 }
 
-.inProgress {
-  background: #e8edf3;
-  border: 1px solid #3d6c9e;
+.status-label-inProgress {
+  background: $b50;
+  border: 1px solid $b500;
 }
 
-.notStarted {
-  background: #f3f5f6;
-  border: 1px solid #c1c6cd;
+.status-label-notStarted {
+  background: $n50;
+  border: 1px solid $n200;
 }
 
-.warningLabel {
+.status-label-warningLabel {
   background: #fff3e9;
   border: 1px solid #ff9e49;
 }
 
-.errorLabel {
-  background: #fae4e4;
-  border: 1px solid #d61f21;
+.status-label-errorLabel {
+  background: $e50;
+  border: 1px solid $e500;
 }
 
-.publishedLabel {
-  background: #e9f0e0;
-  border: 1px solid #498500;
+.status-label-publishedLabel {
+  background: $g50;
+  border: 1px solid $g500;
   border-radius: 24px;
 }
 
-.notPublishedLabel {
-  background: #f3f5f6;
-  border: 1px solid #c1c6cd;
+.status-label-notPublishedLabel {
+  background: $n50;
+  border: 1px solid $n200;
   border-radius: 24px;
 }
 
-.pending {
-  background: #e8edf3;
-  border: 1px solid #3d6c9e;
+.status-label-pending {
+  background: $b50;
+  border: 1px solid $b500;
 }
