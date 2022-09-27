@@ -93,7 +93,7 @@ const SingleProperty = () => {
   const [propertyData, setProperty] = useState(null);
   const [activeSlide, setActiveSlide] = useState(0);
   const [showModal, setShowModal] = useState(false);
-  const [successMessage, setSuccessMessage] = useState(true);
+  const [successMessage, setSuccessMessage] = useState(false);
 
   useEffect(() => {
     const singleProperty = data.filter(
@@ -115,7 +115,7 @@ const SingleProperty = () => {
               <Col sm={12} md={9}>
                 <Row className="mt-4">
                   <Col md={7}>
-                    <InfoTabMessage type={"success"} more={true} />
+                    <InfoTabMessage type={"error"} more={false} />
                   </Col>
                   {successMessage && (
                     <Col md={5} className="d-flex justify-content-end">

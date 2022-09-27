@@ -45,25 +45,27 @@ const SingleAccount = ({ user, hover, image, table }) => {
       onMouseLeave={handleHover}
     >
       <ProfileIcon
-        name={user.name && user.name}
-        surname={user.surname && user.surname}
-        image={user.img || image}
+        name={user?.name}
+        surname={user?.surname}
+        image={user?.img || image}
       />
       <div className="info flex-fill ms-4">
         <h5>
-          {user.name} {user.surname}
+          {user?.name} {user?.surname}
         </h5>
         {table === true ? (
-          <h6 className="small-text light-color user-email">{user.email[0]}</h6>
+          <h6 className="small-text light-color user-email">
+            {user?.email[0]}
+          </h6>
         ) : (
-          <p className="small-text light-color">{user.email}</p>
+          <p className="small-text light-color">{user?.email}</p>
         )}
       </div>
       <div className="label">
         {isHovered || hover ? (
           accountTypeHandler()
         ) : (
-          <AccountLabel role={user.role} />
+          <AccountLabel role={user?.role} />
         )}
         {table === true ? (
           <IconButton icon={<Dots />} />
