@@ -14,7 +14,7 @@ const StatusLabel = ({ status }) => {
         return (
           <Badge
             bg="none"
-            className="d-flex align-items-center status-label success"
+            className="d-flex align-items-center status-label status-label-success"
           >
             <CheckedColor />
             <p>Success</p>
@@ -24,7 +24,7 @@ const StatusLabel = ({ status }) => {
         return (
           <Badge
             bg="none"
-            className="d-flex align-items-center status-label inProgress"
+            className="d-flex align-items-center status-label status-label-inProgress"
           >
             <BlueClock />
             <p>In progress</p>
@@ -34,7 +34,7 @@ const StatusLabel = ({ status }) => {
         return (
           <Badge
             bg="none"
-            className="d-flex align-items-center status-label notStarted"
+            className="d-flex align-items-center status-label status-label-notStarted"
           >
             <Pause />
             <p>Not started</p>
@@ -44,7 +44,7 @@ const StatusLabel = ({ status }) => {
         return (
           <Badge
             bg="none"
-            className="d-flex align-items-center status-label warningLabel"
+            className="d-flex align-items-center status-label status-label-warningLabel"
           >
             <Warning />
             <p>Warning</p>
@@ -54,7 +54,7 @@ const StatusLabel = ({ status }) => {
         return (
           <Badge
             bg="none"
-            className="d-flex align-items-center status-label errorLabel"
+            className="d-flex align-items-center status-label status-label-errorLabel"
           >
             <Danger />
             <p>Error</p>
@@ -64,7 +64,7 @@ const StatusLabel = ({ status }) => {
         return (
           <Badge
             bg="none"
-            className="d-flex align-items-center status-label publishedLabel"
+            className="d-flex align-items-center status-label status-label-publishedLabel"
           >
             <CheckedColor />
             <p>Published</p>
@@ -74,7 +74,7 @@ const StatusLabel = ({ status }) => {
         return (
           <Badge
             bg="none"
-            className="d-flex align-items-center status-label notPublishedLabel"
+            className="d-flex align-items-center status-label status-label-notPublishedLabel"
           >
             <Pause />
             <p>Not published</p>
@@ -84,7 +84,7 @@ const StatusLabel = ({ status }) => {
         return (
           <Badge
             bg="none"
-            className="d-flex align-items-center status-label pending"
+            className="d-flex align-items-center status-label status-label-pending"
           >
             <BlueClock />
             <p>Pending</p>
@@ -94,7 +94,7 @@ const StatusLabel = ({ status }) => {
         return (
           <Badge
             bg="none"
-            className="d-flex align-items-center status-label inProgress"
+            className="d-flex align-items-center status-label status-label-inProgress"
           >
             <BlueClock />
             <p>In progress</p>

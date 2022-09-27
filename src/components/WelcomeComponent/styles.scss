@@ -3,8 +3,7 @@
 .welcome-component-wrapper {
     background: linear-gradient(124.14deg, #084474 0.66%, #527c9e 76.59%);
     border-radius: 4px;
-    padding: 0;
-    margin: 0;
+    padding: 32px 24px;
 
     p {
         color: white;
@@ -18,17 +17,7 @@
 
     .welcome-intro {
         color: white !important;
-        margin-top: 32px;
         margin-bottom: 40px;
-        margin-left: 24px;
     }
 
-    .welcome-statistic {
-        margin-left: 24px;
-        margin-bottom: 32px;
-    }
-
-    .welcome-ilustration {
-        padding: 24px 24px;
-    }
 }

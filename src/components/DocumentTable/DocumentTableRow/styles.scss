@@ -1,0 +1,37 @@
+@use "../../../style/custom" as *;
+
+.document-table-item {
+    align-items: center;
+    vertical-align: middle;
+    width: 100%;
+    cursor: pointer;
+
+    &:hover{
+        background-color: $n50;
+    }
+
+    td {
+      border: none;
+      padding: 8px 10px;
+
+      &:first-child {
+        width: 35%;
+      }
+      &:nth-child(2) {
+        width: 15%;
+      }
+    }
+
+    p {
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 20px;
+    }
+    span {
+      color: #3d6c9e;
+      font-size: 16px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }

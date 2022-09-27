@@ -4,6 +4,7 @@ import { Col, Row, Table, Pagination } from "react-bootstrap";
 import ProfileIcon from "components/ProfileIcon";
 import StatusLabel from "components/StatusLabel";
 import FilledArrowDown from "stories/svg/FilledArrowDown";
+import DocumentTableRow from "./DocumentTableRow";
 import data from "./dummy-documents.json";
 
 import "./styles.scss";
@@ -32,19 +33,8 @@ const DocumentTable = () => {
           </tr>
         </thead>
         <tbody>
-          {showedData.map(({ name, status, uploader, img }, index) => (
-            <tr key={index} className="table-item ">
-              <td>
-                <span className="ps-2">{name}</span>
-              </td>
-              <td>
-                <StatusLabel status={status} />
-              </td>
-              <td className="d-flex align-items-center ">
-                <ProfileIcon image={img} size="sm" className="me-2" />
-                <p>{uploader}</p>
-              </td>
-            </tr>
+          {showedData.map((data, index) => (
+            <DocumentTableRow key={index} data={data} />
           ))}
         </tbody>
       </Table>
