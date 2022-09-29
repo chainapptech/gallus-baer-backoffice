@@ -1,0 +1,39 @@
+@use "../../style/custom" as *;
+
+.new-property-card-invoice-wrapper {
+    &:hover {
+        cursor: pointer;
+        background-color: #f5f5f5;
+    }
+    .new-card {
+        .picture-prop {
+            max-width: 100px;
+            border-radius: 2px;
+            background-color: white;
+        }
+
+        .value-and-address {
+            margin-left: 15px;
+            margin-top: 12px;
+            margin-bottom: 12px;
+        }
+
+        padding: 12px 8px;
+
+        .icon-card-like {
+            padding: 12px;
+            cursor: pointer;
+        }
+        .icon-card-dots {
+            padding: 12px;
+            cursor: pointer;
+        }
+
+        .download-invoice {
+            padding-left: 20px;
+            padding-top: 12px;
+            padding-bottom: 12px;
+            padding-right: 24px;
+        }
+    }
+}

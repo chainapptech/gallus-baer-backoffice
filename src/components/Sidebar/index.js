@@ -12,6 +12,8 @@ import PropertiesOutline from "stories/svg/PropertiesOutline";
 import PropertiesFill from "stories/svg/PropertiesFill";
 import AccountsOutline from "stories/svg/AccountsOutline";
 import AccountsFill from "stories/svg/AccountsFill";
+import InvoicesOutline from "stories/svg/InvoicesOutline";
+import InvoicesFill from "stories/svg/InvoicesFill";
 
 import { useAppContext } from "../../lib/contextLib";
 
@@ -34,7 +36,7 @@ const Sidebar = () => {
       path: "/",
       icon: <HouseOutline />,
       active_icon: <HouseFill />,
-      sub_links:[]
+      sub_links: [],
     },
     {
       text: "Accounts",
@@ -42,18 +44,18 @@ const Sidebar = () => {
       icon: <AccountsOutline />,
       active_icon: <AccountsFill />,
       notificationNumber: 3,
-      sub_links:[]
+      sub_links: [],
     },
     {
       text: "Inquiries",
       path: "/inquiries",
       icon: <DocumentOutline />,
       active_icon: <DocumentFill />,
-      sub_links:[
+      sub_links: [
         {
           text: "All inquiries",
           path: "/inquiries",
-          notificationNumber: 7
+          notificationNumber: 7,
         },
         {
           text: "Our portal",
@@ -62,7 +64,7 @@ const Sidebar = () => {
         {
           text: "Immoscout",
           path: "/immoscout",
-          notificationNumber: 3
+          notificationNumber: 3,
         },
         {
           text: "Homegate",
@@ -71,8 +73,8 @@ const Sidebar = () => {
         {
           text: "Comparis",
           path: "/comparis",
-        }
-      ]
+        },
+      ],
     },
     {
       text: "Properties",
@@ -80,7 +82,14 @@ const Sidebar = () => {
       icon: <PropertiesOutline />,
       active_icon: <PropertiesFill />,
       notificationNumber: 9,
-      sub_links:[]
+      sub_links: [],
+    },
+    {
+      text: "Invoices",
+      path: "/invoices",
+      icon: <InvoicesOutline />,
+      active_icon: <InvoicesFill />,
+      sub_links: [],
     },
   ];
 

@@ -1,0 +1,10 @@
+@use "../../style/custom" as *;
+
+.invoices-wrapper {
+    margin-top: 30px;
+
+    .invoices-tabs {
+        margin-top: 24px;
+        margin-bottom: 24px;
+    }
+}
