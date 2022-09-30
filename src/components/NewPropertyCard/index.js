@@ -22,7 +22,7 @@ const NewPropertyCard = () => {
       onMouseLeave={handleHover}
     >
       <Row className="g-0 new-card">
-        <Col md={7}>
+        <Col sm={6} md={7}>
           <Row className="m-0 p-0">
             <Col md={5} className="p-0 picture-prop">
               <img width="100px" src="./assets/house1.png" />
@@ -35,7 +35,11 @@ const NewPropertyCard = () => {
             </Col>
           </Row>
         </Col>
-        <Col md={5} className="d-flex align-items-center justify-content-end">
+        <Col
+          sm={6}
+          md={5}
+          className="d-flex align-items-center justify-content-end"
+        >
           <Row className="g-0 d-flex align-items-center justify-content-center">
             {isHovered && (
               <>

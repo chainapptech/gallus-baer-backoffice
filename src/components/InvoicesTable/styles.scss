@@ -1,0 +1,31 @@
+@use "../../style/custom" as *;
+
+.new-properties-wrapper {
+    margin: 0;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    background: $n0;
+    border: 1px solid $n100;
+    border-radius: 4px;
+
+    .new-properties-title {
+        margin: 0 16px 16px 16px;
+    }
+
+    .picture-prop {
+        max-width: 100px;
+        border-radius: 2px;
+        background-color: white;
+    }
+
+    .value-and-address {
+        margin-left: 15px;
+        margin-top: 12px;
+        margin-bottom: 12px;
+    }
+
+    .view-all {
+        margin-top: 16px;
+        margin-right: 16px;
+    }
+}

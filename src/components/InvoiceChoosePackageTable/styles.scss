@@ -1,0 +1,22 @@
+@use "../../style/custom" as *;
+
+.invoice-choose-package-table-wrapper {
+    margin: 0;
+    background: $n0;
+    border: 1px solid $n100;
+    border-radius: 4px;
+
+    .choose-package-header {
+        padding: 20px 16px;
+        h5 {
+            margin: 0;
+        }
+    }
+
+    .form-check-input {
+        // background: #084474;
+        // border-radius: 2px;
+        // border: none;
+        // padding: 19px;
+    }
+}

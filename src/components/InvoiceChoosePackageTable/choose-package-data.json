@@ -1,0 +1,12 @@
+[
+  {
+    "checked": true,
+    "serviceName": "Strategy meeting",
+    "price": "320"
+  },
+  {
+    "checked": false,
+    "serviceName": "Personal contact person / experts",
+    "price": "1320"
+  }
+]
