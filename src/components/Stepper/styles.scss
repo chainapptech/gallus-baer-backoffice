@@ -1,0 +1,83 @@
+@use "../../style/custom" as *;
+
+.stepper {
+    .steps {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+
+        .line-container {
+            padding-top: 25px;
+
+            .line {
+                width: 100%;
+                height: 1px;
+            }
+
+            .light-line {
+                background-color: $p50;
+            }
+
+            .dark-line {
+                background-color: $p500;
+            }
+        }
+
+        .step-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            .step {
+                width: 50px;
+                height: 50px;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                h4 {
+                    color: $n0;
+                    margin-bottom: 0;
+                }
+            }
+
+            h5 {
+                margin-top: 8px;
+                color: $p500;
+            }
+        }
+
+        .step-completed {
+            .step {
+                background: $n0;
+                border: 1px solid $p500;
+
+                h4 {
+                    color: $p500;
+                }
+            }
+        }
+
+        .step-active {
+            .step {
+                background: $p500;
+                h4 {
+                    color: $n0;
+                    margin-bottom: 0;
+                }
+            }
+        }
+
+        .step-uncompleted {
+            .step {
+                background: $n0;
+                border: 1px solid $n100;
+
+                h4 {
+                    color: $n100;
+                }
+            }
+        }
+    }
+}
