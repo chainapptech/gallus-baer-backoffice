@@ -8,15 +8,23 @@
 
     .choose-package-header {
         padding: 20px 16px;
+        // h5 {
+        //     margin: 0;
+        // }
+    }
+
+    .col-names {
         h5 {
-            margin: 0;
+            color: $n300;
         }
     }
 
-    .form-check-input {
-        // background: #084474;
-        // border-radius: 2px;
-        // border: none;
-        // padding: 19px;
+    .total-price {
+        padding-top: 14px;
+        padding-bottom: 14px;
+    }
+
+    h5 {
+        margin: 0;
     }
 }

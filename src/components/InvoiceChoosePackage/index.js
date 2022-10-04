@@ -22,17 +22,23 @@ const InvoiceChoosePackage = () => {
               eventKey="st-gallen"
               title="St. Gallen"
               tabClassName="position-relative pt-3 pb-3 ps-4 pe-4 bg-transparent"
-            ></Tab>
+            >
+              <InvoiceChoosePackageTable />
+            </Tab>
             <Tab
               eventKey="gallus"
               title="gallus"
               tabClassName="position-relative pt-3 pb-3 ps-4 pe-4 bg-transparent"
-            ></Tab>
+            >
+              <InvoiceChoosePackageTable />
+            </Tab>
             <Tab
               eventKey="baer"
               title="baer"
               tabClassName="position-relative pt-3 pb-3 ps-4 pe-4 bg-transparent"
-            ></Tab>
+            >
+              <InvoiceChoosePackageTable />
+            </Tab>
             <Tab
               eventKey="custom"
               title="custom"

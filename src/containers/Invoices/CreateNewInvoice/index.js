@@ -1,16 +1,31 @@
 import { useEffect, useState } from "react";
-import { Row, Col } from "react-bootstrap";
+import { Row, Col, Breadcrumb } from "react-bootstrap";
 import PropertyCard from "components/PropertyCard";
 import InputComponent from "components/Input";
 import InvoiceChoosePackage from "components/InvoiceChoosePackage";
 import data from "./dummy.json";
 import "./styles.scss";
 import { Link } from "react-router-dom";
+import Stepper from "components/Stepper";
+import Button from "components/Button";
+import InvoiceSummary from "components/InvoiceSummary";
 
 const CreateNewInvoice = () => {
   const [properties, setProperties] = useState(data);
   const [searchTerm, setSearchTerm] = useState("");
-  const [activeStep, setActiveStep] = useState(0);
+  const [activeStep, setActiveStep] = useState(1);
+
+  const steps = [
+    {
+      name: "Choose a property",
+    },
+    {
+      name: "Choose a package",
+    },
+    {
+      name: "Summary",
+    },
+  ];
 
   useEffect(() => {
     if (searchTerm.length === 0) {
@@ -26,16 +41,33 @@ const CreateNewInvoice = () => {
 
   return (
     <Row className="create-new-invoice-wrapper">
-      <Col sm={12} md={12} className="pt-4 pb-4">
-        <h3>Create new invoice</h3>
+      {activeStep !== 0 && (
+        <Col sm={12} md={12} className="pt-4">
+          <Breadcrumb>
+            <Breadcrumb.Item>
+              <Link to={"/invoices"}>Invoices</Link>
+            </Breadcrumb.Item>
+            <Breadcrumb.Item active>
+              372 Central Park West, Unit 17
+            </Breadcrumb.Item>
+          </Breadcrumb>
+        </Col>
+      )}
+
+      {activeStep === 0 && <Col md={12} className="pt-2"></Col>}
+
+      <Col className="mt-2 pb-4">
+        <h3>Create a new invoice</h3>
       </Col>
-      <Col
-        sm={12}
-        md={12}
-        className="d-flex align-items-center justify-content-center"
-      >
-        Stepper
+
+      <Col sm={12} md={12}>
+        <Row className="d-flex justify-content-center">
+          <Col sm={10} className="mt-4">
+            <Stepper steps={steps} activeIndex={activeStep} />
+          </Col>
+        </Row>
       </Col>
+
       {activeStep === 0 && (
         <>
           <Col md={3}></Col>
@@ -71,6 +103,33 @@ const CreateNewInvoice = () => {
           <Col md={1}></Col>
           <Col md={10}>
             <InvoiceChoosePackage />
+            <Row>
+              <Col md={12} className="mt-5 d-flex justify-content-end">
+                <Button
+                  onClick={() => setActiveStep(0)}
+                  type={"text"}
+                  className="me-2"
+                >
+                  Back
+                </Button>
+                <Button onClick={() => setActiveStep(2)} className="ms-1">
+                  Next
+                </Button>
+              </Col>
+            </Row>
+          </Col>
+          <Col md={1}></Col>
+        </>
+      )}
+
+      {activeStep === 2 && (
+        <>
+          <Col md={1}></Col>
+          <Col md={10} className="mt-5">
+            <InvoiceSummary
+              activeStep={activeStep}
+              setActiveStep={setActiveStep}
+            />
           </Col>
           <Col md={1}></Col>
         </>

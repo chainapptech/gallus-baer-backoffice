@@ -1,4 +1,5 @@
 import Button from "components/Button";
+import MyCheckbox from "components/MyCheckbox";
 import SearchInput from "components/SearchInput";
 import { useEffect, useState } from "react";
 import { Row, Col, Container, Form } from "react-bootstrap";
@@ -8,10 +9,31 @@ import "./styles.scss";
 const InvoiceChoosePackageTable = ({ children }) => {
   const [searchTerm, setSearchTerm] = useState("");
   const [availableServices, setAvailableServices] = useState([]);
+  const [isAllChecked, setIsAllChecked] = useState(false);
+  const [checkedServices, setCheckedServices] = useState({
+    allServices: false,
+  });
 
   useEffect(() => {
     setAvailableServices(services);
+    addCheckedState();
   }, []);
+
+  useEffect(() => {
+    const { allServices, ...rest } = checkedServices;
+    let checkedClone = { ...rest };
+    setIsAllChecked(Object.values(checkedClone).includes(false));
+  }, [checkedServices]);
+
+  const addCheckedState = () => {
+    const checkedStateMap = services.map(({ id }) => ({ [id]: false }));
+    const checkedState = checkedStateMap.reduce((acc, cur) => ({
+      ...acc,
+      ...cur,
+    }));
+
+    setCheckedServices((state) => ({ ...state, ...checkedState }));
+  };
 
   return (
     <Container fluid className="ps-0 pe-0 invoice-choose-package-table-wrapper">
@@ -38,43 +60,64 @@ const InvoiceChoosePackageTable = ({ children }) => {
       <Row className="m-0">
         <hr />
       </Row>
-      <Row md={10}>
+
+      <Row>
         <Col md={1} className="d-flex align-items-center">
-          <Form.Check className="p-3" type="checkbox" id={`default-checkbox`} />
+          <MyCheckbox
+            checked={!isAllChecked}
+            checkedState={checkedServices}
+            id={"allServices"}
+            setIsChecked={setCheckedServices}
+          />
         </Col>
-        <Col md={7} className="d-flex align-items-center">
+        <Col md={8} className="p-0 d-flex align-items-center col-names">
           <h5>Service name</h5>
         </Col>
-        <Col md={2} className="d-flex align-items-center justify-content-end">
+        <Col
+          md={3}
+          className="d-flex align-items-center justify-content-end pe-4 col-names"
+        >
           <h5>Price</h5>
         </Col>
       </Row>
       <Row className="m-0">
         <hr />
       </Row>
-      <Row md={10}>
-        <Col md={1} className="d-flex align-items-center">
-          <Form.Check className="p-3" type="checkbox" id={`default-checkbox`} />
-        </Col>
-        <Col md={7} className="d-flex align-items-center">
-          <p>Strategy meeting</p>
-        </Col>
-        <Col md={2} className="d-flex align-items-center justify-content-end">
-          <p>CHF 320</p>
+
+      {availableServices.map(({ id, serviceName, price }) => (
+        <Row key={id}>
+          <Col md={1} className="d-flex align-items-center">
+            <MyCheckbox
+              checked={checkedServices && checkedServices[id]}
+              checkedState={checkedServices}
+              id={id}
+              setIsChecked={setCheckedServices}
+            />
+          </Col>
+          <Col md={8} className="p-0 d-flex align-items-center">
+            <p>{serviceName}</p>
+          </Col>
+          <Col
+            md={3}
+            className="d-flex align-items-center justify-content-end pe-4"
+          >
+            <p>{`CHF ${price}.00`}</p>
+          </Col>
+        </Row>
+      ))}
+
+      <Row>
+        <Col
+          md={12}
+          className="d-flex align-items-center justify-content-end pe-4"
+        >
+          <div className="d-flex align-items-center justify-content-center total-price">
+            <p className="me-2">Total price:</p>
+            <h5 className="m-0">{`CHF 8,050.00`}</h5>
+          </div>
         </Col>
       </Row>
 
-      <Row md={10}>
-        <Col md={1} className="d-flex align-items-center">
-          <Form.Check className="p-3" type="checkbox" id={`default-checkbox`} />
-        </Col>
-        <Col md={7} className="d-flex align-items-center">
-          <p>Personal contact person / experts</p>
-        </Col>
-        <Col md={2} className="d-flex align-items-center justify-content-end">
-          <p>CHF 1,320</p>
-        </Col>
-      </Row>
       {children}
     </Container>
   );

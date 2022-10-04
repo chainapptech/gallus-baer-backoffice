@@ -1,12 +1,86 @@
 [
   {
+    "id": 1,
     "checked": true,
     "serviceName": "Strategy meeting",
-    "price": "320"
+    "price": 320
   },
   {
+    "id": 2,
     "checked": false,
     "serviceName": "Personal contact person / experts",
-    "price": "1320"
+    "price": 1320
+  },
+  {
+    "id": 3,
+    "checked": false,
+    "serviceName": "Professionelle Fotos / Fotograf (pro Wohnung/Haus)",
+    "price": 480
+  },
+  {
+    "id": 4,
+    "checked": true,
+    "serviceName": "LuSaufnahmen",
+    "price": 600
+  },
+  {
+    "id": 5,
+    "checked": false,
+    "serviceName": "Pläne digital auoereiten 2D (150.00 pro Wohnung/Haus)",
+    "price": 1100
+  },
+  {
+    "id": 6,
+    "checked": false,
+    "serviceName": "Pläne digital auoereiten 3 D (250.00 pro Wohnung/Haus)",
+    "price": 2610
+  },
+  {
+    "id": 7,
+    "checked": true,
+    "serviceName": "Erstellen fehlender Grundrisse",
+    "price": 830
+  },
+  {
+    "id": 8,
+    "checked": false,
+    "serviceName": "Virtueller 360°-Rundgang",
+    "price": 430
+  },
+  {
+    "id": 9,
+    "checked": false,
+    "serviceName": "Virtuelle AnimaWon / digitale Einrichtung (3 Fotos 500.00)",
+    "price": 700
+  },
+  {
+    "id": 10,
+    "checked": true,
+    "serviceName": "Vermarktungstexte durch professionelle TexterIn verfassen",
+    "price": 1020
+  },
+  {
+    "id": 11,
+    "checked": true,
+    "serviceName": "Visualisierungen (Innen-, Aussenansichten)",
+    "price": 120
+  },
+  {
+    "id": 12,
+    "checked": true,
+    "serviceName": "Homestaging",
+    "price": 200
+  },
+  {
+    "id": 13,
+    "checked": false,
+    "serviceName": "kleine Fotos (Instagram, Facebook, Linkedin)",
+    "price": 540
+  },
+  {
+    "id": 14,
+    "checked": true,
+    "serviceName": "kleine Filme (Instagram, Facebook, Linkedin)",
+    "price": 600
   }
 ]
