@@ -9,11 +9,21 @@ import "./styles.scss";
 const InvoiceChoosePackageTable = ({ children }) => {
   const [searchTerm, setSearchTerm] = useState("");
   const [availableServices, setAvailableServices] = useState([]);
-
-  //state sa checkboxovima
+  const [isAllChecked, setIsAllChecked] = useState(false);
   const [checkedServices, setCheckedServices] = useState({
     allServices: false,
   });
+
+  useEffect(() => {
+    setAvailableServices(services);
+    addCheckedState();
+  }, []);
+
+  useEffect(() => {
+    const { allServices, ...rest } = checkedServices;
+    let checkedClone = { ...rest };
+    setIsAllChecked(Object.values(checkedClone).includes(false));
+  }, [checkedServices]);
 
   const addCheckedState = () => {
     const checkedStateMap = services.map(({ id }) => ({ [id]: false }));
@@ -24,13 +34,6 @@ const InvoiceChoosePackageTable = ({ children }) => {
 
     setCheckedServices((state) => ({ ...state, ...checkedState }));
   };
-
-  useEffect(() => {
-    setAvailableServices(services);
-    addCheckedState();
-  }, []);
-
-  // console.log(checkedServices);
 
   return (
     <Container fluid className="ps-0 pe-0 invoice-choose-package-table-wrapper">
@@ -61,9 +64,7 @@ const InvoiceChoosePackageTable = ({ children }) => {
       <Row>
         <Col md={1} className="d-flex align-items-center">
           <MyCheckbox
-            checked={
-              Object.values(checkedServices).includes(false) ? true : false
-            }
+            checked={!isAllChecked}
             checkedState={checkedServices}
             id={"allServices"}
             setIsChecked={setCheckedServices}
@@ -100,7 +101,7 @@ const InvoiceChoosePackageTable = ({ children }) => {
             md={3}
             className="d-flex align-items-center justify-content-end pe-4"
           >
-            <p>{`CHF ${price}`}</p>
+            <p>{`CHF ${price}.00`}</p>
           </Col>
         </Row>
       ))}
@@ -112,7 +113,7 @@ const InvoiceChoosePackageTable = ({ children }) => {
         >
           <div className="d-flex align-items-center justify-content-center total-price">
             <p className="me-2">Total price:</p>
-            <h5 className="m-0">CHF 8,050.00</h5>
+            <h5 className="m-0">{`CHF 8,050.00`}</h5>
           </div>
         </Col>
       </Row>

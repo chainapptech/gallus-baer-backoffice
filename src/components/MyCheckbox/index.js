@@ -36,14 +36,8 @@ const MyCheckbox = ({
       }
       setIsChecked(checkedClone);
     } else {
-      const { allServices, ...rest } = checkedState;
-      let checkedClone = { ...rest };
-      const isAllChecked = Object.values(checkedClone).includes(false);
-      
-      // console.log(checkedClone);
       setIsChecked((state) => ({
         ...state,
-        allServices: isAllChecked ? true : false,
         [e.target.id]: !state[e.target.id],
       }));
     }

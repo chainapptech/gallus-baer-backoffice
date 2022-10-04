@@ -1,0 +1,38 @@
+[
+  {
+    "checked": true,
+    "serviceName": "Strategy meeting",
+    "price": 320
+  },
+  {
+    "checked": true,
+    "serviceName": "LuSaufnahmen",
+    "price": 600
+  },
+  {
+    "checked": true,
+    "serviceName": "Erstellen fehlender Grundrisse",
+    "price": 830
+  },
+
+  {
+    "checked": true,
+    "serviceName": "Vermarktungstexte durch professionelle TexterIn verfassen",
+    "price": 1020
+  },
+  {
+    "checked": true,
+    "serviceName": "Visualisierungen (Innen-, Aussenansichten)",
+    "price": 120
+  },
+  {
+    "checked": true,
+    "serviceName": "Homestaging",
+    "price": 200
+  },
+  {
+    "checked": true,
+    "serviceName": "kleine Filme (Instagram, Facebook, Linkedin)",
+    "price": 600
+  }
+]

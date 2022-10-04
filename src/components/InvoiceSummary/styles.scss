@@ -1,0 +1,18 @@
+@use "../../style/custom" as *;
+
+.invoice-summary-wrapper {
+    // margin: 0;
+    .invoice-summary-title {
+        margin-bottom: 12px;
+    }
+
+    .invoice-summary-item {
+        margin-top: 16px;
+        margin-bottom: 6px;
+    }
+
+    .invoice-summary-total-price {
+        margin-top: 12px;
+        margin-bottom: 32px;
+    }
+}
