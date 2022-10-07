@@ -1,4 +1,4 @@
-import { Col, Badge } from "react-bootstrap";
+import { Badge } from "react-bootstrap";
 import BlueClock from "stories/svg/BlueClock";
 import CheckedColor from "stories/svg/CheckedColor";
 import Danger from "stories/svg/Danger";
@@ -88,6 +88,26 @@ const StatusLabel = ({ status }) => {
           >
             <BlueClock />
             <p>Pending</p>
+          </Badge>
+        );
+      case 9:
+        return (
+          <Badge
+            bg="none"
+            className="d-flex align-items-center status-label status-label-paid"
+          >
+            <CheckedColor />
+            <p>Paid</p>
+          </Badge>
+        );
+      case 10:
+        return (
+          <Badge
+            bg="none"
+            className="d-flex align-items-center status-label status-label-not-paid"
+          >
+            <Danger />
+            <p>Not paid</p>
           </Badge>
         );
       default:

@@ -1,6 +1,10 @@
-.not-found-property {
-  max-width: 600px;
-  width: 100%;
+.not-found-property-wrapper {
+  .not-found-title {
+    margin-top: 40px;
+  }
+  .not-found-subtitle {
+    margin-top: 8px;
+  }
 
   h3 {
     font-weight: 700;

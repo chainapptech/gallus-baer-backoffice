@@ -1,5 +1,4 @@
 import { Row, Col, Container } from "react-bootstrap";
-import WelcomeInvoicesIlustration from "stories/svg/WelcomeIlustrationInvoices";
 import "./styles.scss";
 
 const WelcomeInvoices = () => {
@@ -26,9 +25,10 @@ const WelcomeInvoices = () => {
           </Row>
         </Col>
         <Col md={4} className="d-flex align-items-center justify-content-end">
-          <div className="welcome-ilustration">
+          {/* Currently changed */}
+          {/* <div className="welcome-ilustration">
             <WelcomeInvoicesIlustration />
-          </div>
+          </div> */}
         </Col>
       </Row>
     </Container>

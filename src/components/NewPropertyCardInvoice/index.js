@@ -1,4 +1,5 @@
 import IconButton from "components/IconButton";
+import StatusLabel from "components/StatusLabel";
 import { useState } from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import DocumentOutline from "stories/svg/DocumentOutline";
@@ -29,7 +30,10 @@ const NewPropertyCardInvoice = () => {
           md={5}
           className="d-flex align-items-center justify-content-end"
         >
-          <div className="me-2 d-flex download-invoice">
+          <div className="me-2 d-flex align-items-center justify-content-center">
+            <StatusLabel status={9} />
+          </div>
+          <div className="me-2 d-flex align-items-center justify-content-center download-invoice">
             <DocumentTextOutlined />
             <h5 className="ms-2">Download invoice</h5>
           </div>

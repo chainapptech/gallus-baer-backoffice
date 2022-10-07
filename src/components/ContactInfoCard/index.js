@@ -12,7 +12,7 @@ import FacebookLogo from "stories/svg/FacebookLogo";
 import TikTokLogo from "stories/svg/TikTokLogo";
 import WhatsAppLogo from "stories/svg/WhatsAppLogo";
 
-const ContactInfoCard = ({ account, className }) => {
+const ContactInfoCard = ({ account, className, page }) => {
   return (
     <Card className={`contact-info-card ${className}`}>
       <Card.Body>
@@ -60,9 +60,11 @@ const ContactInfoCard = ({ account, className }) => {
             <WhatsAppLogo />
           </div>
         </div>
-        <Button>Schedule an appointment</Button>
-        <Button type="secondary">Send a brochure</Button>
-        <Button type="secondary">Export property</Button>
+        {page === "properties" && <Button>Schedule an appointment</Button>}
+        {page === "accounts" && <Button>Create an offer</Button>}
+        {page === "accounts" && (
+          <Button type="secondary">Edit user data</Button>
+        )}
       </Card.Body>
     </Card>
   );

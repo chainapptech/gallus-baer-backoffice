@@ -3,43 +3,13 @@ import InquiriesTableRow from "components/InquiriesTableRow";
 import { Link } from "react-router-dom";
 import "./styles.scss";
 import PropertyTag from "components/PropertyTag";
-// import inquiries from "./inqueries-data.json";
 import Button from "components/Button";
 import ArrowRight from "stories/svg/ArrowRight";
 import ArrowDown from "stories/svg/ArrowDown";
 import InquiryCard from "components/InquiryCard";
 import useWindowSize from "lib/useWindowSize";
 
-const table = (item) => {
-  <Table striped>
-    <thead>
-      <tr>
-        <th>
-          <h6>User name & email adress</h6>
-        </th>
-        <th>
-          <h6>Property name</h6>
-        </th>
-        <th>
-          <h6>Date name</h6>
-        </th>
-        <th>
-          <h6>Time</h6>
-        </th>
-      </tr>
-    </thead>
-    <tbody>
-      {item?.inquiry?.map((inquiryItem) => (
-        <InquiriesTableRow
-          key={inquiryItem.account.email}
-          inquiryItem={inquiryItem}
-        />
-      ))}
-    </tbody>
-  </Table>;
-};
-
-const InquiryAccordion = ({ inquiries }) => {
+const InquiryTable = ({ inquiries }) => {
   const size = useWindowSize();
 
   return (
@@ -116,4 +86,4 @@ const InquiryAccordion = ({ inquiries }) => {
   );
 };
 
-export default InquiryAccordion;
+export default InquiryTable;

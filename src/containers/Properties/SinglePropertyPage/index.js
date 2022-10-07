@@ -1,5 +1,5 @@
 import { Col, Row, Tabs, Tab, Breadcrumb, Modal } from "react-bootstrap";
-import { Link, useParams } from "react-router-dom";
+import { Link, useLocation, useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 
 import { numberWithCommas } from "utils/numberWithCommas";
@@ -37,6 +37,7 @@ import CreateAdsTable from "components/CreateAdsTable";
 import InquiryCard from "components/InquiryCard";
 import InfoTabMessage from "components/InfoTabMessage";
 import Checked from "stories/svg/Checked";
+import DocumentFilled from "stories/svg/DocumentFilled";
 
 const detailLabels = [
   "Town",
@@ -94,6 +95,7 @@ const SingleProperty = () => {
   const [activeSlide, setActiveSlide] = useState(0);
   const [showModal, setShowModal] = useState(false);
   const [successMessage, setSuccessMessage] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
     const singleProperty = data.filter(
@@ -128,11 +130,16 @@ const SingleProperty = () => {
                 <Breadcrumb className="mt-4">
                   <Breadcrumb.Item>
                     <Link to={"/properties"}>
-                      <p>Properties</p>
+                      <p>
+                        {propertyData?.property?.approved
+                          ? "Approved Properties"
+                          : "Waiting for approval"}
+                      </p>
                     </Link>
                   </Breadcrumb.Item>
                   <Breadcrumb.Item active className="breadcrumb-active-link">
-                    {id}
+                    {/* {id} */}
+                    Single Property
                   </Breadcrumb.Item>
                 </Breadcrumb>
                 <h3 className="mt-2">West Park Apartment</h3>
@@ -145,7 +152,7 @@ const SingleProperty = () => {
                 </Row>
                 <Row>
                   <Col
-                    md={10}
+                    md={8}
                     className="d-flex flex-column flex-md-row align-items-md-center"
                   >
                     <h2 className="me-4">
@@ -158,6 +165,17 @@ const SingleProperty = () => {
                       )}
                       .00
                     </h4>
+                  </Col>
+                  <Col
+                    md={2}
+                    className="d-flex align-items-center justify-content-center"
+                  >
+                    <Button
+                      type="text"
+                      leadingIcon={<DocumentFilled fill="#EBD3BD" />}
+                    >
+                      Export
+                    </Button>
                   </Col>
                   <Col
                     md={2}
@@ -370,6 +388,7 @@ const SingleProperty = () => {
                     eventKey="inquiries"
                     title="Inquiries"
                     tabClassName="position-relative pt-3 pb-3 ps-4 pe-4 bg-transparent"
+                    disabled={!propertyData?.property?.approved}
                   >
                     <>
                       <Row>
@@ -393,7 +412,8 @@ const SingleProperty = () => {
                       </Row>
                     </>
                   </Tab>
-                  <Tab
+                  {/* Overview - currently no make sense */}
+                  {/* <Tab
                     eventKey="overview"
                     title="Overview"
                     tabClassName="position-relative pt-3 pb-3 ps-4 pe-4 bg-transparent"
@@ -414,11 +434,12 @@ const SingleProperty = () => {
                         </Col>
                       ))}
                     </Row>
-                  </Tab>
+                  </Tab> */}
                   <Tab
-                    eventKey="ads"
-                    title="Create Ads"
+                    eventKey="external-portals"
+                    title="External portals"
                     tabClassName="position-relative pt-3 pb-3 ps-4 pe-4 bg-transparent"
+                    disabled={!propertyData?.property?.approved}
                   >
                     <CreateAdsTable />
                   </Tab>
@@ -431,6 +452,7 @@ const SingleProperty = () => {
                   className={"sticky-top contact-info-sticky"}
                   name={"John"}
                   surname={"Doe"}
+                  page={location.pathname.split("/")[1]}
                 />
               </Col>
             </Row>

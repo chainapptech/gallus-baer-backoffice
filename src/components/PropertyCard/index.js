@@ -11,17 +11,23 @@ import OutlineHeart from "../../stories/svg/OutlineHeart";
 
 import "./styles.scss";
 
-const PropertyCard = ({ property, user, id, waitingForApproval }) => {
+const PropertyCard = ({
+  property,
+  user,
+  id,
+  waitingForApproval,
+  visibleLink = true,
+}) => {
   const ref = useRef();
   const [isFavorite, setIsFavorite] = useState(false);
   const [isActionsClicked, setIsActionsClicked] = useState(false);
-  const [disableLink, setDisableLink] = useState(true);
+  const [disableLink, setDisableLink] = useState(false);
 
   useOnClickOutside(ref, () => setIsActionsClicked(false));
 
   return (
     <Card className="property-card h-100">
-      <Link to={disableLink ? `/properties/${id}` : "#"}>
+      <Link to={visibleLink && `/properties/${id}`}>
         <Card.Body className="position-relative">
           <IconButton
             className={"favorite-property-icon"}
