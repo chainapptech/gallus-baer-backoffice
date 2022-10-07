@@ -1,37 +1,23 @@
-@use '../../../style/custom' as *;
+@use "../../../style/custom" as *;
 
-.user-info{
-    .profile-icon{
-        width: 100px;
-        height: 100px;
-        p{
-            font-size: 30px;
-        }
+.single-account-wrapper {
+    background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+        url("../../../stories/assets/account-background.jpg");
+    background-position: center;
+    background-size: cover;
+    h3 {
+        color: $n0;
     }
-}
-
-.contact-info-sticky{
-    top:100px;
-}
-
-.account-banner{
-    h3{
-        color: $n0
+    h4 {
+        color: $n0;
     }
-
-    h4{
-        color: $n0
+    p {
+        color: $n0;
     }
-
-    p{
-        color: $n0
+    .breadcrumb-active-link {
+        color: $n100;
     }
-
-    .breadcrumb-active-link{
-        color: &n100;
-    }
-
-    .link{
+    .link {
         color: $n50;
     }
 }

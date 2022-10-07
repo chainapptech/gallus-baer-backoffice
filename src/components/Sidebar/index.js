@@ -51,30 +51,7 @@ const Sidebar = () => {
       path: "/inquiries",
       icon: <DocumentOutline />,
       active_icon: <DocumentFill />,
-      sub_links: [
-        {
-          text: "All inquiries",
-          path: "/inquiries",
-          notificationNumber: 7,
-        },
-        {
-          text: "Our portal",
-          path: "/our_portal",
-        },
-        {
-          text: "Immoscout",
-          path: "/immoscout",
-          notificationNumber: 3,
-        },
-        {
-          text: "Homegate",
-          path: "/homegate",
-        },
-        {
-          text: "Comparis",
-          path: "/comparis",
-        },
-      ],
+      sub_links: [],
     },
     {
       text: "Properties",

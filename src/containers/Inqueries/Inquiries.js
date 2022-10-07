@@ -1,47 +1,13 @@
-import { Row, Col, Table, Accordion } from "react-bootstrap";
+import { useState } from "react";
+import { Row, Col, Table, Tabs, Tab } from "react-bootstrap";
 import InquiriesTableRow from "components/InquiriesTableRow";
-import { Link } from "react-router-dom";
-import "./styles.scss";
-import PropertyTag from "components/PropertyTag";
 import inquiries from "./inqueries-data.json";
-import Button from "components/Button";
-import ArrowRight from "stories/svg/ArrowRight";
-import ArrowDown from "stories/svg/ArrowDown";
-import InquiryCard from "components/InquiryCard";
-import useWindowSize from "lib/useWindowSize";
-import InquiryAccordion from "components/InquiryAccordion";
-
-const table = (item) => {
-  <Table striped>
-    <thead>
-      <tr>
-        <th>
-          <h6>User name & email adress</h6>
-        </th>
-        <th>
-          <h6>Property name</h6>
-        </th>
-        <th>
-          <h6>Date name</h6>
-        </th>
-        <th>
-          <h6>Time</h6>
-        </th>
-      </tr>
-    </thead>
-    <tbody>
-      {item?.inquiry?.map((inquiryItem) => (
-        <InquiriesTableRow
-          key={inquiryItem.account.email}
-          inquiryItem={inquiryItem}
-        />
-      ))}
-    </tbody>
-  </Table>;
-};
+import newInquiries from "./new-inqueries-data-table.json";
+import InquiryTable from "components/InquiryTable";
+import "./styles.scss";
 
 const Inquiries = () => {
-  const size = useWindowSize();
+  const [currentTab, setCurrentTab] = useState("new-inquiries");
 
   return (
     <Row className="inquires-wrapper">
@@ -50,7 +16,34 @@ const Inquiries = () => {
           <Col sm={12} md={12}>
             <h2 className="title-inquires">Inquiries</h2>
           </Col>
-          <Col
+          <Col>
+            <Tabs
+              id="uncontrolled-tab-example"
+              activeKey={currentTab}
+              onSelect={(tab) => setCurrentTab(tab)}
+              className="mb-4"
+            >
+              <Tab
+                eventKey="new-inquiries"
+                title="New inquiries"
+                tabClassName="position-relative pt-3 pb-3 ps-4 pe-4 bg-transparent"
+              >
+                <Col>
+                  <InquiryTable inquiries={inquiries} />
+                </Col>
+              </Tab>
+              <Tab
+                eventKey="answered-inquiries"
+                title="Answered inquiries"
+                tabClassName="position-relative pt-3 pb-3 ps-4 pe-4 bg-transparent"
+              >
+                <Col>
+                  <InquiryTable inquiries={inquiries} />
+                </Col>
+              </Tab>
+            </Tabs>
+          </Col>
+          {/* <Col
             className="d-flex align-items-center justify-content-end"
             sm={12}
             md={12}
@@ -65,7 +58,7 @@ const Inquiries = () => {
           </Col>
           <Col>
             <InquiryAccordion inquiries={inquiries} />
-          </Col>
+          </Col> */}
         </Row>
       </Col>
     </Row>

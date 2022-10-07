@@ -11,6 +11,7 @@ import data from "./dummy.json";
 
 import "./styles.scss";
 import SearchInput from "components/SearchInput";
+import { useAppContext } from "lib/contextLib";
 
 const typeOptions = [
   { label: "Apartment", value: "apartment" },
@@ -45,6 +46,9 @@ const Properties = () => {
   const [propertyStatus, setPropertyStatus] = useState([]);
   const [accountsCreated, setAccountsCreated] = useState([]);
   const [otherDetails, setOtherDetails] = useState([]);
+
+  const [currentTab, setCurrentTab] = useState("approved");
+  // const { selectedTabProperties, setSelectedTabProperties } = useAppContext();
 
   useEffect(() => {
     if (searchTerm.length === 0) {
@@ -81,8 +85,9 @@ const Properties = () => {
             </Col>
           </Row>
           <Tabs
-            defaultActiveKey="approved"
             id="uncontrolled-tab-example"
+            activeKey={currentTab}
+            onSelect={(tab) => setCurrentTab(tab)}
             className="mt-3 mb-4"
           >
             <Tab

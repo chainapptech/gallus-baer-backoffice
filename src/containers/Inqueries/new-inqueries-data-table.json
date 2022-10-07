@@ -1,0 +1,128 @@
+[
+  {
+    "id": 1,
+    "companyName": "Homegate",
+    "account": {
+      "name": "Jenna",
+      "surname": "Jones",
+      "email": ["jennajones@gmail.com", "johndoe.ger.milano@gmail.com"],
+      "address": "14 NE 13th St, Miami",
+      "img": "account-5.jpg",
+      "phone": ["+414454543", "+414454543"]
+    },
+    "date": "25.03.2022.",
+    "time": "15:46"
+  },
+  {
+    "id": 2,
+    "companyName": "Comparis",
+    "account": {
+      "name": "Jenna",
+      "surname": "Jones",
+      "email": ["jennajones@gmail.com", "johndoe.ger.milano@gmail.com"],
+      "address": "14 NE 13th St, Miami",
+      "img": "account-5.jpg",
+      "phone": ["+414454543", "+414454543"]
+    },
+    "date": "25.03.2022.",
+    "time": "15:46"
+  },
+  {
+    "id": 3,
+    "companyName": "Homegate",
+    "account": {
+      "name": "Jenna",
+      "surname": "Jones",
+      "email": ["jennajones@gmail.com", "johndoe.ger.milano@gmail.com"],
+      "address": "14 NE 13th St, Miami",
+      "img": "account-5.jpg",
+      "phone": ["+414454543", "+414454543"]
+    },
+    "date": "25.03.2022.",
+    "time": "15:46"
+  },
+  {
+    "id": 4,
+    "companyName": "Comparis",
+    "account": {
+      "name": "Jenna",
+      "surname": "Jones",
+      "email": ["jennajones@gmail.com", "johndoe.ger.milano@gmail.com"],
+      "address": "14 NE 13th St, Miami",
+      "img": "account-5.jpg",
+      "phone": ["+414454543", "+414454543"]
+    },
+    "date": "25.03.2022.",
+    "time": "15:46"
+  },
+  {
+    "id": 5,
+    "companyName": "Homegate",
+    "account": {
+      "name": "Jenna",
+      "surname": "Jones",
+      "email": ["jennajones@gmail.com", "johndoe.ger.milano@gmail.com"],
+      "address": "14 NE 13th St, Miami",
+      "img": "account-5.jpg",
+      "phone": ["+414454543", "+414454543"]
+    },
+    "date": "25.03.2022.",
+    "time": "15:46"
+  },
+  {
+    "id": 6,
+    "companyName": "Comparis",
+    "account": {
+      "name": "Jenna",
+      "surname": "Jones",
+      "email": ["jennajones@gmail.com", "johndoe.ger.milano@gmail.com"],
+      "address": "14 NE 13th St, Miami",
+      "img": "account-5.jpg",
+      "phone": ["+414454543", "+414454543"]
+    },
+    "date": "25.03.2022.",
+    "time": "15:46"
+  },
+  {
+    "id": 7,
+    "companyName": "Homegate",
+    "account": {
+      "name": "Jenna",
+      "surname": "Jones",
+      "email": ["jennajones@gmail.com", "johndoe.ger.milano@gmail.com"],
+      "address": "14 NE 13th St, Miami",
+      "img": "account-5.jpg",
+      "phone": ["+414454543", "+414454543"]
+    },
+    "date": "25.03.2022.",
+    "time": "15:46"
+  },
+  {
+    "id": 8,
+    "companyName": "Comparis",
+    "account": {
+      "name": "Jenna",
+      "surname": "Jones",
+      "email": ["jennajones@gmail.com", "johndoe.ger.milano@gmail.com"],
+      "address": "14 NE 13th St, Miami",
+      "img": "account-5.jpg",
+      "phone": ["+414454543", "+414454543"]
+    },
+    "date": "25.03.2022.",
+    "time": "15:46"
+  },
+  {
+    "id": 9,
+    "companyName": "Homegate",
+    "account": {
+      "name": "Jenna",
+      "surname": "Jones",
+      "email": ["jennajones@gmail.com", "johndoe.ger.milano@gmail.com"],
+      "address": "14 NE 13th St, Miami",
+      "img": "account-5.jpg",
+      "phone": ["+414454543", "+414454543"]
+    },
+    "date": "25.03.2022.",
+    "time": "15:46"
+  }
+]

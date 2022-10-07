@@ -54,7 +54,7 @@ $s300: #e2c1a2;
 $s500: #d6a67a;
 $s700: #cc9567;
 $s800: #c68b5d;
-$s900: #BC7B4A;
+$s900: #bc7b4a;
 
 //Neutral colors
 
@@ -70,9 +70,9 @@ $n700: #3b485c;
 
 //Success
 
-$g50: #e7f0ea;
+$g50: #e9f0e0;
 $g100: #c3dacb;
-$g500: #388452;
+$g500: #498500;
 
 //Error colors
 
@@ -80,10 +80,15 @@ $e50: #fae8e8;
 $e100: #f2c5c5;
 $e500: #d23e3f;
 
-//DevOps
-$b500: #3D6C9E;
+//Errors
 
-$b50: #E8EDF3;
+$r50: #fae4e4;
+$r500: #d61f21;
+
+//DevOps
+$b500: #3d6c9e;
+
+$b50: #e8edf3;
 
 $primary: $p500;
 $secondary: $s500;

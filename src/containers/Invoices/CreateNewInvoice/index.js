@@ -13,7 +13,9 @@ import InvoiceSummary from "components/InvoiceSummary";
 const CreateNewInvoice = () => {
   const [properties, setProperties] = useState(data);
   const [searchTerm, setSearchTerm] = useState("");
-  const [activeStep, setActiveStep] = useState(1);
+  const [activeStep, setActiveStep] = useState(0);
+  const [selectedPropertyId, setSelectedPropertyId] = useState();
+  const [selectedProperty, setSelectedProperty] = useState();
 
   const steps = [
     {
@@ -39,6 +41,12 @@ const CreateNewInvoice = () => {
     setProperties(searchedProperties);
   }, [searchTerm]);
 
+  const handleClickProperty = (id, property) => {
+    setSelectedPropertyId(id);
+    setSelectedProperty(property);
+    setActiveStep((curr) => curr + 1);
+  };
+
   return (
     <Row className="create-new-invoice-wrapper">
       {activeStep !== 0 && (
@@ -48,7 +56,7 @@ const CreateNewInvoice = () => {
               <Link to={"/invoices"}>Invoices</Link>
             </Breadcrumb.Item>
             <Breadcrumb.Item active>
-              372 Central Park West, Unit 17
+              {selectedProperty?.address}
             </Breadcrumb.Item>
           </Breadcrumb>
         </Col>
@@ -88,10 +96,18 @@ const CreateNewInvoice = () => {
             {properties
               .filter(({ property }) => property.approved)
               .map(({ id, property, user }) => (
-                <Col key={id} sm={12} md={6}>
-                  <Link to="/invoices">
-                    <PropertyCard property={property} user={user} id={id} />
-                  </Link>
+                <Col
+                  key={id}
+                  sm={12}
+                  md={6}
+                  onClick={() => handleClickProperty(id, property)}
+                >
+                  <PropertyCard
+                    property={property}
+                    user={user}
+                    id={id}
+                    visibleLink={false}
+                  />
                 </Col>
               ))}
           </Row>

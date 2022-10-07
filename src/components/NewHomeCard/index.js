@@ -11,8 +11,8 @@ const NewHomeCard = ({ children, type }) => {
 
   useEffect(() => {
     const tableTitle = () => {
-      if (type === "properties") setTitle("New properties");
-      else if (type === "accounts") setTitle("Most contacted accounts");
+      if (type === "properties") setTitle("My managed properties");
+      else if (type === "accounts") setTitle("Related accounts");
       else setTitle("New inquiries");
     };
     tableTitle();
