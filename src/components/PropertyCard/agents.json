@@ -1,0 +1,67 @@
+[
+  {
+    "id": 1,
+    "companyName": "Homegate",
+    "account": {
+      "name": "Steve",
+      "surname": "Harris",
+      "email": ["steveharris@gmail.com"],
+      "address": "14 NE 13th St, Miami",
+      "img": "account-1.jpg",
+      "phone": ["+414454543", "+414454543"],
+      "agent": true
+    }
+  },
+  {
+    "id": 2,
+    "companyName": "Homegate",
+    "account": {
+      "name": "Bruce",
+      "surname": "Dickinson",
+      "email": ["brucedickinson@gmail.com"],
+      "address": "14 NE 13th St, Miami",
+      "img": "account-1.jpg",
+      "phone": ["+414454543", "+414454543"],
+      "agent": true
+    }
+  },
+  {
+    "id": 3,
+    "companyName": "Homegate",
+    "account": {
+      "name": "Paul",
+      "surname": "Di Anno",
+      "email": ["pauldianno@gmail.com"],
+      "address": "14 NE 13th St, Miami",
+      "img": "account-1.jpg",
+      "phone": ["+414454543", "+414454543"],
+      "agent": true
+    }
+  },
+  {
+    "id": 4,
+    "companyName": "Homegate",
+    "account": {
+      "name": "Nicko",
+      "surname": "McBrain",
+      "email": ["nickomcbrain@gmail.com"],
+      "address": "14 NE 13th St, Miami",
+      "img": "account-1.jpg",
+      "phone": ["+414454543", "+414454543"],
+      "agent": true
+    }
+  },
+  {
+    "id": 5,
+    "companyName": "Homegate",
+    "account": {
+      "name": "Dave",
+      "surname": "Murray",
+      "email": ["davemurray@gmail.com"],
+      "address": "14 NE 13th St, Miami",
+      "img": "account-1.jpg",
+      "phone": ["+414454543", "+414454543"],
+      "agent": true
+    }
+  }
+]

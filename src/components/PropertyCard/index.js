@@ -1,39 +1,64 @@
-import { useRef, useState } from "react";
-import { Card, Col, Container, Row } from "react-bootstrap";
+import { useEffect, useState } from "react";
+import { Row, Col, Card, Modal, Container } from "react-bootstrap";
 import { Link } from "react-router-dom";
-
-import { useOnClickOutside } from "lib/useOutsideClick";
 import { numberWithCommas } from "utils/numberWithCommas";
 import PropertyTag from "../PropertyTag";
 import IconButton from "../IconButton";
 import ProfileIcon from "../ProfileIcon";
-import OutlineHeart from "../../stories/svg/OutlineHeart";
+import Button from "components/Button";
 
+import PropertyActions from "./PropertyActions";
+import Dots from "stories/svg/Dots";
+import OutlineHeart from "../../stories/svg/OutlineHeart";
+import Checked from "stories/svg/Checked";
 import "./styles.scss";
+import agentsData from "./agents.json";
 
 const PropertyCard = ({
   property,
   user,
   id,
   waitingForApproval,
-  visibleLink = true,
+  visibleLink,
 }) => {
-  const ref = useRef();
-  const [isFavorite, setIsFavorite] = useState(false);
-  const [isActionsClicked, setIsActionsClicked] = useState(false);
-  const [disableLink, setDisableLink] = useState(false);
+  const [isFavourite, setIsFavourite] = useState(false);
+  const [openDropDown, setOpenDropDown] = useState(false);
+  const [disableLink, setDisableLink] = useState(true);
+  const [showModal, setShowModal] = useState(false);
+  const [agents, setAgents] = useState(null);
 
-  useOnClickOutside(ref, () => setIsActionsClicked(false));
+  const [isHoveredModalItem, setIsHoveredModalItem] = useState(false);
+
+  useEffect(() => {
+    setAgents(agentsData);
+  }, []);
+
+  const handleClose = () => {
+    setDisableLink(true);
+    setShowModal(false);
+  };
+  const handleShow = () => {
+    setDisableLink(true);
+    setShowModal(true);
+  };
+
+  const handleClick = () => {
+    if (openDropDown === true) setOpenDropDown(false);
+    else setOpenDropDown(true);
+  };
 
   return (
     <Card className="property-card h-100">
-      <Link to={visibleLink && `/properties/${id}`}>
+      <Link
+        style={{ pointerEvents: visibleLink === false && "none" }}
+        to={disableLink && `/properties/${id}`}
+      >
         <Card.Body className="position-relative">
           <IconButton
-            className={"favorite-property-icon"}
-            icon={<OutlineHeart fill={isFavorite} />}
+            className={"favourite-property-icon"}
+            icon={<OutlineHeart fill={isFavourite} />}
             size={"sm"}
-            onClick={() => setIsFavorite((state) => !state)}
+            onClick={() => setIsFavourite((state) => !state)}
             onMouseEnter={() => setDisableLink(false)}
             onMouseLeave={() => setDisableLink(true)}
           />
@@ -42,38 +67,41 @@ const PropertyCard = ({
           ) : (
             <Card.Img variant="top" src={`assets/no-property.png`} />
           )}
-          <Col className="p-3">
+          <Row className="mt-3 mb-3 ms-2 me-2">
             <Col
-              md={12}
+              md={10}
               className="d-flex align-items-start justify-content-between"
             >
-              {/* <div className="col-md-10"> */}
               <h4>CHF {numberWithCommas(property.price)}.00</h4>
-
-              {/* </div> */}
-              {/* <div
-                className="actions"
-                ref={ref}
-                onClick={() => setIsActionsClicked((state) => !state)}
+            </Col>
+            {waitingForApproval && (
+              <Col
+                md={2}
+                className="d-flex align-items-center justify-content-center"
+                onClick={handleClick}
                 onMouseEnter={() => setDisableLink(false)}
                 onMouseLeave={() => setDisableLink(true)}
               >
-                <Dots className="p-1" />
-                {isActionsClicked && <PropertyActions />}
-              </div> */}
-            </Col>
+                <Dots />
+                {openDropDown && (
+                  <PropertyActions
+                    handleShow={handleShow}
+                    setDisableLink={setDisableLink}
+                    openDropDown={openDropDown}
+                  />
+                )}
+              </Col>
+            )}
+
             <Col md={12}>
-              <p className="opacity-75">
+              <p className="small-text opacity-75">
                 CHF {numberWithCommas(property["previous-price"])}.00
               </p>
             </Col>
-            <Container>
+            <Col md={12} className="mt-2 ms-2">
               <Row>
                 {property.tags.map((tag) => (
-                  <PropertyTag
-                    key={tag}
-                    className={"tag-property-property-card"}
-                  >
+                  <PropertyTag key={tag} className={"me-2"}>
                     {tag}
                   </PropertyTag>
                 ))}
@@ -85,12 +113,14 @@ const PropertyCard = ({
                   </PropertyTag>
                 </Row>
               )}
-            </Container>
-            <p className="property-address">
-              {property.address.length < 35
-                ? property.address
-                : `${property.address.slice(0, 30)}...`}
-            </p>
+            </Col>
+            <Col md={12}>
+              <p className="property-address">
+                {property.address.length < 30
+                  ? property.address
+                  : `${property.address.slice(0, 30)}...`}
+              </p>
+            </Col>
             <hr />
             <Row>
               <Col className="d-flex profile-icon-property-card">
@@ -105,9 +135,60 @@ const PropertyCard = ({
                 </p>
               </Col>
             </Row>
-          </Col>
+          </Row>
         </Card.Body>
       </Link>
+      {/* Modal - assign to agent */}
+      <Modal centered show={showModal} onHide={handleClose}>
+        <Modal.Header closeButton>
+          <Modal.Title>Assign to agent</Modal.Title>
+        </Modal.Header>
+        <Modal.Body className="modal-body-share-property">
+          <Container fluid className="p-0 m-0 container-modal-assign-to-agent">
+            <Row className="g-2 pt-3 pb-3 ps-1 pe-1">
+              {agents?.map((item) => (
+                <Col
+                  md={12}
+                  className="pt-2 pb-2 d-flex align-items-center justify-content-start modal-hovered"
+                  onMouseEnter={() => setIsHoveredModalItem(true)}
+                  onMouseLeave={() => setIsHoveredModalItem(false)}
+                >
+                  <ProfileIcon image={item?.account?.img} className={"ms-3"}/>
+                  <p className="ms-2">{`${item?.account?.name} ${item?.account?.surname}`}</p>
+                </Col>
+              ))}
+            </Row>
+          </Container>
+          {/* <Row>
+            <Col md={12}>
+              <ProfileIcon name={"Nikola"} />
+            </Col>
+            <Col md={12}>
+              <ProfileIcon name={"Nikola"} />
+            </Col>
+          </Row> */}
+        </Modal.Body>
+        <Modal.Footer className="m-0 p-0">
+          <Button
+            type="text"
+            onClick={handleClose}
+            onMouseEnter={() => setDisableLink(false)}
+            onMouseLeave={() => setDisableLink(true)}
+          >
+            Cancel
+          </Button>
+          <Button
+            onClick={handleClose}
+            className="mt-2 mb-2 m-3"
+            leadingIcon={<Checked fill="#EBD3BD" />}
+            onMouseEnter={() => setDisableLink(false)}
+            onMouseLeave={() => setDisableLink(true)}
+          >
+            Confirm
+          </Button>
+        </Modal.Footer>
+      </Modal>
+      {/* Modal */}
     </Card>
   );
 };

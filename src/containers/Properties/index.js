@@ -47,8 +47,8 @@ const Properties = () => {
   const [accountsCreated, setAccountsCreated] = useState([]);
   const [otherDetails, setOtherDetails] = useState([]);
 
-  const [currentTab, setCurrentTab] = useState("approved");
-  // const { selectedTabProperties, setSelectedTabProperties } = useAppContext();
+  // const [currentTab, setCurrentTab] = useState("approved-properties");
+  const { selectedTabProperties, setSelectedTabProperties } = useAppContext();
 
   useEffect(() => {
     if (searchTerm.length === 0) {
@@ -86,12 +86,12 @@ const Properties = () => {
           </Row>
           <Tabs
             id="uncontrolled-tab-example"
-            activeKey={currentTab}
-            onSelect={(tab) => setCurrentTab(tab)}
+            activeKey={selectedTabProperties}
+            onSelect={(tab) => setSelectedTabProperties(tab)}
             className="mt-3 mb-4"
           >
             <Tab
-              eventKey="approved"
+              eventKey="approved-properties"
               title={
                 <>
                   Approved properties
@@ -179,7 +179,7 @@ const Properties = () => {
               </Row>
             </Tab>
             <Tab
-              eventKey="unnaproved"
+              eventKey="unapproved-properties"
               title={
                 <>
                   Unapproved properties

@@ -38,6 +38,9 @@ import InquiryCard from "components/InquiryCard";
 import InfoTabMessage from "components/InfoTabMessage";
 import Checked from "stories/svg/Checked";
 import DocumentFilled from "stories/svg/DocumentFilled";
+import Plus from "stories/svg/Plus";
+import { useAppContext } from "lib/contextLib";
+import ExternalPortalsTable from "components/CreateAdsTable";
 
 const detailLabels = [
   "Town",
@@ -97,6 +100,8 @@ const SingleProperty = () => {
   const [successMessage, setSuccessMessage] = useState(false);
   const location = useLocation();
 
+  const { selectedTabProperties } = useAppContext();
+
   useEffect(() => {
     const singleProperty = data.filter(
       (property) => property.id === Number(id)
@@ -131,9 +136,15 @@ const SingleProperty = () => {
                   <Breadcrumb.Item>
                     <Link to={"/properties"}>
                       <p>
-                        {propertyData?.property?.approved
+                        {/* {propertyData?.property?.approved
                           ? "Approved Properties"
-                          : "Waiting for approval"}
+                          : "Waiting for approval"} */}
+                        {selectedTabProperties === "approved-properties" &&
+                          "Approved Properties"}
+                        {selectedTabProperties === "waiting-for-approval" &&
+                          "Waiting for approval"}
+                        {selectedTabProperties === "unapproved-properties" &&
+                          "Unapproved properties"}
                       </p>
                     </Link>
                   </Breadcrumb.Item>
@@ -241,12 +252,12 @@ const SingleProperty = () => {
                   </Modal.Body>
                 </Modal>
                 <Tabs
-                  defaultActiveKey="details"
+                  defaultActiveKey="property-details"
                   id="uncontrolled-tab-example"
                   className="mb-4 mt-4"
                 >
                   <Tab
-                    eventKey="details"
+                    eventKey="property-details"
                     title="Property details"
                     tabClassName="position-relative pt-3 pb-3 ps-4 pe-4 bg-transparent"
                   >
@@ -378,7 +389,7 @@ const SingleProperty = () => {
                     </Row>
                   </Tab>
                   <Tab
-                    eventKey="process"
+                    eventKey="process-information"
                     title="Process information"
                     tabClassName="position-relative pt-3 pb-3 ps-4 pe-4 bg-transparent"
                   >
@@ -441,7 +452,7 @@ const SingleProperty = () => {
                     tabClassName="position-relative pt-3 pb-3 ps-4 pe-4 bg-transparent"
                     disabled={!propertyData?.property?.approved}
                   >
-                    <CreateAdsTable />
+                    <ExternalPortalsTable />
                   </Tab>
                 </Tabs>
               </Col>
@@ -454,6 +465,14 @@ const SingleProperty = () => {
                   surname={"Doe"}
                   page={location.pathname.split("/")[1]}
                 />
+                <Button
+                  // onClick={handleShow}
+                  type="secondary"
+                  leadingIcon={<Plus fill="#EBD3BD" />}
+                  className={"mt-4 sticky-bottom"}
+                >
+                  Assign to agent
+                </Button>
               </Col>
             </Row>
           </Col>

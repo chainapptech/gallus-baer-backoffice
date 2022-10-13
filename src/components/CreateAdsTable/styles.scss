@@ -1,10 +1,11 @@
 @use "../../style/custom" as *;
 
-.table-wrapper {
+.external-portals-table-wrapper {
   max-width: 1000px;
   background-color: $n0;
   border: 1px solid $n100;
   border-radius: 4px;
+
   .ads-table {
     thead {
       th {
@@ -16,40 +17,45 @@
       }
     }
 
-    .table-item {
-      align-items: center;
-      vertical-align: middle;
-      td {
-        border: none;
-        padding: 14px 10px;
-        .table-ads-logo {
-          width: 86px;
-        }
-        &:first-child {
-          width: 15%;
-        }
-        &:last-child {
-          width: 20%;
-        }
-      }
+    // .table-item {
+    //   align-items: center;
+    //   vertical-align: middle;
 
-      p {
-        font-weight: 400;
-        font-size: 14px;
-        line-height: 20px;
-      }
-      h5 {
-        color: $p500;
-      }
+    //   &:hover {
+    //     background-color: $n50;
+    //   }
+    //   td {
+    //     border: none;
+    //     // padding: 10px;
+    //     .table-ads-logo {
+    //       width: 86px;
+    //     }
+    //     &:first-child {
+    //       width: 25%;
+    //     }
+    //     &:nth-child(2) {
+    //       width: 25%;
+    //     }
+    //   }
 
-      span {
-        color: #3d6c9e;
-        font-size: 16px;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-      }
-    }
+    //   p {
+    //     font-weight: 400;
+    //     font-size: 14px;
+    //     line-height: 20px;
+    //   }
+    //   h5 {
+    //     margin: 0;
+    //     color: $p500;
+    //   }
+
+    //   span {
+    //     color: #3d6c9e;
+    //     font-size: 16px;
+    //     white-space: nowrap;
+    //     overflow: hidden;
+    //     text-overflow: ellipsis;
+    //   }
+    // }
   }
 
   .pagination-wrapper {
@@ -61,11 +67,9 @@
 
     ul {
       margin: 0;
-
       li {
         a {
           border: none;
-
           &:focus,
           &:active {
             box-shadow: none;

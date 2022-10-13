@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import DocumentTextOutlined from "stories/svg/DocumentTextOutlined";
 import SendOutlined from "stories/svg/SendOutlined";
+import { numberWithCommas } from "utils/numberWithCommas";
 import checked from "./invoice-summary.json";
 import "./styles.scss";
 
@@ -35,7 +36,7 @@ const InvoiceSummary = ({ activeStep, setActiveStep }) => {
             <p>{serviceName}</p>
           </Col>
           <Col md={4} className="d-flex align-items-center justify-content-end">
-            <h5 className="m-0">{`CHF ${price}.00`}</h5>
+            <h5 className="m-0">{`CHF ${numberWithCommas(price)}.00`}</h5>
           </Col>
           <Col md={12} className="m-0">
             <hr />
@@ -45,7 +46,8 @@ const InvoiceSummary = ({ activeStep, setActiveStep }) => {
 
       <Row className="invoice-summary-total-price">
         <Col className="d-flex align-items-center justify-content-end">
-          <p className="me-2">Total price:</p> <h4>{`CHF ${totalPrice}.00`}</h4>
+          <p className="me-2">Total price:</p>{" "}
+          <h4>{`CHF ${numberWithCommas(totalPrice)}.00`}</h4>
         </Col>
       </Row>
 

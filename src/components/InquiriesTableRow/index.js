@@ -10,13 +10,15 @@ import Button from "components/Button";
 import SendOutlined from "stories/svg/SendOutlined";
 import Modal from "react-bootstrap/Modal";
 import Checked from "stories/svg/Checked";
+import MyCheckbox from "components/MyCheckbox";
+import MyRadio from "components/MyRadio";
 
 const selectOptions = ["Not answered", "Answered", "Assigned"];
 
 const InquiriesTableRow = ({ inquiryItem }) => {
   const [showCanvas, setShowCanvas] = useState(false);
   const [showModal, setShowModal] = useState(false);
-  const [option, setOption] = useState("Not answered");
+  const [option, setOption] = useState(inquiryItem.inquiryStatus);
 
   const handleCloseButton = () => {
     if (option === "Not answered") {
@@ -52,7 +54,7 @@ const InquiriesTableRow = ({ inquiryItem }) => {
             >
               <p>Property: </p>
               <p className="p-2 inquire-address">
-                {inquiryItem.account.address}
+                {inquiryItem?.account?.address}
               </p>
             </Col>
             <Col
@@ -82,16 +84,17 @@ const InquiriesTableRow = ({ inquiryItem }) => {
                   >
                     <ProfileIcon
                       className={"profile-pict"}
-                      name={inquiryItem.account.name}
-                      surname={inquiryItem.account.surname}
-                      image={inquiryItem.account.img}
+                      name={inquiryItem?.account?.name}
+                      surname={inquiryItem?.account?.surname}
+                      image={inquiryItem?.account?.img}
                     />
                     <div>
                       <h5>
-                        {inquiryItem.account.name} {inquiryItem.account.surname}
+                        {inquiryItem?.account?.name}{" "}
+                        {inquiryItem?.account?.surname}
                       </h5>
                       <p className="small-text">
-                        {inquiryItem.account.email &&
+                        {inquiryItem?.account?.email &&
                           inquiryItem.account.email[0]}
                       </p>
                     </div>
@@ -154,7 +157,40 @@ const InquiriesTableRow = ({ inquiryItem }) => {
                     <Form.Label className="m-0">
                       <h5 className="ms-2">Inquiry status</h5>
                     </Form.Label>
-                    <Form.Select
+                    {/* <MyRadio
+                      checked={option === "answered"}
+                      name={"test1"}
+                      label={"Answered"}
+                      inline
+                      key={"Answered"}
+                      value={"Answered"}
+                      onClick={() => setOption("answered")}
+                    />
+
+                    <MyRadio
+                      checked={option === "not-answered"}
+                      name={"test2"}
+                      label={"Not Answered"}
+                      inline
+                      key={"Not Answered"}
+                      value={"Not Answered"}
+                      onClick={() => setOption("not-answered")}
+                    /> */}
+
+                    {selectOptions.map((item, index) => (
+                      <MyRadio
+                        checked={option}
+                        name="test"
+                        label={item}
+                        inline
+                        key={index}
+                        value={option}
+                      >
+                        {item}
+                      </MyRadio>
+                    ))}
+
+                    {/* <Form.Select
                       className="mb-3"
                       value={option}
                       onChange={(e) => setOption(e.target.value)}
@@ -164,7 +200,7 @@ const InquiriesTableRow = ({ inquiryItem }) => {
                           {item}
                         </option>
                       ))}
-                    </Form.Select>
+                    </Form.Select> */}
                   </Form.Group>
                 </Col>
               </Row>
@@ -209,29 +245,32 @@ const InquiriesTableRow = ({ inquiryItem }) => {
           >
             <ProfileIcon
               className={"profile-pict"}
-              name={inquiryItem.account.name}
-              surname={inquiryItem.account.surname}
-              image={inquiryItem.account.img}
+              name={inquiryItem?.account?.name}
+              surname={inquiryItem?.account?.surname}
+              image={inquiryItem?.account?.img}
             />
             <div>
               <h5>
-                {inquiryItem.account.name} {inquiryItem.account.surname}
+                {inquiryItem?.account?.name} {inquiryItem?.account?.surname}
               </h5>
               <p className="small-text">
-                {inquiryItem.account.email && inquiryItem.account.email[0]}
+                {inquiryItem?.account?.email && inquiryItem.account.email[0]}
               </p>
             </div>
           </div>
         </td>
         <td className="align-middle">
-          <p className="p-2 inquire-address">{inquiryItem.account.address}</p>
+          <p className="p-2 inquire-address">{inquiryItem?.account?.address}</p>
+        </td>
+        <td className="align-middle">
+          <p className="p-2 inquire-address">{inquiryItem?.companyName}</p>
         </td>
         <td className="align-middle">
           <div className="d-flex align-items-center justify-content-start">
             <div className="me-2">
               <CalendarDotted />
             </div>
-            <p className="ms-1">{inquiryItem.date}</p>
+            <p className="ms-1">{inquiryItem?.date}</p>
           </div>
         </td>
         <td className="align-middle">
@@ -239,7 +278,7 @@ const InquiriesTableRow = ({ inquiryItem }) => {
             <div className="me-2">
               <Time />
             </div>
-            <p className="ms-1">{inquiryItem.time}</p>
+            <p className="ms-1">{inquiryItem?.time}</p>
           </div>
         </td>
       </tr>

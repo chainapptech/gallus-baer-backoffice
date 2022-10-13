@@ -28,18 +28,22 @@ const Inquiries = () => {
                 title="New inquiries"
                 tabClassName="position-relative pt-3 pb-3 ps-4 pe-4 bg-transparent"
               >
-                <Col>
-                  <InquiryTable inquiries={inquiries} />
-                </Col>
+                <Row>
+                  <Col md={10}>
+                    <InquiryTable inquiries={newInquiries} />
+                  </Col>
+                </Row>
               </Tab>
               <Tab
                 eventKey="answered-inquiries"
                 title="Answered inquiries"
                 tabClassName="position-relative pt-3 pb-3 ps-4 pe-4 bg-transparent"
               >
-                <Col>
-                  <InquiryTable inquiries={inquiries} />
-                </Col>
+                <Row>
+                  <Col md={10}>
+                    <InquiryTable inquiries={newInquiries} />
+                  </Col>
+                </Row>
               </Tab>
             </Tabs>
           </Col>

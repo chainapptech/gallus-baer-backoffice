@@ -1,27 +1,16 @@
-.accordion-wrapper {
-    .accordion-button {
-        padding: 0 12px;
-        .logo {
-            width: 7%;
-        }
-        .descr {
-            width: 15%;
-            padding: 16px 60px 16px 16px;
-            h5 {
-                margin: 0;
-            }
-        }
-    }
+@use "../../style/custom" as *;
 
-    .accordion-body {
-        .table {
-            margin: 0;
-        }
-        padding: 0;
-        h6 {
-            margin: 0;
-            padding: 16px 16px;
-            color: #6b6f72;
-        }
+.inquiry-table-wrapper {
+    background: $n0;
+    border: 1px solid $n100;
+    border-radius: 4px;
+    .table {
+        margin: 0;
+    }
+    padding: 0;
+    h6 {
+        margin: 0;
+        padding: 16px 16px;
+        color: #6b6f72;
     }
 }

@@ -3,8 +3,9 @@ const AppContext = createContext();
 
 export function AppContextProvider({ children }) {
   const [authenticated, setAuthenticated] = useState(false);
-  const [selectedTabProperties, setSelectedTabProperties] =
-    useState("approved");
+  const [selectedTabProperties, setSelectedTabProperties] = useState(
+    "approved-properties"
+  );
 
   return (
     <AppContext.Provider
