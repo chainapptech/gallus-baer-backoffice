@@ -3,6 +3,7 @@ import MyCheckbox from "components/MyCheckbox";
 import SearchInput from "components/SearchInput";
 import { useEffect, useState } from "react";
 import { Row, Col, Container, Form } from "react-bootstrap";
+import { numberWithCommas } from "utils/numberWithCommas";
 import services from "./choose-package-data.json";
 import "./styles.scss";
 
@@ -101,7 +102,7 @@ const InvoiceChoosePackageTable = ({ children }) => {
             md={3}
             className="d-flex align-items-center justify-content-end pe-4"
           >
-            <p>{`CHF ${price}.00`}</p>
+            <p>{`CHF ${numberWithCommas(price)}.00`}</p>
           </Col>
         </Row>
       ))}

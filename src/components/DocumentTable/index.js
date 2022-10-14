@@ -1,18 +1,17 @@
 import { useState } from "react";
-import { Col, Row, Table, Pagination } from "react-bootstrap";
-
-import ProfileIcon from "components/ProfileIcon";
-import StatusLabel from "components/StatusLabel";
+import { Col, Table, Pagination } from "react-bootstrap";
 import FilledArrowDown from "stories/svg/FilledArrowDown";
 import DocumentTableRow from "./DocumentTableRow";
+import { useAppContext } from "lib/contextLib";
 import data from "./dummy-documents.json";
-
 import "./styles.scss";
 
 const DocumentTable = () => {
   const [rowsPerPage, setRowPerPage] = useState(10);
   const [currentPage, setCurrentPage] = useState(1);
   const [showedData, showData] = useState(data.slice(0, rowsPerPage));
+
+  const { selectedTabProperties } = useAppContext();
 
   const handleClick = (page) => {
     setCurrentPage(page);
@@ -28,7 +27,9 @@ const DocumentTable = () => {
         <thead>
           <tr>
             <th>Document name</th>
-            <th>Status</th>
+            {selectedTabProperties === "waiting-for-approval" && (
+              <th>Status</th>
+            )}
             <th>Uploader</th>
           </tr>
         </thead>

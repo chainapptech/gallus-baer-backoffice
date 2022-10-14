@@ -1,3 +1,5 @@
+@use "../../../style/custom" as *;
+
 .contact-info-card-property {
   position: absolute;
   top: 0;
@@ -17,6 +19,14 @@
 .modal-body-share-property {
   background-color: #f5f5f5;
   border-radius: 6px;
+  .container-modal-assign-to-agent {
+    background: $n0;
+    border: 1px solid $n100;
+    border-radius: 4px;
+  }
+  .modal-hovered:hover {
+    background-color: $n50;
+  }
 }
 
 .nav-tabs {

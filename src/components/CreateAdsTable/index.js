@@ -1,17 +1,22 @@
 import { useState } from "react";
-import { Col, Row, Table, Pagination } from "react-bootstrap";
-
-import ProfileIcon from "components/ProfileIcon";
+import { Col, Table, Pagination } from "react-bootstrap";
 import StatusLabel from "components/StatusLabel";
 import FilledArrowDown from "stories/svg/FilledArrowDown";
 import data from "./dummy-documents.json";
 
 import "./styles.scss";
+import Button from "components/Button";
+import ExternalPortalsTableRow from "./ExternalPortalsTableRow";
 
-const CreateAdsTable = () => {
+const ExternalPortalsTable = () => {
   const [rowsPerPage, setRowPerPage] = useState(10);
   const [currentPage, setCurrentPage] = useState(1);
   const [showedData, showData] = useState(data?.slice(0, rowsPerPage));
+
+  const [isHovered, setIsHovered] = useState(false);
+
+  const handleHover = (e) =>
+    e.type === "mouseenter" ? setIsHovered(true) : setIsHovered(false);
 
   const handleClick = (page) => {
     setCurrentPage(page);
@@ -22,28 +27,19 @@ const CreateAdsTable = () => {
   };
 
   return (
-    <Col className="table-wrapper">
+    <Col className="external-portals-table-wrapper">
       <Table className="ads-table" responsive>
         <thead>
           <tr>
             <th>Logo</th>
             <th>Portal name</th>
             <th>Status</th>
+            {/* {isHovered && <th></th>} */}
           </tr>
         </thead>
         <tbody>
-          {showedData.map(({ logo, name, status }, index) => (
-            <tr key={index} className="table-item ">
-              <td>
-                <img className="table-ads-logo" src={`/assets/${logo}`} />
-              </td>
-              <td>
-                <h5>{name}</h5>
-              </td>
-              <td className="w-20">
-                <StatusLabel status={status} />
-              </td>
-            </tr>
+          {showedData.map((data, index) => (
+           <ExternalPortalsTableRow key={index} data={data} />
           ))}
         </tbody>
       </Table>
@@ -69,4 +65,4 @@ const CreateAdsTable = () => {
   );
 };
 
-export default CreateAdsTable;
+export default ExternalPortalsTable;

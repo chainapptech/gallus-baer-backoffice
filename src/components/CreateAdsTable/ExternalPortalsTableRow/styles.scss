@@ -1,26 +1,24 @@
 @use "../../../style/custom" as *;
 
-.document-table-item {
+.table-item {
   align-items: center;
   vertical-align: middle;
-  width: 100%;
-  cursor: pointer;
 
   &:hover {
     background-color: $n50;
   }
-
   td {
     border: none;
-    padding: 8px 10px;
-
-    &:first-child {
-      width: 35%;
+    // padding: 10px;
+    .table-ads-logo {
+      width: 86px;
     }
-  }
-
-  .status {
-    width: 15%;
+    &:first-child {
+      width: 25%;
+    }
+    &:nth-child(2) {
+      width: 25%;
+    }
   }
 
   p {
@@ -28,6 +26,11 @@
     font-size: 14px;
     line-height: 20px;
   }
+  h5 {
+    margin: 0;
+    color: $p500;
+  }
+
   span {
     color: #3d6c9e;
     font-size: 16px;

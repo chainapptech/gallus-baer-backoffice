@@ -2,10 +2,12 @@ import { useState } from "react";
 import ProfileIcon from "components/ProfileIcon";
 import StatusLabel from "components/StatusLabel";
 import Button from "components/Button";
-
+import { useAppContext } from "lib/contextLib";
 import "./styles.scss";
+
 const DocumentTableRow = ({ data }) => {
   const [isHovered, setIsHovered] = useState(false);
+  const { selectedTabProperties } = useAppContext();
 
   const handleHover = (e) =>
     e.type === "mouseenter" ? setIsHovered(true) : setIsHovered(false);
@@ -19,9 +21,11 @@ const DocumentTableRow = ({ data }) => {
       <td>
         <span className="ps-2">{data.name}</span>
       </td>
-      <td>
-        <StatusLabel status={data.status} />
-      </td>
+      {selectedTabProperties === "waiting-for-approval" && (
+        <td className="status">
+          <StatusLabel status={data.status} />
+        </td>
+      )}
       <td className="d-flex align-items-center justify-content-between">
         <div className="d-flex align-items-center">
           <ProfileIcon image={data.img} size="sm" className="me-2" />
