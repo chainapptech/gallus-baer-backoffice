@@ -1,19 +1,28 @@
+import { useState } from "react";
+import { useAppContext } from "lib/contextLib";
+import { Container, Row, Col } from "react-bootstrap";
 import Button from "components/Button";
 import ProfileIcon from "components/ProfileIcon";
-import { useState } from "react";
-import { Col, Form, Row } from "react-bootstrap";
 import CalendarDotted from "stories/svg/CalendarDotted";
 import Phone from "stories/svg/Phone";
 import SendOutlined from "stories/svg/SendOutlined";
 import Time from "stories/svg/Time";
+import MyRadio from "components/MyRadio";
 import "./styles.scss";
 
 const InquiryCard = () => {
-  const [option, setOption] = useState("Not answered");
+  const { selectedTabInquiries } = useAppContext();
 
   const selectOptions = ["Not answered", "Answered", "Assigned"];
+
+  const [inqueryStatusRadio, setInqueryStatusRadio] = useState("Answered");
+
+  const radioChangeHandler = (e) => {
+    setInqueryStatusRadio(e.target.value);
+  };
+
   return (
-    <div className="single-inquiry-card">
+    <Container className="single-inquiry-card">
       <Row>
         <Col md={9}>
           <Row>
@@ -70,10 +79,32 @@ const InquiryCard = () => {
                 <b>14 NE 13th St, Miami</b>
               </p>
             </Col>
+            {selectedTabInquiries === "new-inquiries" && (
+              <>
+                <Col
+                  md={12}
+                  className="d-flex align-items-center justify-content-start mt-3"
+                >
+                  <h5>Inquiry Status</h5>
+                </Col>
+                <Col className="d-flex align-items-center justify-content-start mt-2">
+                  {selectOptions.map((item, index) => (
+                    <MyRadio
+                      onChange={radioChangeHandler}
+                      id={index}
+                      isSelected={inqueryStatusRadio === item}
+                      label={item}
+                      value={item}
+                      className={"me-4"}
+                    />
+                  ))}
+                </Col>
+              </>
+            )}
           </Row>
         </Col>
         <Col md={3}>
-          <Form.Group>
+          {/* <Form.Group>
             <Form.Label className="d-none d-md-block">
               <h5 className="ms-2 ">Inquiry status</h5>
             </Form.Label>
@@ -88,7 +119,17 @@ const InquiryCard = () => {
                 </option>
               ))}
             </Form.Select>
-          </Form.Group>
+          </Form.Group> */}
+          <Row>
+            <Col md={6}></Col>
+            <Col md={6}>
+              <img
+                src="../assets/LogoImmoScout24.png"
+                alt="Logo"
+                // className="inquiries-logo-company"
+              ></img>
+            </Col>
+          </Row>
         </Col>
       </Row>
       <Row>
@@ -123,7 +164,7 @@ const InquiryCard = () => {
           </Row>
         </Col>
       </Row>
-    </div>
+    </Container>
   );
 };
 

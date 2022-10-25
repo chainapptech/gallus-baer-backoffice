@@ -2,18 +2,21 @@
 
 .my-radio-wrapper {
     .form-check-input {
-        // border: 2px solid #a4acb6;
-        // border-radius: 50%;
-        // background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='10' cy='10' r='9.5' fill='white' stroke='%2396989B'/%3E%3Ccircle cx='10' cy='10' r='6.5' fill='white' stroke='%2396989B'/%3E%3C/svg%3E%0A");
+        border: none;
+        background-color: none;
+        background-position: center;
         box-shadow: none;
+        background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='10' cy='10' r='9.5' fill='white' stroke='%2396989B'/%3E%3Ccircle cx='10' cy='10' r='6.5' fill='white' stroke='%2396989B'/%3E%3C/svg%3E%0A");
         cursor: pointer;
     }
 
     .form-radio-input:checked {
         border: none;
+        background-color: none;
+        box-shadow: none;
         background-position: center;
-        // background-color: #084474;
         background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='10' cy='10' r='9.5' fill='white' stroke='%2396989B'/%3E%3Ccircle cx='10' cy='10' r='6.5' fill='%23084474' stroke='%2396989B'/%3E%3C/svg%3E%0A");
+        cursor: pointer;
     }
 
     .form-radio-input:disabled {

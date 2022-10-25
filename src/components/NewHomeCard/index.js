@@ -26,7 +26,9 @@ const NewHomeCard = ({ children, type }) => {
           <p className="small-text">You have 37 new {type}.</p>
         </Col>
         <Col md={6} className="d-flex align-items-center justify-content-end">
-          <Plus />
+          <div className="plus-icon">
+            <Plus />
+          </div>
         </Col>
       </Row>
       <Row className="ps-3 pe-3 m-0">

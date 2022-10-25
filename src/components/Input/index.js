@@ -16,7 +16,7 @@ const InputComponent = ({
   search,
 }) => (
   <Col className="input-wrapper d-flex flex-column">
-    <h6 className="mb-2 ms-2">{label}</h6>
+    {label && <h5 className="mb-2 ms-2">{label}</h5>}
     {type === "select" ? (
       <DropdownButton
         disabled={disabled}

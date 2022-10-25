@@ -75,7 +75,7 @@ const Table = ({ accounts }) => {
             adipiscing elit...
           </p>
           <Row>
-            <Col md={6}>
+            <Col md={12}>
               <InputComponent
                 label={"Mobile phone"}
                 placeholder={"Placeholder text"}

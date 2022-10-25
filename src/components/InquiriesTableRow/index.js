@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useAppContext } from "lib/contextLib";
 import { Col, Form, Offcanvas, Row } from "react-bootstrap";
 import ProfileIcon from "components/ProfileIcon";
 import "./styles.scss";
@@ -10,18 +11,24 @@ import Button from "components/Button";
 import SendOutlined from "stories/svg/SendOutlined";
 import Modal from "react-bootstrap/Modal";
 import Checked from "stories/svg/Checked";
-import MyCheckbox from "components/MyCheckbox";
 import MyRadio from "components/MyRadio";
-
-const selectOptions = ["Not answered", "Answered", "Assigned"];
 
 const InquiriesTableRow = ({ inquiryItem }) => {
   const [showCanvas, setShowCanvas] = useState(false);
   const [showModal, setShowModal] = useState(false);
-  const [option, setOption] = useState(inquiryItem.inquiryStatus);
+  const { selectedTabInquiries } = useAppContext();
+  // const [option, setOption] = useState(inquiryItem.inquiryStatus);
+
+  const selectOptions = ["Not answered", "Answered", "Assigned"];
+
+  const [inqueryStatusRadio, setInqueryStatusRadio] = useState("Answered");
+
+  const radioChangeHandler = (e) => {
+    setInqueryStatusRadio(e.target.value);
+  };
 
   const handleCloseButton = () => {
-    if (option === "Not answered") {
+    if (inqueryStatusRadio === "Answered") {
       setShowCanvas(false);
     } else setShowModal(true);
   };
@@ -37,6 +44,7 @@ const InquiriesTableRow = ({ inquiryItem }) => {
         placement={"end"}
         show={showCanvas}
         onHide={handleCloseButton}
+        // onHide={() => setShowCanvas(false)}
         style={{ width: "33%" }}
       >
         <Offcanvas.Header closeButton>
@@ -152,56 +160,24 @@ const InquiriesTableRow = ({ inquiryItem }) => {
                     </Col>
                   </Row>
                 </Col>
-                <Col md={7} className="info-canvas-select">
-                  <Form.Group>
-                    <Form.Label className="m-0">
-                      <h5 className="ms-2">Inquiry status</h5>
-                    </Form.Label>
-                    {/* <MyRadio
-                      checked={option === "answered"}
-                      name={"test1"}
-                      label={"Answered"}
-                      inline
-                      key={"Answered"}
-                      value={"Answered"}
-                      onClick={() => setOption("answered")}
-                    />
-
-                    <MyRadio
-                      checked={option === "not-answered"}
-                      name={"test2"}
-                      label={"Not Answered"}
-                      inline
-                      key={"Not Answered"}
-                      value={"Not Answered"}
-                      onClick={() => setOption("not-answered")}
-                    /> */}
-
-                    {selectOptions.map((item, index) => (
-                      <MyRadio
-                        checked={option}
-                        name="test"
-                        label={item}
-                        inline
-                        key={index}
-                        value={option}
-                      >
-                        {item}
-                      </MyRadio>
-                    ))}
-
-                    {/* <Form.Select
-                      className="mb-3"
-                      value={option}
-                      onChange={(e) => setOption(e.target.value)}
-                    >
+                <Col md={7} className="info-canvas-radio">
+                  {selectedTabInquiries === "new-inquiries" && (
+                    <Form.Group>
+                      <Form.Label className="mb-2">
+                        <h5>Inquiry status</h5>
+                      </Form.Label>
+                      {/* Radios */}
                       {selectOptions.map((item, index) => (
-                        <option key={index} value={item}>
-                          {item}
-                        </option>
+                        <MyRadio
+                          onChange={radioChangeHandler}
+                          id={index}
+                          isSelected={inqueryStatusRadio === item}
+                          label={item}
+                          value={item}
+                        />
                       ))}
-                    </Form.Select> */}
-                  </Form.Group>
+                    </Form.Group>
+                  )}
                 </Col>
               </Row>
             </Col>
@@ -245,8 +221,8 @@ const InquiriesTableRow = ({ inquiryItem }) => {
           >
             <ProfileIcon
               className={"profile-pict"}
-              name={inquiryItem?.account?.name}
-              surname={inquiryItem?.account?.surname}
+              // name={inquiryItem?.account?.name}
+              // surname={inquiryItem?.account?.surname}
               image={inquiryItem?.account?.img}
             />
             <div>
@@ -263,7 +239,7 @@ const InquiriesTableRow = ({ inquiryItem }) => {
           <p className="p-2 inquire-address">{inquiryItem?.account?.address}</p>
         </td>
         <td className="align-middle">
-          <p className="p-2 inquire-address">{inquiryItem?.companyName}</p>
+          <h5 className="p-2">{inquiryItem?.companyName}</h5>
         </td>
         <td className="align-middle">
           <div className="d-flex align-items-center justify-content-start">

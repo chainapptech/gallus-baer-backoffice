@@ -1,4 +1,3 @@
-import React from "react";
 import { Auth } from "aws-amplify";
 import { useNavigate, Link } from "react-router-dom";
 import { Col, Nav } from "react-bootstrap";
@@ -81,7 +80,7 @@ const Sidebar = () => {
         defaultActiveKey="/home"
         className="flex-column mt-4 pt-4 "
       >
-        <p className="ms-4 mb-4">WELCOME, LUCIA</p>
+        {/* <p className="ms-4 mb-4">WELCOME, LUCIA</p> */}
         {links.map((link, index) => (
           <Link key={index} to={`${link.path}`}>
             <SidebarLink key={index} link={link} notificationNumber={0} />

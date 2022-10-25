@@ -13,15 +13,6 @@ const MyCheckbox = ({
   radio,
   label,
 }) => {
-  // const [isChecked, setIsChecked] = useState(false);
-
-  // useEffect(() => {
-  //   if (!checked) setIsChecked(false);
-  //   else setIsChecked(true);
-  // }, [checked]);
-
-  // const [isChecked, setIsChecked] = useState(checked);
-
   const handleOnChange = (e) => {
     if (e.target.id === "allServices") {
       let checkedClone = { ...checkedState };
@@ -64,17 +55,6 @@ const MyCheckbox = ({
           onChange={handleOnChange}
         />
       )}
-      {/* <input
-        type="checkbox"
-        id=""
-        disabled={disabled}
-        value="Paneer"
-        checked={isChecked}
-        onChange={handleOnChange}
-        className={`p-3 form-check-input ${
-          isChecked && "form-check-input:checked"
-        } ${disabled && "form-check-input:disabled"}`}
-      /> */}
     </div>
   );
 };
