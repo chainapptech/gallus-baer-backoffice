@@ -1,12 +1,9 @@
-import { Container, Row, Col, Table, Accordion } from "react-bootstrap";
+import { Container, Row, Col, Table } from "react-bootstrap";
 import InquiriesTableRow from "components/InquiriesTableRow";
 import { Link } from "react-router-dom";
 import "./styles.scss";
-import PropertyTag from "components/PropertyTag";
 import Button from "components/Button";
 import ArrowRight from "stories/svg/ArrowRight";
-import ArrowDown from "stories/svg/ArrowDown";
-import InquiryCard from "components/InquiryCard";
 import useWindowSize from "lib/useWindowSize";
 
 const InquiryTable = ({ inquiries }) => {

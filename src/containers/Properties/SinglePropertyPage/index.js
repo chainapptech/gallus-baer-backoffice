@@ -121,12 +121,15 @@ const SingleProperty = () => {
             <Row className="gy-3">
               <Col sm={12} md={9}>
                 <Row className="mt-4">
-                  <Col md={7}>
+                  <Col md={9}>
                     <InfoTabMessage type={"error"} more={false} />
                   </Col>
                   {successMessage && (
-                    <Col md={5} className="d-flex justify-content-end">
-                      <Button leadingIcon={<Checked fill="#EBD3BD" />}>
+                    <Col md={3} className="d-flex justify-content-end">
+                      <Button
+                        onClick={() => setSuccessMessage(true)}
+                        leadingIcon={<Checked fill="#EBD3BD" />}
+                      >
                         Approve property
                       </Button>
                     </Col>
@@ -136,9 +139,6 @@ const SingleProperty = () => {
                   <Breadcrumb.Item>
                     <Link to={"/properties"}>
                       <p>
-                        {/* {propertyData?.property?.approved
-                          ? "Approved Properties"
-                          : "Waiting for approval"} */}
                         {selectedTabProperties === "approved-properties" &&
                           "Approved Properties"}
                         {selectedTabProperties === "waiting-for-approval" &&
@@ -465,14 +465,16 @@ const SingleProperty = () => {
                   surname={"Doe"}
                   page={location.pathname.split("/")[1]}
                 />
-                <Button
-                  // onClick={handleShow}
-                  type="secondary"
-                  leadingIcon={<Plus fill="#EBD3BD" />}
-                  className={"mt-4 sticky-bottom"}
-                >
-                  Assign to agent
-                </Button>
+                <div className="mt-5 d-flex align-items-center justify-content-center">
+                  <Button
+                    // onClick={handleShow}
+                    type="secondary"
+                    leadingIcon={<Plus fill="#EBD3BD" />}
+                    className={"position-fixed"}
+                  >
+                    Assign to agent
+                  </Button>
+                </div>
               </Col>
             </Row>
           </Col>

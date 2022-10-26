@@ -150,10 +150,10 @@ const PropertyCard = ({
                 <Col
                   md={12}
                   className="pt-2 pb-2 d-flex align-items-center justify-content-start modal-hovered"
-                  onMouseEnter={() => setIsHoveredModalItem(true)}
-                  onMouseLeave={() => setIsHoveredModalItem(false)}
+                  // onMouseEnter={() => setIsHoveredModalItem(true)}
+                  // onMouseLeave={() => setIsHoveredModalItem(false)}
                 >
-                  <ProfileIcon image={item?.account?.img} className={"ms-3"}/>
+                  <ProfileIcon image={item?.account?.img} className={"ms-3"} />
                   <p className="ms-2">{`${item?.account?.name} ${item?.account?.surname}`}</p>
                 </Col>
               ))}

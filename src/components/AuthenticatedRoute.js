@@ -4,7 +4,7 @@ import SingleAccountPage from "containers/Accounts/SingleAccountPage";
 import Properties from "containers/Properties";
 import Dashboard from "containers/Dashboard";
 import SingleProperty from "containers/Properties/SinglePropertyPage";
-import Inquiries from "containers/Inqueries/Inquiries";
+import Inquiries from "containers/Inqueries";
 import SingleInquiryPage from "containers/Inqueries/SingleInquiryPage";
 import Invoices from "containers/Invoices";
 import CreateNewInvoice from "containers/Invoices/CreateNewInvoice";

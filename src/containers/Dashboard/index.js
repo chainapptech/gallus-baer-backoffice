@@ -1,13 +1,11 @@
+import { useEffect, useState } from "react";
 import { Row, Col } from "react-bootstrap";
-import CreateCard from "components/CreateCard";
 import WelcomeComponent from "components/WelcomeComponent";
 import NewPropertyCard from "components/NewPropertyCard";
-import Inquiries from "containers/Inqueries/Inquiries";
 import SingleAccount from "components/SingleAccount";
 import NewHomeCard from "components/NewHomeCard";
-import InquiryAccordion from "components/InquiryAccordion";
-
-import inquiries from "../../containers/Inqueries/inqueries-data.json";
+import newInquiries from "./new-inqueries-data-table.json";
+import InquiryTable from "components/InquiryTable";
 
 const user = {
   name: "Merry Petrov",
@@ -16,6 +14,12 @@ const user = {
 };
 
 const Dashboard = () => {
+  const [inquiries, setInquiries] = useState(null);
+
+  useEffect(() => {
+    setInquiries(newInquiries);
+  }, []);
+
   return (
     <>
       <Row className="mt-3 pt-3 gy-3">
@@ -39,7 +43,8 @@ const Dashboard = () => {
         </Col>
         <Col sm={12} md={12}>
           <NewHomeCard type={"inquiries"}>
-            <InquiryAccordion inquiries={inquiries} />
+            {/* <InquiryAccordion inquiries={inquiries} /> */}
+            <InquiryTable inquiries={inquiries} />
           </NewHomeCard>
         </Col>
 

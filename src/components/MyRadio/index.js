@@ -1,21 +1,23 @@
-import { useEffect, useState } from "react";
-import Form from "react-bootstrap/Form";
-
+import { Form } from "react-bootstrap";
 import "./styles.scss";
 
-const MyRadio = ({ checked, name, disabled, label, id, onChange }) => {
+const MyRadio = (props) => {
+  const { onChange, id, isSelected, label, value, name, className } = props;
   return (
-    <div className="d-flex align-items-center justify-content-start my-radio-wrapper">
+    <div
+      className={`d-flex align-items-center justify-content-start my-radio-wrapper ${className}`}
+    >
       <Form.Check
+        id={id}
         name={name}
-        checked={checked}
-        disabled={disabled}
-        type={`radio`}
-        id={id ? id : `default-radio`}
-        label={label}
         onChange={onChange}
+        value={value}
+        type="radio"
+        checked={isSelected}
       />
-      {/* <p>{label}</p> */}
+      <label htmlFor={id}>
+        <p className="ms-2">{label}</p>
+      </label>
     </div>
   );
 };

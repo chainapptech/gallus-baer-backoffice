@@ -6,6 +6,10 @@ export function AppContextProvider({ children }) {
   const [selectedTabProperties, setSelectedTabProperties] = useState(
     "approved-properties"
   );
+  const [selectedTabInquiries, setSelectedTabInquiries] =
+    useState("new-inquiries");
+  const [selectedTabInvoices, setSelectedTabInvoices] =
+    useState("new-properties");
 
   return (
     <AppContext.Provider
@@ -14,6 +18,10 @@ export function AppContextProvider({ children }) {
         setAuthenticated,
         selectedTabProperties,
         setSelectedTabProperties,
+        selectedTabInquiries,
+        setSelectedTabInquiries,
+        selectedTabInvoices,
+        setSelectedTabInvoices,
       }}
     >
       {children}

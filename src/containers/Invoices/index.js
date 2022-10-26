@@ -1,12 +1,15 @@
+import { useAppContext } from "lib/contextLib";
+import { Row, Col, Tabs, Tab } from "react-bootstrap";
 import InvoicesTable from "components/InvoicesTable";
-import NewPropertyCard from "components/NewPropertyCard";
 import NewPropertyCardInvoice from "components/NewPropertyCardInvoice";
 import WelcomeInvoices from "components/WelcomeInvoices";
-import { Row, Col, Tabs, Tab } from "react-bootstrap";
 import "./styles.scss";
 
 const Invoices = () => {
   let titleTable = ["properties-without-invoices", "invoice-documents"];
+
+  const { selectedTabInvoices, setSelectedTabInvoices } = useAppContext();
+
   return (
     <Row className="invoices-wrapper">
       <Col sm={12} md={12}>
@@ -14,7 +17,9 @@ const Invoices = () => {
       </Col>
       <Col sm={12} md={12} className="m-0 invoices-tabs">
         <Tabs
-          defaultActiveKey="new-properties"
+          // defaultActiveKey="new-properties"
+          activeKey={selectedTabInvoices}
+          onSelect={(tab) => setSelectedTabInvoices(tab)}
           id="uncontrolled-tab-example"
           className="mt-0 mb-4 mt-md-4"
         >

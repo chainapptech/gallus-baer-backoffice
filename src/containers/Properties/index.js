@@ -3,15 +3,15 @@ import { Row, Col, Tabs, Tab, Offcanvas, Form } from "react-bootstrap";
 import { MultiSelect } from "react-multi-select-component";
 
 import Button from "components/Button";
-import Property from "components/PropertyCard";
 import NotificationBadge from "components/NotificationBadge";
 import FilterSvg from "stories/svg/Filter";
 import FilledArrowDown from "stories/svg/FilledArrowDown";
-import data from "./dummy.json";
-
-import "./styles.scss";
 import SearchInput from "components/SearchInput";
+import PropertyCard from "components/PropertyCard";
+
 import { useAppContext } from "lib/contextLib";
+import data from "./dummy.json";
+import "./styles.scss";
 
 const typeOptions = [
   { label: "Apartment", value: "apartment" },
@@ -47,7 +47,6 @@ const Properties = () => {
   const [accountsCreated, setAccountsCreated] = useState([]);
   const [otherDetails, setOtherDetails] = useState([]);
 
-  // const [currentTab, setCurrentTab] = useState("approved-properties");
   const { selectedTabProperties, setSelectedTabProperties } = useAppContext();
 
   useEffect(() => {
@@ -73,7 +72,7 @@ const Properties = () => {
 
   return (
     <>
-      <Row className="mt-4 properties">
+      <Row className="mt-4">
         <Col sm={12} md={12}>
           <Row
             className="d-flex align-items-center justify-content-start"
@@ -84,6 +83,8 @@ const Properties = () => {
               <h2 className="py-3 mb-2">Properties</h2>
             </Col>
           </Row>
+        </Col>
+        <Col md={12}>
           <Tabs
             id="uncontrolled-tab-example"
             activeKey={selectedTabProperties}
@@ -122,12 +123,12 @@ const Properties = () => {
                 </Col>
               </Row>
 
-              <Row className="g-4" sm={1} md={3} lg={4}>
+              <Row className="g-3" sm={1} md={3} lg={4}>
                 {properties
                   .filter(({ property }) => property.approved)
                   .map(({ id, property, user }) => (
                     <Col key={id} sm={12} md={6}>
-                      <Property property={property} user={user} id={id} />
+                      <PropertyCard property={property} user={user} id={id} />
                     </Col>
                   ))}
               </Row>
@@ -168,7 +169,7 @@ const Properties = () => {
                   .filter(({ property }) => !property.approved)
                   .map(({ id, property, user }) => (
                     <Col key={id} sm={12} md={6}>
-                      <Property
+                      <PropertyCard
                         waitingForApproval={"unassigned"}
                         property={property}
                         user={user}
@@ -214,7 +215,7 @@ const Properties = () => {
                   .filter(({ property }) => property.unapproved)
                   .map(({ id, property, user }) => (
                     <Col key={id} sm={12} md={6}>
-                      <Property property={property} user={user} id={id} />
+                      <PropertyCard property={property} user={user} id={id} />
                     </Col>
                   ))}
               </Row>
